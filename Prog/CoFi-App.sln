@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoFi-App", "D:\cours\p3-p4\c#\CoFi-App\CoFi-App\CoFi-App.csproj", "{CECB8569-76EF-4EF2-AC91-2C73198C8D08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CECB8569-76EF-4EF2-AC91-2C73198C8D08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CECB8569-76EF-4EF2-AC91-2C73198C8D08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CECB8569-76EF-4EF2-AC91-2C73198C8D08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CECB8569-76EF-4EF2-AC91-2C73198C8D08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4E3D7FE-D43D-491D-B493-5AE1571B5E4B}
+	EndGlobalSection
+EndGlobal
