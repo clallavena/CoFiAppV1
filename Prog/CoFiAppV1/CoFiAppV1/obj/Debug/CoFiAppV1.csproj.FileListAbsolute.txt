@@ -33,3 +33,5 @@ C:\Users\clallavena\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\obj\Debug\Use
 C:\Users\clallavena\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\obj\Debug\CoFiAppV1.g.resources
 C:\Users\clallavena\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\obj\Debug\CoFiAppV1.Properties.Resources.resources
 C:\Users\clallavena\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\obj\Debug\CoFiAppV1.csproj.GenerateResource.Cache
+C:\Users\clallavena\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\obj\Debug\BarreDeRecherche.g.cs
+C:\Users\clallavena\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\obj\Debug\BarreDeRecherche.baml
