@@ -12,10 +12,13 @@
             <ColumnDefinition Width="25*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
             <RowDefinition Height="90*"/>
         </Grid.RowDefinitions>
         <!--Définition de la grid-->
-        
+
+        <TextBox TextWrapping="Wrap" Grid.Row="0" Margin="5" Text="Rechercher" FontSize="20" FontStyle="Italic"/>
+
         <ScrollViewer VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Height="Auto">
             <ListBox VerticalAlignment="Top" Height="Auto" SelectedIndex="0" Grid.Column="0" Grid.Row="1" Background="Aqua">
                 <!--Début d'une séléction-->
