@@ -1,63 +1,44 @@
-﻿<Window x:Class="WpfApp1.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
-        mc:Ignorable="d"
-        Title="Cofi App" Height="720" Width="1280">
-    <Grid Margin="5,5,5,5">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="25*" />
-            <ColumnDefinition Width="90*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="10*" />
-            <RowDefinition Height="90*" />
-        </Grid.RowDefinitions>
-        
-        <Button Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Admin" FontSize="25" DockPanel.Dock="Left" Width="150" Height="35"/>
-        <Button Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Content="+ Ajouter" FontSize="25" DockPanel.Dock="Right" Width="150" Height="35"/>
-
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="1">
+﻿<Page x:Class="WpfApp1.Accueil"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="Accueil">
+    
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="1">
             <Grid Grid.Column="1" Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="15*" />
                     <ColumnDefinition Width="10*" />
                     <ColumnDefinition Width="15*" />
                 </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="15*" />
-                    <RowDefinition Height="5*" />
-                    <RowDefinition Height="20*" />
-                </Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="15*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="20*" />
+            </Grid.RowDefinitions>
 
-                <Viewbox Stretch="Uniform" Grid.Column="1" Grid.Row="0" Width="220" Height="220">
-                    <Image HorizontalAlignment="Left"  VerticalAlignment="Top" Source="images/logo.png" />
+                <Button Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Admin" FontSize="25" Width="150" Height="35"/>
+                <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="+ Ajouter" FontSize="25" Width="150" Height="35"/>
+
+
+                <Viewbox Stretch="Uniform" Grid.Column="1" Grid.Row="1" Width="220" Height="220">
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="img/logo.png" />
                 </Viewbox>
 
-                <TextBlock Text="CofiApp" Grid.ColumnSpan="3" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60"/>
+                <TextBlock Text="CofiApp" Grid.ColumnSpan="3" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60"/>
 
-                <TextBlock Margin="5,30,5,30" Grid.ColumnSpan="3" Grid.Row="2" FontSize="20" TextWrapping="Wrap" Text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sollicitudin risus. Nulla ac posuere orci, tempor dignissim nulla. Duis in volutpat arcu. Sed imperdiet leo elit, at bibendum arcu dapibus a. Sed vestibulum risus sed arcu suscipit, ut cursus quam eleifend. Mauris porta nulla erat, eu cursus lorem eleifend vitae. Nunc dapibus est nunc. Sed velit sem, varius non imperdiet sed, sagittis quis tellus. Phasellus id posuere diam, ac faucibus arcu. Duis pharetra luctus sapien. Maecenas ac metus fermentum, maximus dui sed, placerat ligula. Maecenas placerat facilisis velit vehicula imperdiet. Maecenas sollicitudin tempus ligula, ac tincidunt odio euismod ut.
+                <TextBlock Margin="5,30,5,30" Grid.ColumnSpan="3" Grid.Row="3" FontSize="20" TextWrapping="Wrap" Text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sollicitudin risus. Nulla ac posuere orci, tempor dignissim nulla. Duis in volutpat arcu. Sed imperdiet leo elit, at bibendum arcu dapibus a. Sed vestibulum risus sed arcu suscipit, ut cursus quam eleifend. Mauris porta nulla erat, eu cursus lorem eleifend vitae. Nunc dapibus est nunc. Sed velit sem, varius non imperdiet sed, sagittis quis tellus. Phasellus id posuere diam, ac faucibus arcu. Duis pharetra luctus sapien. Maecenas ac metus fermentum, maximus dui sed, placerat ligula. Maecenas placerat facilisis velit vehicula imperdiet. Maecenas sollicitudin tempus ligula, ac tincidunt odio euismod ut.
 
 Suspendisse tincidunt, lorem sit amet aliquet elementum, nisl sapien mattis ante, vel molestie neque massa nec orci. Fusce ultrices convallis sem mollis venenatis. Mauris semper id ipsum vitae maximus. Praesent molestie neque eget nulla ullamcorper feugiat. Nullam eu urna id neque dignissim ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Aliquam erat volutpat. Morbi a odio lectus. In hac habitasse platea dictumst. Nulla malesuada efficitur erat, vitae sollicitudin leo.  Sed vitae nulla tempor, ultrices arcu eget, venenatis neque. Phasellus vitae scelerisque ligula, at ultrices dolor. Integer ac turpis sit amet tortor pretium consectetur quis ut erat. Quisque ante lectus, ornare in nunc et, posuere venenatis dolor. Vivamus volutpat elementum leo, ac ullamcorper purus. In ut ligula augue. In et est non neque vehicula pellentesque sit amet non ipsum. Duis a finibus lacus, nec pellentesque urna. Cras eget nunc dolor. Suspendisse sit amet suscipit leo. Aliquam sed porta massa. Etiam mi risus, ultricies suscipit cursus vel, consequat vitae neque. Mauris finibus pharetra quam.
 
 Etiam sit amet semper tellus, sed vehicula lacus. Maecenas est enim, elementum sit amet magna viverra, elementum convallis magna. Quisque quis est vel nisi fermentum finibus. Cras id metus tellus. Suspendisse malesuada auctor eros vitae lobortis. Morbi sodales sem nec purus semper blandit. Quisque placerat suscipit vehicula. Morbi vel justo at quam vulputate viverra gravida at nulla. Proin ut feugiat lectus, ac pretium est. Sed eget sapien arcu. Etiam ut nisl est. Integer viverra nulla eros, ut tristique odio interdum sed. Maecenas faucibus mollis metus, a venenatis sem auctor ac. Nam egestas lorem tristique vehicula aliquet. "/>
 
             </Grid>
-            </ScrollViewer>
+        </ScrollViewer>
 
-        <ListBox Width="Auto" Margin="0,0,0,0" Height="Auto" Grid.Row="1" >
-            <TextBlock Text="Film 1" />
-            <TextBlock Text="Film 2" />
-            <TextBlock Text="Film 3" />
-            <TextBlock Text="Film 4" />
-        </ListBox>
-
-
-        
-
-
-
-    </Grid>
-</Window>
+</Page>
