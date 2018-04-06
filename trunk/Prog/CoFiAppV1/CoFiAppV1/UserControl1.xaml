@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="CoFiAppV1.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CoFiAppV1"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="300">
+    <Grid>
+        <!--Définition de la grid-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+        <!--Définition de la grid-->
+        
+        <ScrollViewer VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Height="Auto">
+            <ListBox VerticalAlignment="Top" Height="Auto" SelectedIndex="0" Grid.Column="0" Grid.Row="1" Background="Aqua">
+                <!--Début d'une séléction-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="Film 1" FontWeight="Bold" FontSize="25" />
+                    <Viewbox Grid.Column="1" Stretch="Uniform">
+                        <Image Source="img/Shining.jpg"  Height="100" Width="100" HorizontalAlignment="Right"/>
+                    </Viewbox>
+                </Grid>
+                <!--Fin d'une séléction-->
+                
+                <!--Début d'une séléction-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" DockPanel.Dock="Left" Text="Film 2" FontWeight="Bold" FontSize="25" />
+                    <Viewbox Stretch="Uniform" Grid.Column="1">
+                        <Image Source="img/backtothefuture.jpg" Height="100" Width="100" HorizontalAlignment="Right"/>
+                    </Viewbox>
+                </Grid>
+                <!--Fin d'une séléction-->
+
+                <!--Début d'une séléction-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" DockPanel.Dock="Left" Text="Film 3" FontWeight="Bold" FontSize="25" />
+                    <Viewbox Stretch="Uniform" Grid.Column="1">
+                        <!--Insérez une images-->
+                    </Viewbox>
+                </Grid>
+                <!--Fin d'une séléction-->
+                
+                <!--Début d'une séléction-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" DockPanel.Dock="Left" Text="Film 4" FontWeight="Bold" FontSize="25" />
+                    <Viewbox Stretch="Uniform" Grid.Column="1">
+                        <!--Insérez une images-->
+                    </Viewbox>
+                </Grid>
+                <!--Fin d'une séléction-->
+                
+            </ListBox>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
