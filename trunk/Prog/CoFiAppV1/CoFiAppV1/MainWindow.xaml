@@ -22,26 +22,25 @@
             <local:BarreDeRecherche/>
         </UserControl>
 
-        <ScrollViewer VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Height="Auto">
-            <ListBox VerticalAlignment="Top" Height="Auto" SelectedIndex="0" Grid.Column="0" Grid.Row="1" Background="Aqua">
-                <!--Début d'une séléction-->
-                <UserControl Grid.Row="1">
-                    <local:UserControl1/>
-                </UserControl>
-                <!--Fin d'une séléction-->
+        <ListBox VerticalAlignment="Top" Height="Auto" SelectedIndex="0" Grid.Column="0" Grid.Row="1" Background="Aqua">
+            <!--Début d'une séléction-->
+            <UserControl Grid.Row="1">
+                <local:UserControl1/>
+            </UserControl>
+            <!--Fin d'une séléction-->
 
-                <!--Début d'une séléction-->
-                <UserControl Grid.Row="1">
-                    <local:UserControl1/>
-                </UserControl>
-                <!--Fin d'une séléction-->
+            <!--Début d'une séléction-->
+            <UserControl Grid.Row="1">
+                <local:UserControl1/>
+            </UserControl>
+            <!--Fin d'une séléction-->
 
-                <!--Début d'une séléction-->
-                <UserControl Grid.Row="1">
-                    <local:UserControl1/>
-                </UserControl>
-                <!--Fin d'une séléction-->
-            </ListBox>
-        </ScrollViewer>
+            <!--Début d'une séléction-->
+            <UserControl Grid.Row="1">
+                <local:UserControl1/>
+            </UserControl>
+            <!--Fin d'une séléction-->
+        </ListBox>
+        
     </Grid>
 </Window>
