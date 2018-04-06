@@ -5,75 +5,24 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CoFiAppV1"
              mc:Ignorable="d" 
-             d:DesignHeight="720" d:DesignWidth="300">
-    <Grid>
+             d:DesignHeight="100" d:DesignWidth="300">
+    <Grid Background="Aqua">
         <!--Définition de la grid-->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="90*"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <!--Définition de la grid-->
-
-        <TextBox TextWrapping="Wrap" Grid.Row="0" Margin="5" Text="Rechercher" FontSize="20" FontStyle="Italic"/>
-
-        <ScrollViewer VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Height="Auto">
-            <ListBox VerticalAlignment="Top" Height="Auto" SelectedIndex="0" Grid.Column="0" Grid.Row="1" Background="Aqua">
-                <!--Début d'une séléction-->
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="120"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Text="Film 1" FontWeight="Bold" FontSize="25" />
-                    <Viewbox Grid.Column="1" Stretch="Uniform">
-                        <Image Source="img/Shining.jpg"  Height="100" Width="100" HorizontalAlignment="Right"/>
-                    </Viewbox>
-                </Grid>
-                <!--Fin d'une séléction-->
-                
-                <!--Début d'une séléction-->
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="120"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" DockPanel.Dock="Left" Text="Film 2" FontWeight="Bold" FontSize="25" />
-                    <Viewbox Stretch="Uniform" Grid.Column="1">
-                        <Image Source="img/backtothefuture.jpg" Height="100" Width="100" HorizontalAlignment="Right"/>
-                    </Viewbox>
-                </Grid>
-                <!--Fin d'une séléction-->
-
-                <!--Début d'une séléction-->
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="120"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" DockPanel.Dock="Left" Text="Film 3" FontWeight="Bold" FontSize="25" />
-                    <Viewbox Stretch="Uniform" Grid.Column="1">
-                        <!--Insérez une images-->
-                    </Viewbox>
-                </Grid>
-                <!--Fin d'une séléction-->
-                
-                <!--Début d'une séléction-->
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="120"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" DockPanel.Dock="Left" Text="Film 4" FontWeight="Bold" FontSize="25" />
-                    <Viewbox Stretch="Uniform" Grid.Column="1">
-                        <!--Insérez une images-->
-                    </Viewbox>
-                </Grid>
-                <!--Fin d'une séléction-->
-                
-            </ListBox>
-        </ScrollViewer>
+        
+            <!--Début d'une séléction-->
+            <TextBlock Grid.Column="0" Text="Film 1" FontWeight="Bold" FontSize="22" VerticalAlignment="Center" TextWrapping="Wrap"/>
+            <Viewbox Grid.Column="1" Stretch="Uniform"  >
+                <!--Changer l'image-->
+                <Image Source="img/Shining.jpg" Height="100" Width="100" HorizontalAlignment="Right"/>
+            </Viewbox>
+            <!--Fin d'une séléction-->
     </Grid>
 </UserControl>

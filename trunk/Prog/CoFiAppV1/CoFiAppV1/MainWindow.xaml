@@ -7,9 +7,41 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280">
     <Grid>
-        <UserControl>
-            <local:UserControl1/>
-        </UserControl> 
-    </Grid>
+        <!--Définition de la grid-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="75*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+        <!--Définition de la grid-->
 
+        <UserControl Grid.Row="0" Grid.Column="0" Margin="5">
+            <local:BarreDeRecherche/>
+        </UserControl>
+
+        <ScrollViewer VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Height="Auto">
+            <ListBox VerticalAlignment="Top" Height="Auto" SelectedIndex="0" Grid.Column="0" Grid.Row="1" Background="Aqua">
+                <!--Début d'une séléction-->
+                <UserControl Grid.Row="1">
+                    <local:UserControl1/>
+                </UserControl>
+                <!--Fin d'une séléction-->
+
+                <!--Début d'une séléction-->
+                <UserControl Grid.Row="1">
+                    <local:UserControl1/>
+                </UserControl>
+                <!--Fin d'une séléction-->
+
+                <!--Début d'une séléction-->
+                <UserControl Grid.Row="1">
+                    <local:UserControl1/>
+                </UserControl>
+                <!--Fin d'une séléction-->
+            </ListBox>
+        </ScrollViewer>
+    </Grid>
 </Window>
