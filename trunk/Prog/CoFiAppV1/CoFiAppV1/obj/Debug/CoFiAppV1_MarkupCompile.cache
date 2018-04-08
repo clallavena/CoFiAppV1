@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\ghostfalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\App.xaml
-3-1779606557
+6-837821047
 
-11979464732
+10648672008
 131569487696
-BarreDeRecherche.xaml;MainWindow.xaml;UserControl1.xaml;
+Frames\Accueil.xaml;Frames\AddFilm.xaml;UserControl\BarreDeRecherche.xaml;Frames\Film.xaml;MainWindow.xaml;UserControl\UserControl1.xaml;
 
-True
+False
 

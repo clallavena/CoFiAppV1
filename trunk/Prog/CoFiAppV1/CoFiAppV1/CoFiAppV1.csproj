@@ -54,15 +54,32 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BarreDeRecherche.xaml.cs">
+    <Compile Include="Frames\Accueil.xaml.cs" />
+    <Compile Include="Frames\AddFilm.xaml.cs">
+      <DependentUpon>AddFilm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\BarreDeRecherche.xaml.cs">
       <DependentUpon>BarreDeRecherche.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControl1.xaml.cs">
+    <Compile Include="Frames\Film.xaml.cs" />
+    <Compile Include="UserControl\UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>
-    <Page Include="BarreDeRecherche.xaml">
+    <Page Include="Frames\Accueil.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Frames\AddFilm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\BarreDeRecherche.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\Film.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -76,7 +93,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UserControl1.xaml">
+    <Page Include="UserControl\UserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="CoFiAppV1.BarreDeRecherche"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CoFiAppV1"
+             mc:Ignorable="d" 
+             d:DesignHeight="70" d:DesignWidth="250">
+    <Grid Background="Gray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox TextWrapping="Wrap" Grid.Row="0" Margin="5" Text="Rechercher" FontSize="15" FontStyle="Italic"/>
+        <Viewbox Grid.Column="1" Stretch="Uniform">
+            <Image Source="../img/loupe.png" Height="50" Width="30"/>
+        </Viewbox>
+    </Grid>
+</UserControl>
