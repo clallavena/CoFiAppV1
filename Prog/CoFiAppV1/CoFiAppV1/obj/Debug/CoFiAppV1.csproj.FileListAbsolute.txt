@@ -25,3 +25,6 @@ C:\Users\ghostfalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\obj\Debug\C
 C:\Users\ghostfalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\obj\Debug\CoFiAppV1.csproj.CoreCompileInputs.cache
 C:\Users\ghostfalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\obj\Debug\CoFiAppV1.exe
 C:\Users\ghostfalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\obj\Debug\CoFiAppV1.pdb
+C:\Users\ghostfalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\obj\Debug\CoFiAppV1.csprojResolveAssemblyReference.cache
+C:\Users\ghostfalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\obj\Debug\Frames\FilmDesc.g.cs
+C:\Users\ghostfalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\obj\Debug\Frames\FilmDesc.baml
