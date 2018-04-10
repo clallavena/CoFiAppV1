@@ -54,32 +54,43 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Frames\Accueil.xaml.cs" />
+    <Compile Include="Frames\Accueil1.xaml.cs">
+      <DependentUpon>Accueil1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\AddDirector.xaml.cs">
+      <DependentUpon>AddDirector.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Frames\AddFilm.xaml.cs">
       <DependentUpon>AddFilm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Director.xaml.cs">
+      <DependentUpon>Director.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControl\BarreDeRecherche.xaml.cs">
       <DependentUpon>BarreDeRecherche.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Frames\Film.xaml.cs" />
     <Compile Include="UserControl\UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>
-    <Page Include="Frames\Accueil.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Frames\Accueil1.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\AddDirector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Frames\AddFilm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\Director.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControl\BarreDeRecherche.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Frames\Film.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -130,6 +141,16 @@
   <ItemGroup>
     <Resource Include="img\backtothefuture.jpg" />
     <Resource Include="img\Shining.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\JackN.jpg" />
+    <Resource Include="img\ShelleyD.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Kubrick.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\ClockworkOrange.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\clallavena\Desktop\App\CoFiAppV1\CoFiAppV1\obj\Release\
+C:\Users\ghostfalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\obj\Release\
 CoFiAppV1
 none
 false
 TRACE
-C:\Users\clallavena\Desktop\App\CoFiAppV1\CoFiAppV1\App.xaml
-21053122409
+C:\Users\ghostfalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\App.xaml
+7651846533
 
-6554709285
+11-1456633739
 131569487696
-MainWindow.xaml;UserControl1.xaml;
+Frames\Accueil1.xaml;Frames\AddDirector.xaml;Frames\AddFilm.xaml;Frames\Director.xaml;UserControl\BarreDeRecherche.xaml;MainWindow.xaml;UserControl\UserControl1.xaml;
 
 True
 
