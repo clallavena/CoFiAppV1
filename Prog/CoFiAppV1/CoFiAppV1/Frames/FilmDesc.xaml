@@ -48,8 +48,8 @@
                 </TextBlock>
 
                 <WrapPanel Margin="0,15">
-                    <ToggleButton HorizontalAlignment="Left" Content="J'aime ce film !" Height="25" Width="150" Click="jaime" />
-                    <ToggleButton HorizontalAlignment="Left" Content="Je n'aime pas ce film !" Height="25" Width="150" Click="Jaime_Pas" />
+                    <ToggleButton HorizontalAlignment="Left" Content="J'aime ce film !" Height="25" Width="150"/>
+                    <ToggleButton HorizontalAlignment="Left" Content="Je n'aime pas ce film !" Height="25" Width="150"/>
                 </WrapPanel>
             </StackPanel>
 
