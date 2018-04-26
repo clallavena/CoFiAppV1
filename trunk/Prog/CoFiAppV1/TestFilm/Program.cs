@@ -11,7 +11,7 @@ namespace TestFilm
     {
         static void Main(string[] args)
         {
-            Film f = new Film("2001", 1989, null, "Esteban le con");
+            Film f = new Film("2001", 1989, null, "Test1 Test2");
             Console.WriteLine(f);
         }
     }
