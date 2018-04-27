@@ -54,17 +54,36 @@ namespace Metier
             Biographie = biographie;
         }
 
+        public Realisateur(string nom, string prenom, DateTime dateDeNaissance, string nationalite, string biographie)
+        {
+            Nom = nom;
+            Prenom = prenom;
+            DateDeNaissance = dateDeNaissance;
+            Nationalite = nationalite;
+            Biographie = biographie;
+        }
+
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
+
+
+            int year = DateDeNaissance.Year;
+            int month = DateDeNaissance.Month;
+            int day = DateDeNaissance.Day;
 
             sb.Append(Nom);
             sb.Append(" ");
             sb.Append(Prenom);
             sb.Append(" ");
-            sb.Append(DateDeNaissance.ToString());
-            sb.Append(" ");
-            sb.Append(DateDeMort.ToString());
+            sb.Append(DateDeNaissance.ToShortDateString());
+
+            if(!DateDeMort.Equals(new DateTime(0001, 01, 01)))
+            {
+                sb.Append(" ");
+                sb.Append(DateDeMort.ToShortDateString());
+            }
+
             sb.Append(" ");
             sb.Append(Nationalite);
             sb.Append(" ");
