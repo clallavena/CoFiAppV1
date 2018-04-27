@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\clallavena\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\App.xaml
-8-2146440171
+91795387750
 
-16-1831702099
+17-1942515319
 131569487696
-Frames\Accueil1.xaml;Frames\AddDirector.xaml;Frames\AddFilm.xaml;Frames\Director.xaml;Frames\FilmDesc.xaml;UserControl\BarreDeRecherche.xaml;MainWindow.xaml;UserControl\UserControl1.xaml;
+Frames\Accueil1.xaml;Frames\AddDirector.xaml;Frames\AddFilm.xaml;Frames\Director.xaml;Frames\FilmDesc.xaml;Frames\Independant.xaml;UserControl\BarreDeRecherche.xaml;MainWindow.xaml;UserControl\UserControl1.xaml;
 
-False
+True
 
