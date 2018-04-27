@@ -15,7 +15,6 @@ namespace Metier
 
         public void AjouterFilm(Film film)
         {
-
         }
 
         public void AjouterReal(Realisateur real)

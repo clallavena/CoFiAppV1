@@ -11,12 +11,12 @@ namespace Metier
 
         public string Nom
         {
-            get; set;
+            get; private set;
         }
 
         public string Prenom
         {
-            get; set;
+            get; private set;
         }
 
         public Acteur(string nom, string prenom)
@@ -27,7 +27,7 @@ namespace Metier
 
         public override string ToString()
         {
-            return $"Nom: {Nom}, Prenom: {Prenom}";
+            return $"{Nom} {Prenom}";
         }
         
     }

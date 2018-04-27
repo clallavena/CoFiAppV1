@@ -43,6 +43,7 @@
     <Compile Include="Acteur.cs" />
     <Compile Include="Admin.cs" />
     <Compile Include="Film.cs" />
+    <Compile Include="FilmManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Realisateur.cs" />
     <Compile Include="Tag.cs" />
