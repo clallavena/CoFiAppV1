@@ -45,5 +45,10 @@ namespace Metier
 
         }
 
+        public override string ToString()
+        {
+            return $"Username: {Username} Password: {Password}";
+        }
+
     }
 }
