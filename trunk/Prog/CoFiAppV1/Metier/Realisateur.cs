@@ -10,38 +10,32 @@ namespace Metier
     {
         public string Nom
         {
-            get;
-            private set;
+            get; private set;
         }
 
         public string Prenom
         {
-            get;
-            private set;
+            get; private set;
         }
 
         public DateTime DateDeNaissance
         {
-            get;
-            private set;
+            get; private set;
         }
 
         public DateTime DateDeMort
         {
-            get;
-            private set;
+            get; private set;
         }
 
         public string Nationalite
         {
-            get;
-            private set;
+            get; private set;
         }
 
         public string Biographie
         {
-            get;
-            private set;
+            get; private set;
         }
 
         public Realisateur(string nom, string prenom, DateTime dateDeNaissance, DateTime dateDeMort, string nationalite, string biographie)

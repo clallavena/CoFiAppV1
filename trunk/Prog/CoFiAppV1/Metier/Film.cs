@@ -10,29 +10,35 @@ namespace Metier
     {
         public string Titre
         {
-            get; set;
+            get; private set;
         }
 
         public int DateDeSortie
         {
-            get; set;
+            get; private set;
         }
 
         public List<Tag> ListTags
         {
-            get; set;
+            get; private set;
         }
 
         public string Synopsis
         {
-            get; set;
+            get; private set;
         }
 
-        public Film(string titre, int dateDeSortie, string synopsis, params Tag[] listTags)        {
+        public List<Acteur> ListActeurs
+        {
+            get; private set;
+        }
+
+        public Film(string titre, int dateDeSortie, string synopsis, List<Acteur> listActeurs, params Tag[] listTags)        {
             ListTags = new List<Tag>();
             Titre = titre;
             DateDeSortie = dateDeSortie;
             Synopsis = synopsis;
+            ListActeurs = listActeurs;
 
             foreach(var e in listTags)
             {
@@ -49,6 +55,12 @@ namespace Metier
             sb.Append(DateDeSortie);
             sb.Append(" ");
             sb.Append(Synopsis);
+
+            foreach (var e in ListActeurs)
+            {
+                sb.Append(" ");
+                sb.Append(e);
+            }
 
 
             foreach(var e in ListTags)

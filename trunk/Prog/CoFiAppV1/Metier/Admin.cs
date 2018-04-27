@@ -9,14 +9,12 @@ namespace Metier
     public class Admin
     {
         public string Username {
-            get;
-            private set;
+            get; private set;
         }
 
         public string Password
         {
-            get;
-            private set;
+            get; private set;
         }
 
         public Admin(string username, string password)
