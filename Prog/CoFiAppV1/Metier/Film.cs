@@ -28,12 +28,15 @@ namespace Metier
             get; set;
         }
 
-        public Film(string titre, int dateDeSortie, List<string> listTags,string synopsis)
+        public Film(string titre, int dateDeSortie,string synopsis, params string[] listTags)
         {
             Titre = titre;
             DateDeSortie = dateDeSortie;
-            ListTags = listTags;
             Synopsis = synopsis;
+            foreach(var s in listTags)
+            {
+                ListTags.Add(s);
+            }
         }
 
         public override string ToString()

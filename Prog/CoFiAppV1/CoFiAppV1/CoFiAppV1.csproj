@@ -69,6 +69,9 @@
     <Compile Include="Frames\FilmDesc.xaml.cs">
       <DependentUpon>FilmDesc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Frames\Independant.xaml.cs">
+      <DependentUpon>Independant.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\BarreDeRecherche.xaml.cs">
       <DependentUpon>BarreDeRecherche.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Frames\FilmDesc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\Independant.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
