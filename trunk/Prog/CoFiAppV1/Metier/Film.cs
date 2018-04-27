@@ -28,7 +28,7 @@ namespace Metier
             get; set;
         }
 
-        public Film(string titre, int dateDeSortie, List<string> listTags,string synopsis)        {
+        public Film(string titre, int dateDeSortie, string synopsis, params Tag[] listTags)        {
             ListTags = new List<Tag>();
             Titre = titre;
             DateDeSortie = dateDeSortie;
@@ -37,7 +37,8 @@ namespace Metier
             foreach(var e in listTags)
             {
                 ListTags.Add(e);
-            }        }
+            }
+        }
 
         public override string ToString()
         {
