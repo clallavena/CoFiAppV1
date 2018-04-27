@@ -18,7 +18,7 @@ namespace Metier
             get; set;
         }
 
-        public List<String> ListTags
+        public List<Tag> ListTags
         {
             get; set;
         }
@@ -28,20 +28,35 @@ namespace Metier
             get; set;
         }
 
-        public Film(string titre, int dateDeSortie,string synopsis, params string[] listTags)
-        {
+        public Film(string titre, int dateDeSortie, List<string> listTags,string synopsis)        {
+            ListTags = new List<Tag>();
             Titre = titre;
             DateDeSortie = dateDeSortie;
             Synopsis = synopsis;
-            foreach(var s in listTags)
+
+            foreach(var e in listTags)
             {
-                ListTags.Add(s);
-            }
-        }
+                ListTags.Add(e);
+            }        }
 
         public override string ToString()
         {
-            return $"{Titre} {DateDeSortie} {ListTags} {Synopsis}";
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append(Titre);
+            sb.Append(" ");
+            sb.Append(DateDeSortie);
+            sb.Append(" ");
+            sb.Append(Synopsis);
+
+
+            foreach(var e in ListTags)
+            {
+                sb.Append(" ");
+                sb.Append(e);
+            }
+
+            return sb.ToString();
         }
     }
 }
