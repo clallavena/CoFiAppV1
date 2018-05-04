@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Metier
 {
     /// <summary>
     /// La classe Réalisateur est composé d'un nom, d'un prénom, d'une date de naissance, d'une date de mort (optionnel), d'une nationalité et d'une biographie
     /// </summary>
-    public class Realisateur
+    public class Realisateur : IEquatable<Realisateur>
     {
         /// <summary>
         /// Nom du réalisateur
@@ -81,7 +78,27 @@ namespace Metier
         {
             DateDeMort = dateDeMort;
         }
-        
+
+        /// <summary>
+        /// Redéfinition de la méthode Equals pour comparer deux réalisateurs
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns>true ou false pour savoir si les deux réalisateurs sont différents ou non</returns>
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (obj == this) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return this.Equals(obj);
+        }
+        public bool Equals(Realisateur other)
+        {
+            return other.Nom == this.Nom && other.Prenom == this.Prenom && other.DateDeNaissance == this.DateDeNaissance && other.DateDeMort == this.DateDeMort && other.Nationalite == this.Nationalite && other.Biographie == this.Biographie;
+        }
+
+        /// <summary>
+        /// Redéfinition de ma méthode ToString
+        /// </summary>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
