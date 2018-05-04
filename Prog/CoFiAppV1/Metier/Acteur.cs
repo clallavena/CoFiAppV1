@@ -48,7 +48,7 @@ namespace Metier
         {
             if (obj == null) return false;
             if (obj == this) return true;
-            if (obj.GetType() == this.GetType()) return true;
+            if (obj.GetType() != this.GetType()) return false;
             return this.Equals(obj);
         }
         public bool Equals(Acteur other)

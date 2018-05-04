@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Metier
 {
+    /// <summary>
+    /// La classe Tag contient une liste d'énumération comportant les différentes étiquettes qui sont accociés au film
+    /// </summary>
     public enum Tag
     {
         Action,
