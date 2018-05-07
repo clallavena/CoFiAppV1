@@ -42,7 +42,7 @@
             <!--Fin d'une séléction-->
         </ListBox>
 
-        <Frame Grid.Column="1" Grid.RowSpan="2" Source="Frames/AddDirector.xaml" />
+        <Frame Grid.Column="1" Grid.RowSpan="2" Source="Frames/Independant.xaml" />
 
     </Grid>
 </Window>

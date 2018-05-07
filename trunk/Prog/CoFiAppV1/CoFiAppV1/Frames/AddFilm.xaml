@@ -7,8 +7,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="AddFilm"
-      Background="White"
-      FontSize="20">
+      Background="{StaticResource defaultBackground}"
+      FontSize="{StaticResource defaultFontSize}">
 
     <Page.Resources>
         <Style x:Key="stylePourTextBox" TargetType="{x:Type TextBox}">
