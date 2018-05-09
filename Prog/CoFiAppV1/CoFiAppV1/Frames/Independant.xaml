@@ -48,17 +48,9 @@
         </Grid>
 
         <!-- Barre de Recherche -->
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40*"/>
-                <ColumnDefinition Width="60*"/>
-            </Grid.ColumnDefinitions>
-            
-            <UserControl>
-                <local1:BarreDeRecherche/>
-            </UserControl>
-        </Grid>
+        <local1:BarreDeRecherche Grid.Row="2" DockPanel.Dock="Left" HorizontalAlignment="Left" Width="350"/>
 
+        <!-- Liste -->
         <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto">
             <ListBox VerticalAlignment="Top" Width="Auto" Background="Aqua">
                 <local1:UserControl1/>
