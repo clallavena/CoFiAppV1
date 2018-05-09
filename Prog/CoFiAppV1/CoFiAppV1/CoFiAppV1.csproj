@@ -72,6 +72,9 @@
     <Compile Include="Frames\Independant.xaml.cs">
       <DependentUpon>Independant.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Frames\ModifFilm.xaml.cs">
+      <DependentUpon>ModifFilm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Frames\ModifReal.xaml.cs">
       <DependentUpon>ModifReal.xaml</DependentUpon>
     </Compile>
@@ -102,6 +105,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Frames\Independant.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\ModifFilm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
