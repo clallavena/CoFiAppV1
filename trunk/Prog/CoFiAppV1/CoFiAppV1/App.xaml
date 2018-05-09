@@ -13,6 +13,13 @@
                 <Setter Property="Height" Value="25"/>
                 <Setter Property="Width" Value="150"/>
         </Style>
+        <Style x:Key="styleToggleButtonsModif" TargetType="{x:Type ToggleButton}">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Content" Value="Modifier"/>
+        </Style>
         <Style x:Key="stylePourLesViewboxs" TargetType="{x:Type Viewbox}">
                 <Setter Property="Width" Value="150"/>
                 <Setter Property="Height" Value="200"/>
