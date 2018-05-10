@@ -21,7 +21,7 @@ namespace Metier
         Catastrophe,
         Comedie,
         Comedie_Dramatique,
-        Comedie_Musical,
+        Comedie_Musicale,
         Comedie_Policiere,
         Comedie_Romantique,
         Documentaire,
