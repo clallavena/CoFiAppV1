@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Metier
 {
     /// <summary>
-    /// La classe Film est réprésenté par un titre, une date de sortie, une liste d'étiquettes, un synonpsis et une liste d'acteurs
+    /// La classe Film est réprésenté par un titre, une date de sortie, une liste d'étiquettes, un synonpsis et une liste de personnes
     /// </summary>
     public class Film
     {
@@ -45,9 +45,9 @@ namespace Metier
         }
 
         /// <summary>
-        /// Liste des principaux acteurs présents dans le film
+        /// Association des différentes personnes présentes pour la réalisation du film
         /// </summary>
-        public List<Acteur> ListActeurs
+        public Dictionary<Metier, List<Personne>> Personnes
         {
             get; private set;
         }
@@ -58,15 +58,15 @@ namespace Metier
         /// <param name="titre"></param>
         /// <param name="dateDeSortie"></param>
         /// <param name="synopsis"></param>
-        /// <param name="listActeurs"></param>
+        /// <param name="personnes"></param>
         /// <param name="listTags"></param>
-        public Film(string titre, int dateDeSortie, string synopsis, List<Acteur> listActeurs, params Tag[] listTags)        {
+        public Film(string titre, int dateDeSortie, string synopsis, Dictionary<Metier, List<Personne>> personnes, params Tag[] listTags)
+        {
             ListTags = new List<Tag>();
-            ListActeurs = new List<Acteur>();
+            Personnes = new Dictionary<Metier, List<Personne>>();
             Titre = titre;
             DateDeSortie = dateDeSortie;
             Synopsis = synopsis;
-            ListActeurs = listActeurs;
 
             foreach(var e in listTags)
             {
@@ -88,7 +88,7 @@ namespace Metier
             sb.Append(" ");
             sb.Append(Synopsis);
 
-            foreach (var e in ListActeurs)
+            foreach (var e in Personnes)
             {
                 sb.Append(" ");
                 sb.Append(e);
