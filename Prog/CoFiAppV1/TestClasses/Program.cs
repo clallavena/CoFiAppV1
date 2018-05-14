@@ -11,7 +11,8 @@ namespace TestClasses
     {
         static void Main(string[] args)
         {
-            Acteur a = new Acteur("Tom", "Hanks");
+            /*Acteur a = new Acteur("Tom", "Hanks");
+            Acteur b = new Acteur("Tom", "Hanks");
 
             Admin admin = new Admin("esbarland", "azerty");
 
@@ -24,16 +25,15 @@ namespace TestClasses
 
             Realisateur r = new Realisateur("Georges", "Lucas", new DateTime(1944, 05, 14), new DateTime(1968, 06, 08), "Américain", "super bonhomme");
             Realisateur ra = new Realisateur("Georges", "Paul", new DateTime(1988, 06, 08), "Américain", "petit garçon");
-
+            
             Console.WriteLine(a);
             Console.WriteLine(admin);
             Console.WriteLine(f);
             Console.WriteLine(r);
-            Console.WriteLine(ra);
+            Console.WriteLine(ra);*/
 
-            Acteur b = new Acteur("Tom", "Hanks");
-
-            Console.WriteLine("\n" + (a == b) + " " + a.Equals(b) + " " + b.Equals(a));
+            
+            
 
         }
     }
