@@ -9,18 +9,32 @@ namespace Metier
     public class Manager
     {
 
-        public string CurrentUser
+        /// <summary>
+        /// Utilisateur avec les droits administrateurs
+        /// </summary>
+        public Admin CurrentUser
         {
             get; private set;
         }
 
+        /// <summary>
+        /// Liste de tous les films
+        /// </summary>
+        public List<Film> Films
+        {
+            get; private set;
+        }
+
+
+        public IRecherchePersonneParCritere rech = new RechParFilm();
+        
         /// <summary>
         /// Méthode permettant d'ajouter un film
         /// </summary>
         /// <param name="film"></param>
         public void AjouterFilm(Film film)
         {
-
+            
         }
 
         /// <summary>
@@ -51,12 +65,21 @@ namespace Metier
         }
 
         /// <summary>
-        /// Méthode permettant de rechercher parmi la liste des films selon le titre ou les différentes étiquettes
+        /// Méthode permettant de rechercher parmi les personnes pour trouver un réalisateur
         /// </summary>
         /// <param name="recherche"></param>
-        public void Rechercher(string recherche)
+        public Personne RechercherReal(string nom, string prenom)
         {
+            return null;
+        }
 
+        /// <summary>
+        /// Méthode permettant de rechercher parmi la liste des films selon le titre de celui-ci
+        /// </summary>
+        /// <param name="recherche"></param>
+        public Film RechercherFilm(string recherche)
+        {
+            return null;
         }
 
         /// <summary>

@@ -59,11 +59,6 @@ namespace Metier
             get; private set;
         }
 
-        public Metier M
-        {
-            get; private set;
-        }
-
         /// <summary>
         /// Constructeur d'une personne sans et avec date de mort
         /// </summary>
