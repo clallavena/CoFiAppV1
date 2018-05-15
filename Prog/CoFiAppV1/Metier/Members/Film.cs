@@ -47,7 +47,7 @@ namespace Metier
         /// <summary>
         /// Association des différentes personnes présentes pour la réalisation du film
         /// </summary>
-        public Dictionary<Metier, List<Personne>> Personnes
+        public Dictionary<Job, List<Personne>> Personnes
         {
             get; private set;
         }
@@ -60,10 +60,10 @@ namespace Metier
         /// <param name="synopsis"></param>
         /// <param name="personnes"></param>
         /// <param name="listTags"></param>
-        public Film(string titre, int dateDeSortie, string synopsis, Dictionary<Metier, List<Personne>> personnes, params Tag[] listTags)
+        public Film(string titre, int dateDeSortie, string synopsis, Dictionary<Job, List<Personne>> personnes, params Tag[] listTags)
         {
             ListTags = new List<Tag>();
-            Personnes = new Dictionary<Metier, List<Personne>>();
+            Personnes = new Dictionary<Job, List<Personne>>();
             Titre = titre;
             DateDeSortie = dateDeSortie;
             Synopsis = synopsis;

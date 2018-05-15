@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Metier
 {
-    public interface IRecherchePersonneParCritere
+    public interface IRecherchePersonne
     {
 
         Personne RechercherRealisateur(string nom);

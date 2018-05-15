@@ -26,8 +26,15 @@ namespace Metier
         }
 
 
-        public IRecherchePersonneParCritere rech = new RechParFilm();
-        
+        public IRecherchePersonne rech = new RechParFilm();
+
+        public IDataManager dm;
+
+        public Manager(IDataManager dm)
+        {
+            this.dm = dm;
+        }
+
         /// <summary>
         /// Méthode permettant d'ajouter un film
         /// </summary>
