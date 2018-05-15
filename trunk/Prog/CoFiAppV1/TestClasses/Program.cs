@@ -1,5 +1,6 @@
 ﻿using Metier;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,28 +12,19 @@ namespace TestClasses
     {
         static void Main(string[] args)
         {
-            /*Acteur a = new Acteur("Tom", "Hanks");
-            Acteur b = new Acteur("Tom", "Hanks");
+            Dictionary<Job, List<Personne>> personnes = new Dictionary<Job, List<Personne>>();
+            List<Personne> acteurs = new List<Personne>();
+            acteurs.Add(new Personne("jack", "paul"));
+            acteurs.Add(new Personne("anne", "champetre"));
+            List<Personne> reals = new List<Personne>();
+            reals.Add(new Personne("georges", "lucas"));
+            reals.Add(new Personne("sylvain", "durif"));
 
-            Admin admin = new Admin("esbarland", "azerty");
+            personnes.Add(Job.Acteur, acteurs);
+            personnes.Add(Job.Realisateur, reals);
 
-            List<Acteur> listActeurs = new List<Acteur>();
-            listActeurs.Add(new Acteur("Paul", "Jean"));
-            listActeurs.Add(new Acteur("Jack", "Pierre"));
-            listActeurs.Add(new Acteur("Roger", "Robert"));
-            Film f = new Film("Star Wars", 2017, "une histoire géniale", listActeurs, Tag.Science_Fiction, Tag.Aventure);
-
-
-            Realisateur r = new Realisateur("Georges", "Lucas", new DateTime(1944, 05, 14), new DateTime(1968, 06, 08), "Américain", "super bonhomme");
-            Realisateur ra = new Realisateur("Georges", "Paul", new DateTime(1988, 06, 08), "Américain", "petit garçon");
-            
-            Console.WriteLine(a);
-            Console.WriteLine(admin);
+            Film f = new Film("Star Wars", 1990, "superbe histoire", personnes, Tag.Action, Tag.Aventure);
             Console.WriteLine(f);
-            Console.WriteLine(r);
-            Console.WriteLine(ra);*/
-
-            
             
 
         }

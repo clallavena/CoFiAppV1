@@ -60,23 +60,41 @@ namespace Metier
         }
 
         /// <summary>
-        /// Constructeur d'une personne sans et avec date de mort
+        /// Constructeur avec un nom et un prénom
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <param name="prenom"></param>
+        public Personne(string nom, string prenom)
+        {
+            Nom = nom;
+            Prenom = prenom;
+        }
+
+        /// <summary>
+        /// Constructeur avec un nom, un prénom, une date de naissance, une nationalité et une biographie
         /// </summary>
         /// <param name="nom"></param>
         /// <param name="prenom"></param>
         /// <param name="dateDeNaissance"></param>
         /// <param name="nationalite"></param>
         /// <param name="biographie"></param>
-        public Personne(string nom, string prenom, DateTime dateDeNaissance, string nationalite, string biographie)
+        public Personne(string nom, string prenom, DateTime dateDeNaissance, string nationalite, string biographie) : this(nom, prenom)
         {
-            Nom = nom;
-            Prenom = prenom;
             DateDeNaissance = dateDeNaissance;
             Nationalite = nationalite;
             Biographie = biographie;
             DateDeMort = null;
         }
 
+        /// <summary>
+        /// Constructeur avec un nom, un prénom, une date de naissance, une date de mort, une nationalité et une biographie
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <param name="prenom"></param>
+        /// <param name="dateDeNaissance"></param>
+        /// <param name="dateDeMort"></param>
+        /// <param name="nationalite"></param>
+        /// <param name="biographie"></param>
         public Personne(string nom, string prenom, DateTime dateDeNaissance, DateTime dateDeMort, string nationalite, string biographie) : this(nom, prenom, dateDeNaissance, nationalite, biographie)
         {
             DateDeMort = dateDeMort;
@@ -113,7 +131,8 @@ namespace Metier
             sb.Append(" ");
             sb.Append(DateDeNaissance.ToShortDateString());
 
-            if(DateDeMort.HasValue)            {
+            if (DateDeMort.HasValue)
+            {
                 sb.Append(" ");
                 sb.Append(DateDeMort.Value.ToShortDateString());
             }

@@ -40,15 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs" />
-    <Compile Include="Film.cs" />
-    <Compile Include="IRecherchePersonneParCritere.cs" />
+    <Compile Include="Members\Admin.cs" />
+    <Compile Include="Members\Film.cs" />
+    <Compile Include="DataManager\IDataManager.cs" />
+    <Compile Include="RecherchePersonne\IRecherchePersonne.cs" />
     <Compile Include="Manager.cs" />
-    <Compile Include="Metier.cs" />
-    <Compile Include="Personne.cs" />
+    <Compile Include="Enums\Job.cs" />
+    <Compile Include="Members\Personne.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RechParFilm.cs" />
-    <Compile Include="Tag.cs" />
+    <Compile Include="RecherchePersonne\RechParFilm.cs" />
+    <Compile Include="Enums\Tag.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="RechercheFilm\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

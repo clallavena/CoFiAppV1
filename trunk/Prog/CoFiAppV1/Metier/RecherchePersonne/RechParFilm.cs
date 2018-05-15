@@ -9,7 +9,7 @@ namespace Metier
     /// <summary>
     /// Classe qui permet de rechercher un réalisateur en passant par la liste des films puis par la liste des personnes associé à chacun
     /// </summary>
-    public class RechParFilm : IRecherchePersonneParCritere
+    public class RechParFilm : IRecherchePersonne
     {
         /// <summary>
         /// Rechercher un réalisateur grâce à son nom et son prénom
@@ -19,10 +19,6 @@ namespace Metier
         /// <returns></returns>
         public Personne RechercherRealisateur(string nom, string prenom)
         {
-           
-
-
-
             return null;
         }
 
