@@ -42,20 +42,23 @@ namespace Metier
         /// <param name="film"></param>
         public void AjouterFilm(Film film)
         {
-            if (Films.Count == 0)
+            //Problème de equals avec les films ?
+            if (Films.Contains(film))
+            {
+                Debug.WriteLine("Ce film existe déjà");
+                return;
+            }
+            else
+            {
+                Films.Add(film);
+            }
+
+            /*if (Films.Count == 0)
             {
                 Films.Add(film);
                 return;
             }
-
-            foreach (Film f in Films)
-            {
-                //Prevoir un message d'erreur si vrai
-                /* if (film.Equals(f))
-                 {
-                     Debug.WriteLine("Ce film existe déjà");
-                     return;
-                 }*/
+                
                 Film fi;
                 fi = RechercherFilm(film.Titre, Films);
 
@@ -68,8 +71,9 @@ namespace Metier
                 {
                     Debug.WriteLine("Film existant");
                     return;
-                }
-            }
+                }*/
+                    
+            
         }
 
         /// <summary>

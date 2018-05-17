@@ -81,15 +81,15 @@ namespace Metier
         /// <returns></returns>
         public override bool Equals(object obj)
         {
-            if (obj == null) return false;
-            if (obj == this) return true;
+            if (object.ReferenceEquals(obj, null)) return false;
+            if (object.ReferenceEquals(obj, this)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return this.Equals(obj);
+            return this.Equals(obj as Film);
         }
         
         public bool Equals(Film film)
         {
-            return film.Titre == this.Titre && film.DateDeSortie == this.DateDeSortie && film.Synopsis == this.Synopsis && film.Personnes == this.Personnes && film.ListTags == this.ListTags;
+            return (film.Titre == this.Titre && film.DateDeSortie == this.DateDeSortie && film.Synopsis == this.Synopsis && film.Personnes == this.Personnes && film.ListTags == this.ListTags);
         }
 
         /// <summary>
