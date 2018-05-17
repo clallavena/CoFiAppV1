@@ -9,7 +9,7 @@ namespace Metier
     /// <summary>
     /// La classe Film est réprésenté par un titre, une date de sortie, une liste d'étiquettes, un synonpsis et une liste de personnes
     /// </summary>
-    public class Film
+    public class Film : IEquatable<Film>
     {
         /// <summary>
         /// Titre du film
@@ -72,6 +72,24 @@ namespace Metier
             {
                 ListTags.Add(e);
             }
+        }
+
+        /// <summary>
+        /// Redéfinition de la méthode Equals pour comparer deux films
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (obj == this) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return this.Equals(obj);
+        }
+        
+        public bool Equals(Film film)
+        {
+            return film.Titre == this.Titre && film.DateDeSortie == this.DateDeSortie && film.Synopsis == this.Synopsis && film.Personnes == this.Personnes && film.ListTags == this.ListTags;
         }
 
         /// <summary>

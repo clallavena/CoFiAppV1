@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Metier.RechercheFilms;
 
 namespace Metier
 {
@@ -35,13 +37,46 @@ namespace Metier
             this.dm = dm;
         }
 
+        //A SUPPRIMER A LA FIN DES TEST//
+        public Manager()
+        {
+            Films = new List<Film>();
+        }
+
         /// <summary>
-        /// Méthode permettant d'ajouter un film
+        /// Méthode permettant d'ajouter un film à la collection existante
         /// </summary>
         /// <param name="film"></param>
         public void AjouterFilm(Film film)
         {
-            
+            if (Films.Count == 0)
+            {
+                Films.Add(film);
+                return;
+            }
+
+            foreach (Film f in Films)
+            {
+                //Prevoir un message d'erreur si vrai
+                /* if (film.Equals(f))
+                 {
+                     Debug.WriteLine("Ce film existe déjà");
+                     return;
+                 }*/
+                Film fi;
+                fi = RechercherFilm(film.Titre, Films);
+
+                if (fi == null)
+                {
+                    Films.Add(film);
+                    return;
+                }
+                else
+                {
+                    Debug.WriteLine("Film existant");
+                    return;
+                }
+            }
         }
 
         /// <summary>
@@ -61,11 +96,11 @@ namespace Metier
         {
 
         }
-        
+
         /// <summary>
-         /// Méthode permettant de signaler une personne qui est un réalisateur si le contenu de celui n'est pas approprié
-         /// </summary>
-         /// <param name="real"></param>
+        /// Méthode permettant de signaler une personne qui est un réalisateur si le contenu de celui n'est pas approprié
+        /// </summary>
+        /// <param name="real"></param>
         public void SignalerReal(Personne real)
         {
 
@@ -84,9 +119,10 @@ namespace Metier
         /// Méthode permettant de rechercher parmi la liste des films selon le titre de celui-ci
         /// </summary>
         /// <param name="recherche"></param>
-        public Film RechercherFilm(string recherche)
+        public Film RechercherFilm(string recherche, List<Film> Films)
         {
-            return null;
+            RechFilmParNom re = new RechFilmParNom();
+            return re.RechercheFilm(recherche, Films);
         }
 
         /// <summary>

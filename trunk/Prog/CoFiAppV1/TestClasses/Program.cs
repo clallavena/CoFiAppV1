@@ -12,6 +12,8 @@ namespace TestClasses
     {
         static void Main(string[] args)
         {
+            Manager m = new Manager();
+
             Dictionary<Job, List<Personne>> personnes = new Dictionary<Job, List<Personne>>();
             List<Personne> acteurs = new List<Personne>();
             acteurs.Add(new Personne("jack", "paul"));
@@ -24,8 +26,45 @@ namespace TestClasses
             personnes.Add(Job.Realisateur, reals);
 
             Film f = new Film("Star Wars", 1990, "superbe histoire", personnes, Tag.Action, Tag.Aventure);
-            Console.WriteLine(f);
-            
+
+            Film f1 = new Film("Star Wars", 1990, "superbe histoire", personnes, Tag.Action, Tag.Aventure);
+
+            Film f2 = new Film("Forrest Gump", 1994, "superbe histoire", personnes, Tag.Drame, Tag.Comedie_Dramatique);
+
+
+            foreach (Film fi in m.Films)
+            {
+                Console.WriteLine(fi);
+            }
+
+            Console.WriteLine("/////////////////////////////////////////////");
+
+            m.AjouterFilm(f);
+
+            foreach (Film fi in m.Films)
+            {
+                Console.WriteLine(fi);
+            }
+
+            Console.WriteLine("/////////////////////////////////////////////");
+
+            m.AjouterFilm(f2);
+
+            foreach (Film fi in m.Films)
+            {
+                Console.WriteLine(fi);
+            }
+
+            Console.WriteLine("/////////////////////////////////////////////");
+
+            m.AjouterFilm(f1);
+
+            foreach (Film fi in m.Films)
+            {
+                Console.WriteLine(fi);
+            }
+
+            Console.WriteLine("/////////////////////////////////////////////");
 
         }
     }

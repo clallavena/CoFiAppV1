@@ -43,6 +43,8 @@
     <Compile Include="Members\Admin.cs" />
     <Compile Include="Members\Film.cs" />
     <Compile Include="DataManager\IDataManager.cs" />
+    <Compile Include="RechercheFilms\IRechercheFilm.cs" />
+    <Compile Include="RechercheFilms\RechFilmParNom.cs" />
     <Compile Include="RecherchePersonne\IRecherchePersonne.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="Enums\Job.cs" />
@@ -51,9 +53,7 @@
     <Compile Include="RecherchePersonne\RechParFilm.cs" />
     <Compile Include="Enums\Tag.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="RechercheFilm\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
