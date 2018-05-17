@@ -6,16 +6,12 @@ using System.Threading.Tasks;
 
 namespace Metier
 {
-    public interface IDataManager : IEnumerable<Film>, IEnumerable<Personne>
+    public interface IDataManager
     {
 
         IEnumerable<Film> ChargementFilms();
 
-        IEnumerable<Personne> ChargementPersonnes();
-
         void SauvegardeFilms(IEnumerable<Film> films);
-
-        void SauvegardePersonnes(IEnumerable<Personne> personnes);
 
     }
 }

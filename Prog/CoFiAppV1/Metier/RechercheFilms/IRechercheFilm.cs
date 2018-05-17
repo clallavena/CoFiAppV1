@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Metier.RechercheFilms
 {
-    public interface IRechercheFilm : IEnumerable<Film>
+    public interface IRechercheFilm
     {
         Film RechercheFilm(string critere, IEnumerable<Film> films);
 
