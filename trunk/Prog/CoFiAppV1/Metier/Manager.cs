@@ -24,17 +24,16 @@ namespace Metier
         /// </summary>
         public List<Film> Films
         {
-            get; private set;
+            get; set;
         }
 
 
-        public IRecherchePersonne rech = new RechParFilm();
+        private IRecherchePersonne rech = new RechParFilm();
+        private IDataManager dm;
 
-        public IDataManager dm;
-
-        public Manager(IDataManager dm)
+        public Manager(IDataManager datamanager)
         {
-            this.dm = dm;
+            dm = datamanager;
         }
 
         /// <summary>
