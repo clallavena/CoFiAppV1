@@ -15,15 +15,22 @@ namespace TestClasses
         {
             IDataManager dm = new StubDataManager();
 
-            Manager m = new Manager(dm);
+            Manager m = new Manager(dm)
+            {
+                Films = (List<Film>)dm.ChargementFilms()
+            };
 
-            /*Dictionary<Job, List<Personne>> personnes = new Dictionary<Job, List<Personne>>();
-            List<Personne> acteurs = new List<Personne>();
-            acteurs.Add(new Personne("jack", "paul"));
-            acteurs.Add(new Personne("anne", "champetre"));
-            List<Personne> reals = new List<Personne>();
-            reals.Add(new Personne("georges", "lucas"));
-            reals.Add(new Personne("sylvain", "durif"));
+            Dictionary<Job, List<Personne>> personnes = new Dictionary<Job, List<Personne>>();
+            List<Personne> acteurs = new List<Personne>
+            {
+                new Personne("jack", "paul"),
+                new Personne("anne", "champetre")
+            };
+            List<Personne> reals = new List<Personne>
+            {
+                new Personne("georges", "lucas"),
+                new Personne("sylvain", "durif")
+            };
 
             personnes.Add(Job.Acteur, acteurs);
             personnes.Add(Job.Realisateur, reals);
@@ -68,7 +75,7 @@ namespace TestClasses
             }
 
             Console.WriteLine("/////////////////////////////////////////////");
-            */
+            
         }
     }
 }

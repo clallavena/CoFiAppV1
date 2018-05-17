@@ -41,8 +41,8 @@ namespace Metier.DataManager
 
             listPR_f2.Add(new Personne("Nolan", "Christophe", new DateTime(1970, 07, 30), "Anglais", "XOXOXO"));
 
-            filmForrest.Add(Job.Acteur, listPA_f2);
-            filmForrest.Add(Job.Realisateur, listPR_f2);
+            filmInterstellar.Add(Job.Acteur, listPA_f2);
+            filmInterstellar.Add(Job.Realisateur, listPR_f2);
 
 
             //Ajout de film à la liste
