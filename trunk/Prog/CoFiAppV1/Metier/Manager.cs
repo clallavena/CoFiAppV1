@@ -37,12 +37,6 @@ namespace Metier
             this.dm = dm;
         }
 
-        //A SUPPRIMER A LA FIN DES TEST//
-        public Manager()
-        {
-            Films = new List<Film>();
-        }
-
         /// <summary>
         /// Méthode permettant d'ajouter un film à la collection existante
         /// </summary>

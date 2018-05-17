@@ -29,10 +29,5 @@ namespace Metier.RechercheFilms
 
             return null;
         }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

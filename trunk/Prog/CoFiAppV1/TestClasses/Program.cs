@@ -1,4 +1,5 @@
 ﻿using Metier;
+using Metier.DataManager;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,9 +13,11 @@ namespace TestClasses
     {
         static void Main(string[] args)
         {
-            Manager m = new Manager();
+            IDataManager dm = new StubDataManager();
 
-            Dictionary<Job, List<Personne>> personnes = new Dictionary<Job, List<Personne>>();
+            Manager m = new Manager(dm);
+
+            /*Dictionary<Job, List<Personne>> personnes = new Dictionary<Job, List<Personne>>();
             List<Personne> acteurs = new List<Personne>();
             acteurs.Add(new Personne("jack", "paul"));
             acteurs.Add(new Personne("anne", "champetre"));
@@ -65,7 +68,7 @@ namespace TestClasses
             }
 
             Console.WriteLine("/////////////////////////////////////////////");
-
+            */
         }
     }
 }
