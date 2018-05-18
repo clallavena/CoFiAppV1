@@ -22,27 +22,21 @@
             <local:BarreDeRecherche/>
         </UserControl>
 
-        <ListBox VerticalAlignment="Top" Height="Auto" SelectedIndex="0" Grid.Column="0" Grid.Row="1" Background="Aqua">
+        <ListBox VerticalAlignment="Top" Height="Auto" SelectedIndex="0" Grid.Column="0" Grid.Row="1" Background="Aqua" ItemsSource="{Binding Films}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Titre}"></TextBlock>
+                    
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            
             <!--Début d'une séléction-->
             <UserControl Grid.Row="1">
                 <local:UserControl1/>
             </UserControl>
-            <!--Fin d'une séléction-->
-
-            <!--Début d'une séléction-->
-            <UserControl Grid.Row="1">
-                <local:UserControl1/>
-            </UserControl>
-            <!--Fin d'une séléction-->
-
-            <!--Début d'une séléction-->
-            <UserControl Grid.Row="1">
-                <local:UserControl1/>
-            </UserControl>
-            <!--Fin d'une séléction-->
         </ListBox>
 
-        <Frame Grid.Column="1" Grid.RowSpan="2" Source="Frames/ModifReal.xaml" />
+        <Frame Grid.Column="1" Grid.RowSpan="2" Source="Frames/Accueil1.xaml" />
 
 
     </Grid></Window>
