@@ -125,6 +125,16 @@ namespace Metier
         {
             StringBuilder sb = new StringBuilder();
 
+            if (Nationalite == null && Biographie == null)
+            {
+                sb.Append(Nom);
+                sb.Append(" ");
+                sb.Append(Prenom);
+                sb.Append(" ");
+
+                return sb.ToString();
+            }
+
             sb.Append(Nom);
             sb.Append(" ");
             sb.Append(Prenom);
