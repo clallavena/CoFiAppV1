@@ -183,5 +183,11 @@
   <ItemGroup>
     <Resource Include="img\logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Metier\Metier.csproj">
+      <Project>{dcab952b-2374-41ea-82db-cf94d66a2760}</Project>
+      <Name>Metier</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

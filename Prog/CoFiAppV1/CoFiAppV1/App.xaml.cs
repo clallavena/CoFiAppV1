@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Metier;
+using Metier.DataManager;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +15,15 @@ namespace CoFiAppV1
     /// </summary>
     public partial class App : Application
     {
+        private Manager manager = new Manager(new StubDataManager());
+
+        public Manager LeManager
+        {
+            get
+            {
+                return (Application.Current as App).manager;
+            }
+        }        
+
     }
 }
