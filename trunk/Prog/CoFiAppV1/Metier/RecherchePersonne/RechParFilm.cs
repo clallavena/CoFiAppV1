@@ -19,12 +19,10 @@ namespace Metier
         /// <returns></returns>
         public IEnumerable<Film> RechercherRealisateur(string nom, string prenom, IEnumerable<Film> films)
         {
-            var gg = films.Where(s => s.Personnes.Keys.Contains(Job.Realisateur)
+            var rech = films.Where(s => s.Personnes.Keys.Contains(Job.Realisateur)
                                       && s.Personnes[Job.Realisateur].Exists(p => p.Nom.Equals(nom) && p.Prenom.Equals(prenom)));
 
-            // var rr = films.GroupBy(s => s.Personnes, s => s.Personnes.Keys).Where(r => r.Key.Equals(Job.Realisateur)) ;
-
-            return gg;
+            return rech;
         }
 
         /// <summary>
@@ -34,7 +32,10 @@ namespace Metier
         /// <returns></returns>
         public IEnumerable<Film> RechercherRealisateur(string nom, IEnumerable<Film> films)
         {
-            return null;
+            var rech = films.Where(s => s.Personnes.Keys.Contains(Job.Realisateur)
+                                      && s.Personnes[Job.Realisateur].Exists(p => p.Nom.Equals(nom)));
+
+            return rech;
         }
     }
 }
