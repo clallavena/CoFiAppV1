@@ -15,19 +15,16 @@ namespace Metier.RechercheFilms
         }
 
         /// <summary>
-        /// Recherche un film, avec en paramètre un critère et une collection de film, recherche à partir du titre du film
+        /// Recherche un film, avec en paramètre un critère et une collection de film, recherche à partir du titre du film : Renvoie une liste de Film contenant critère en titre.
         /// </summary>
         /// <param name="critere"></param>
         /// <param name="films"></param>
         /// <returns></returns>
-        public Film RechercheFilm(string critere, IEnumerable<Film> films)
+        public IEnumerable<Film> RechercheFilm(string critere, IEnumerable<Film> films)
         {
-            foreach(Film f in films)
-            {
-                if (f.Titre == critere) return f;
-            }
 
-            return null;
+            return films.Where(s => s.Titre.Contains(critere));
+
         }
     }
 }
