@@ -17,9 +17,14 @@ namespace Metier
         /// <param name="nom"></param>
         /// <param name="prenom"></param>
         /// <returns></returns>
-        public Personne RechercherRealisateur(string nom, string prenom)
+        public IEnumerable<Film> RechercherRealisateur(string nom, string prenom, IEnumerable<Film> films)
         {
-            return null;
+            var gg = films.Where(s => s.Personnes.Keys.Contains(Job.Realisateur)
+                                      && s.Personnes[Job.Realisateur].Exists(p => p.Nom.Equals(nom) && p.Prenom.Equals(prenom)));
+
+            // var rr = films.GroupBy(s => s.Personnes, s => s.Personnes.Keys).Where(r => r.Key.Equals(Job.Realisateur)) ;
+
+            return gg;
         }
 
         /// <summary>
@@ -27,7 +32,7 @@ namespace Metier
         /// </summary>
         /// <param name="nom"></param>
         /// <returns></returns>
-        public Personne RechercherRealisateur(string nom)
+        public IEnumerable<Film> RechercherRealisateur(string nom, IEnumerable<Film> films)
         {
             return null;
         }

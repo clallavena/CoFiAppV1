@@ -8,7 +8,7 @@ namespace Metier.RechercheFilms
 {
     public interface IRechercheFilm
     {
-        Film RechercheFilm(string critere, IEnumerable<Film> films);
+        IEnumerable<Film> RechercheFilm(string critere, IEnumerable<Film> films);
 
     }
 }

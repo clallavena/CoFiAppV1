@@ -9,9 +9,9 @@ namespace Metier
     public interface IRecherchePersonne
     {
 
-        Personne RechercherRealisateur(string nom);
+        IEnumerable<Film> RechercherRealisateur(string nom, IEnumerable<Film> films);
 
-        Personne RechercherRealisateur(string nom, string prenom);
+        IEnumerable<Film> RechercherRealisateur(string nom, string prenom, IEnumerable<Film> films);
 
     }
 }

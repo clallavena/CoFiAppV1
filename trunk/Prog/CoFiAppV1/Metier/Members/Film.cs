@@ -67,6 +67,7 @@ namespace Metier
             Titre = titre;
             DateDeSortie = dateDeSortie;
             Synopsis = synopsis;
+            Personnes = personnes;
 
             foreach(var e in listTags)
             {
