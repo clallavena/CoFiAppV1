@@ -22,18 +22,31 @@ namespace Metier
         /// <summary>
         /// Liste de tous les films
         /// </summary>
-        public List<Film> Films
+        List<Film> Films = new List<Film>();
+
+        private Film filmSelected;
+
+        public Film FilmSelected
         {
-            get; set;
+            get { return filmSelected; }
+            set { filmSelected = value; }
         }
 
-
         private IRecherchePersonne rech = new RechParFilm();
-        private IDataManager dm;
+        IDataManager Dm
+        {
+            get;
+            set;
+        }
 
         public Manager(IDataManager datamanager)
         {
-            dm = datamanager;
+            Dm = datamanager;
+        }
+
+        public void Chargement()
+        {
+            Films.AddRange(Dm.ChargementFilms());
         }
 
         /// <summary>
@@ -72,8 +85,8 @@ namespace Metier
                     Debug.WriteLine("Film existant");
                     return;
                 }*/
-                    
-            
+
+
         }
 
         /// <summary>
