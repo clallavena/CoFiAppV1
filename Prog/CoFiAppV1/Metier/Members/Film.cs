@@ -69,7 +69,7 @@ namespace Metier
             Synopsis = synopsis;
             Personnes = personnes;
 
-            foreach(var e in listTags)
+            foreach (var e in listTags)
             {
                 ListTags.Add(e);
             }
@@ -87,7 +87,7 @@ namespace Metier
             if (obj.GetType() != this.GetType()) return false;
             return this.Equals(obj as Film);
         }
-        
+
         public bool Equals(Film film)
         {
             return (film.Titre == this.Titre && film.DateDeSortie == this.DateDeSortie && film.Synopsis == this.Synopsis && film.Personnes == this.Personnes && film.ListTags == this.ListTags);
@@ -107,14 +107,24 @@ namespace Metier
             sb.Append(" ");
             sb.Append(Synopsis);
 
-            foreach (var e in Personnes)
+            sb.Append(" Acteurs: ");
+            foreach (var p in Personnes.Where(s => s.Key == Job.Acteur)
+                                       .SelectMany(kvp => kvp.Value))
             {
-                sb.Append(" ");
-                sb.Append(e);
+                sb.Append(p);
+                sb.Append(", ");
+            }
+
+            sb.Append(" Réalisateurs: ");
+            foreach (var p in Personnes.Where(s => s.Key == Job.Realisateur)
+                                       .SelectMany(kvp => kvp.Value))
+            {
+                sb.Append(p);
+                sb.Append(", ");
             }
 
 
-            foreach(var e in ListTags)
+            foreach (var e in ListTags)
             {
                 sb.Append(" ");
                 sb.Append(e);
