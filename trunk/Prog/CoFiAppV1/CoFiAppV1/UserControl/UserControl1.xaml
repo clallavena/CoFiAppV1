@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CoFiAppV1"
+             x:Name="root"
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="300">
     <Grid Background="Aqua">
@@ -18,7 +19,7 @@
         <!--Définition de la grid-->
         
             <!--Début d'une séléction-->
-            <TextBlock Grid.Column="0" Text="Film 1" FontWeight="Bold" FontSize="22" VerticalAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock Grid.Column="0" Text="{Binding Titre, ElementName=root}" FontWeight="Bold" FontSize="22" VerticalAlignment="Center" TextWrapping="Wrap"/>
             <Viewbox Grid.Column="1" Stretch="Uniform"  >
                 <!--Changer l'image-->
                 <Image Source="../img/Shining.jpg" Height="100" Width="100" HorizontalAlignment="Right"/>
