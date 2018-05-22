@@ -27,7 +27,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <UserControl>
-                        <local:UserControl1/>
+                        <local:UserControl1 Titre="{Binding Titre}"/>
                     </UserControl>
 
                 </DataTemplate>

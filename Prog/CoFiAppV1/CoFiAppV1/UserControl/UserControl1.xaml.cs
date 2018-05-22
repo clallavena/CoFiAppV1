@@ -24,5 +24,18 @@ namespace CoFiAppV1
         {
             InitializeComponent();
         }
+
+
+
+        public string Titre
+        {
+            get { return (string)GetValue(TitreProperty); }
+            set { SetValue(TitreProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Titre.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty TitreProperty =
+            DependencyProperty.Register("Titre", typeof(string), typeof(UserControl1), new PropertyMetadata("Sans nom"));
+
     }
 }
