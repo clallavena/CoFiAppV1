@@ -22,7 +22,15 @@ namespace Metier
         /// <summary>
         /// Liste de tous les films
         /// </summary>
-        List<Film> Films = new List<Film>();
+        private List<Film> films = new List<Film>();
+
+        public IEnumerable<Film> Films
+        {
+            get
+            {
+                return films;
+            }
+        }
 
         private Film filmSelected;
 
@@ -46,7 +54,7 @@ namespace Metier
 
         public void Chargement()
         {
-            Films.AddRange(Dm.ChargementFilms());
+            films.AddRange(Dm.ChargementFilms());
         }
 
         /// <summary>
@@ -56,14 +64,14 @@ namespace Metier
         public void AjouterFilm(Film film)
         {
             //Problème de equals avec les films ?
-            if (Films.Contains(film))
+            if (films.Contains(film))
             {
                 Debug.WriteLine("Ce film existe déjà");
                 return;
             }
             else
             {
-                Films.Add(film);
+                films.Add(film);
             }
 
             /*if (Films.Count == 0)
@@ -123,7 +131,7 @@ namespace Metier
         public IEnumerable<Film> RechercherReal(string nom, string prenom)
         {
             IRecherchePersonne re = new RechParFilm();
-            return re.RechercherRealisateur(nom, prenom, Films);
+            return re.RechercherRealisateur(nom, prenom, films);
         }
 
         /// <summary>

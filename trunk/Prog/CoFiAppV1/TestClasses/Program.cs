@@ -15,10 +15,8 @@ namespace TestClasses
         {
             IDataManager dm = new StubDataManager();
 
-            Manager m = new Manager(dm)
-            {
-                Films = (List<Film>)dm.ChargementFilms()
-            };
+            Manager m = new Manager(dm);
+            m.Chargement();
 
 
             //Dictionary de personnes pour test film1
