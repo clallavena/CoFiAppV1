@@ -15,15 +15,7 @@ namespace CoFiAppV1
     /// </summary>
     public partial class App : Application
     {
-        private Manager manager = new Manager(new StubDataManager());
-
-        public Manager LeManager
-        {
-            get
-            {
-                return (Application.Current as App).manager;
-            }
-        }        
+        public Manager LeManager { get; set; } = new Manager(new StubDataManager());
 
     }
 }

@@ -21,11 +21,19 @@ namespace CoFiAppV1
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Manager LeManager
+        {
+            get
+            {
+                return (Application.Current as App).LeManager;
+            }
+        }
 
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = (Application.Current as App).LeManager;
+            LeManager.Chargement();
+            DataContext = LeManager;
         }
     }
 }
