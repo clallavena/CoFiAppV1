@@ -67,6 +67,7 @@ namespace Metier
             Titre = titre;
             DateDeSortie = dateDeSortie;
             Synopsis = synopsis;
+            //BEURK :
             Personnes = personnes;
 
             foreach (var e in listTags)
@@ -90,7 +91,7 @@ namespace Metier
 
         public bool Equals(Film film)
         {
-            return (film.Titre == this.Titre && film.DateDeSortie == this.DateDeSortie && film.Synopsis == this.Synopsis && film.Personnes == this.Personnes && film.ListTags == this.ListTags);
+            return (film.Titre == this.Titre && film.DateDeSortie == this.DateDeSortie);
         }
 
         /// <summary>
@@ -131,6 +132,11 @@ namespace Metier
             }
 
             return sb.ToString();
+        }
+
+        public override int GetHashCode()
+        {
+            return Titre.GetHashCode();
         }
     }
 }

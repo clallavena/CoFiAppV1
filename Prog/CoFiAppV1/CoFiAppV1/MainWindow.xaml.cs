@@ -35,5 +35,6 @@ namespace CoFiAppV1
             LeManager.Chargement();
             DataContext = LeManager;
         }
+        
     }
 }
