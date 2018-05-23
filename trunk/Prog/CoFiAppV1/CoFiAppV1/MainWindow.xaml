@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:frames="clr-namespace:CoFiAppV1.Frames"
         xmlns:local="clr-namespace:CoFiAppV1"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280">
@@ -23,7 +24,7 @@
         </UserControl>
 
         <ListBox VerticalAlignment="Top" Height="Auto" Grid.Column="0" Grid.Row="1" Background="Aqua"
-                 ItemsSource="{Binding Films}">
+                 ItemsSource="{Binding Films}" SelectedItem="{Binding FilmSelected, Mode=TwoWay}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <UserControl>
@@ -37,7 +38,7 @@
             
         </ListBox>
 
-        <Frame Grid.Column="1" Grid.RowSpan="2" Source="Frames/Accueil1.xaml" />
+        <ContentControl Grid.Column="1" Grid.RowSpan="2" ContentTemplate="{StaticResource filmDesc}"/>
 
 
     </Grid></Window>
