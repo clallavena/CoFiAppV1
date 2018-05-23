@@ -19,6 +19,19 @@ namespace Metier
             get; private set;
         }
 
+        private List<Personne> reals = new List<Personne>();
+
+        /// <summary>
+        /// Dictionnaire de Réalisateur connu de type Personne
+        /// </summary>
+        public IEnumerable<Personne> ListReal
+        {
+            get
+            {
+                return reals;
+            }
+        }
+
         /// <summary>
         /// Liste de tous les films
         /// </summary>
@@ -55,6 +68,7 @@ namespace Metier
         public void Chargement()
         {
             films.AddRange(Dm.ChargementFilms());
+            //reals.AddRange(Dm.ChargementReal());
         }
 
         /// <summary>
@@ -63,7 +77,6 @@ namespace Metier
         /// <param name="film"></param>
         public void AjouterFilm(Film film)
         {
-            //Problème de equals avec les films ?
             if (films.Contains(film))
             {
                 Debug.WriteLine("Ce film existe déjà");
@@ -74,27 +87,6 @@ namespace Metier
                 films.Add(film);
             }
 
-            /*if (Films.Count == 0)
-            {
-                Films.Add(film);
-                return;
-            }
-                
-                Film fi;
-                fi = RechercherFilm(film.Titre, Films);
-
-                if (fi == null)
-                {
-                    Films.Add(film);
-                    return;
-                }
-                else
-                {
-                    Debug.WriteLine("Film existant");
-                    return;
-                }*/
-
-
         }
 
         /// <summary>
@@ -103,6 +95,7 @@ namespace Metier
         /// <param name="real"></param>
         public void AjouterReal(Personne real)
         {
+            
 
         }
 
