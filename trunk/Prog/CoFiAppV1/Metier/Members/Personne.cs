@@ -19,6 +19,7 @@ namespace Metier
             get; private set;
         }
 
+
         /// <summary>
         /// Prénom de la personne
         /// </summary>

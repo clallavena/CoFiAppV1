@@ -55,6 +55,21 @@ namespace Metier.DataManager
             return films;
         }
 
+
+        /// <summary>
+        /// Chargement d'une liste de réalisateur de base, retourne une liste de Réalisateur. //!! Solution provisoire !!\\
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Personne> ChargementReal()
+        {
+            List<Personne> reals = new List<Personne>();
+
+            reals.Add(new Personne("Nolan", "Christophe", new DateTime(1970, 07, 30), "Anglais", "XOXOXO"));
+            reals.Add(new Personne("Zemeckis", "Robert", new DateTime(1952, 05, 14), "Americain", "Fabuleux Réal"));
+
+            return reals;
+        }
+
         public void SauvegardeFilms(IEnumerable<Film> films)
         {
 
