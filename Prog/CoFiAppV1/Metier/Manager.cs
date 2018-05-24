@@ -19,10 +19,13 @@ namespace Metier
             get; private set;
         }
 
+        /// <summary>
+        /// Liste des réalisateur connue
+        /// </summary>
         private List<Personne> reals = new List<Personne>();
 
         /// <summary>
-        /// Dictionnaire de Réalisateur connu de type Personne
+        /// Collection de Réalisateur connu de type Personne
         /// </summary>
         public IEnumerable<Personne> ListReal
         {
@@ -68,7 +71,7 @@ namespace Metier
         public void Chargement()
         {
             films.AddRange(Dm.ChargementFilms());
-            //reals.AddRange(Dm.ChargementReal());
+            reals.AddRange(Dm.ChargementReal());
         }
 
         /// <summary>
@@ -90,13 +93,20 @@ namespace Metier
         }
 
         /// <summary>
-        /// Méthode permettant d'ajouter une personne qui est un réalisateur
+        /// Méthode permettant d'ajouter une personne qui est un réalisateur dans la collection de réalisateur connu
         /// </summary>
         /// <param name="real"></param>
         public void AjouterReal(Personne real)
         {
-            
-
+            if (reals.Contains(real))
+            {
+                Debug.WriteLine("Réalisateur Existant");
+                return;
+            }
+            else
+            {
+                reals.Add(real);
+            }
         }
 
         /// <summary>
@@ -143,6 +153,14 @@ namespace Metier
         /// <param name="film"></param>
         public void SupprimerFilm(Film film)
         {
+            if (films.Contains(film))
+            {
+                films.Remove(film);
+            }
+            else
+            {
+                Debug.WriteLine("Film inexistant");
+            }
 
         }
 
@@ -152,6 +170,14 @@ namespace Metier
         /// <param name="real"></param>
         public void SupprimerReal(Personne real)
         {
+            if (reals.Contains(real))
+            {
+                reals.Remove(real);
+            }
+            else
+            {
+                Debug.WriteLine("Réalisateur inexistant");
+            }
 
         }
 
@@ -159,9 +185,33 @@ namespace Metier
         /// Méthode permettant de modifier les informations d'un film
         /// </summary>
         /// <param name="film"></param>
-        public void ModifierFilm(Film film)
+        public void ModifierFilm(string titre, int dateDeSortie, string synopsis, Dictionary<Job, List<Personne>> personnes, params Tag[] listTags)
         {
 
+            IEnumerable<Film> li = RechercherFilm(titre, films);
+
+            li.Where(s => s.Titre.Equals(titre) && s.DateDeSortie == dateDeSortie);
+
+            if (li.Count() == 1)
+            {
+                foreach(Film f in li)
+                {
+                    f.Titre = titre;
+                    f.DateDeSortie = dateDeSortie;
+                    f.Synopsis = synopsis;
+
+                    f.Personnes.Clear();
+                    foreach (KeyValuePair<Job, List<Personne>> p in personnes)
+                    {
+                        f.Personnes[p.Key].AddRange(p.Value);
+                    }
+
+                    foreach (Tag t in listTags)
+                    {
+                        f.ListTags.Add(t);
+                    }
+                }
+            }
         }
 
         /// <summary>

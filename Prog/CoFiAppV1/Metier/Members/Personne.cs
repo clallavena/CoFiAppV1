@@ -108,15 +108,15 @@ namespace Metier
         /// <returns>true ou false pour savoir si les deux personnes sont différentes ou non</returns>
         public override bool Equals(object obj)
         {
-            if (obj == null) return false;
-            if (obj == this) return true;
+            if (object.ReferenceEquals(obj, null)) return false;
+            if (object.ReferenceEquals(obj, this)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return this.Equals(obj);
+            return this.Equals(obj as Personne);
         }
 
         public bool Equals(Personne other)
         {
-            return other.Nom == this.Nom && other.Prenom == this.Prenom && other.DateDeNaissance == this.DateDeNaissance && other.DateDeMort == this.DateDeMort && other.Nationalite == this.Nationalite && other.Biographie == this.Biographie;
+            return other.Nom == this.Nom && other.Prenom == this.Prenom;
         }
 
         /// <summary>

@@ -12,6 +12,7 @@ namespace Metier
         IEnumerable<Film> ChargementFilms();
 
         void SauvegardeFilms(IEnumerable<Film> films);
+        IEnumerable<Personne> ChargementReal();
 
     }
 }

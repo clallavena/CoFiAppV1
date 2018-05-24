@@ -70,40 +70,52 @@ namespace TestClasses
             //    Console.WriteLine(fi.Titre);
             //}
 
-            //Test ajout de Film
-            foreach (Film fi in m.Films)
+            ////Test ajout de Film
+            //foreach (Film fi in m.Films)
+            //{
+            //    Console.WriteLine(fi);
+            //}
+
+            //Console.WriteLine("/////////////////////////////////////////////");
+
+            //m.AjouterFilm(f);
+
+            //foreach (Film fi in m.Films)
+            //{
+            //    Console.WriteLine(fi);
+            //}
+
+            //Console.WriteLine("/////////////////////////////////////////////");
+
+            //m.AjouterFilm(f2);
+
+            //foreach (Film fi in m.Films)
+            //{
+            //    Console.WriteLine(fi);
+            //}
+
+            //Console.WriteLine("/////////////////////////////////////////////");
+
+            //m.AjouterFilm(f1);
+
+            //foreach (Film fi in m.Films)
+            //{
+            //    Console.WriteLine(fi);
+            //}
+
+            //Console.WriteLine("/////////////////////////////////////////////");
+
+
+            //Test de l'ajout de Réal//
+
+            m.AjouterReal(new Personne("Barland", "Esteban", new DateTime(1999, 10, 17), "Espingouin", "Vivant à St-Christophe, avec ses 3 habitants, Esteban rêver de grandeur cinématographique."));
+
+            foreach(Personne p in m.ListReal)
             {
-                Console.WriteLine(fi);
+                Console.WriteLine(p);
             }
 
-            Console.WriteLine("/////////////////////////////////////////////");
-
-            m.AjouterFilm(f);
-
-            foreach (Film fi in m.Films)
-            {
-                Console.WriteLine(fi);
-            }
-
-            Console.WriteLine("/////////////////////////////////////////////");
-
-            m.AjouterFilm(f2);
-
-            foreach (Film fi in m.Films)
-            {
-                Console.WriteLine(fi);
-            }
-
-            Console.WriteLine("/////////////////////////////////////////////");
-
-            m.AjouterFilm(f1);
-
-            foreach (Film fi in m.Films)
-            {
-                Console.WriteLine(fi);
-            }
-
-            Console.WriteLine("/////////////////////////////////////////////");
+            m.AjouterReal(new Personne("Nolan", "Christophe", new DateTime(1970, 07, 30), "Anglais", "Prout"));
 
         }
     }
