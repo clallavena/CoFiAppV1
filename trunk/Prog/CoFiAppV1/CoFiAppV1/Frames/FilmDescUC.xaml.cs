@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Metier;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +14,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CoFiAppV1
+namespace CoFiAppV1.Frames
 {
     /// <summary>
-    /// Logique d'interaction pour UserControl1.xaml
+    /// Logique d'interaction pour FilmDesc.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class FilmDescUC : UserControl
     {
-        public UserControl1()
+        public Manager LeManager
+        {
+            get
+            {
+                return (Application.Current as App).LeManager;
+            }
+        }
+        public FilmDescUC()
         {
             InitializeComponent();
+            DataContext = LeManager;
         }
 
 
@@ -35,7 +44,11 @@ namespace CoFiAppV1
 
         // Using a DependencyProperty as the backing store for Titre.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TitreProperty =
-            DependencyProperty.Register("Titre", typeof(string), typeof(UserControl1), new PropertyMetadata("Sans nom"));
+            DependencyProperty.Register("Titre", typeof(string), typeof(FilmDescUC), new PropertyMetadata("sans titre"));
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

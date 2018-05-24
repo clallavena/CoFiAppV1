@@ -8,6 +8,7 @@
     <Application.Resources>
         <SolidColorBrush x:Key="defaultBackground">White</SolidColorBrush>
         <system:Double x:Key="defaultFontSize">20</system:Double>
+        
         <Style x:Key="stylePourTousLesBouttons" TargetType="{x:Type Button}">
                 <Setter Property="VerticalAlignment" Value="Center"/>
                 <Setter Property="FontSize" Value="15"/>
@@ -26,9 +27,13 @@
                 <Setter Property="Height" Value="200"/>
                 <Setter Property="Stretch" Value="Uniform"/>
         </Style>
+        <Style x:Key="stylePourTextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
 
         <DataTemplate x:Key="filmDesc">
-            <frames:FilmDesc/>
+            <frames:FilmDescUC/>
         </DataTemplate>
 
     </Application.Resources>

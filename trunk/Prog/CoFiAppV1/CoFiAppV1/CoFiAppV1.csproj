@@ -54,65 +54,66 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Frames\Accueil1.xaml.cs">
-      <DependentUpon>Accueil1.xaml</DependentUpon>
+    <Compile Include="Frames\AccueilUC.xaml.cs">
+      <DependentUpon>AccueilUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Frames\AddDirector.xaml.cs">
-      <DependentUpon>AddDirector.xaml</DependentUpon>
+    <Compile Include="Frames\AddDirectorUC.xaml.cs">
+      <DependentUpon>AddDirectorUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Frames\AddFilm.xaml.cs">
-      <DependentUpon>AddFilm.xaml</DependentUpon>
+    <Compile Include="Frames\AddFilmUC.xaml.cs">
+      <DependentUpon>AddFilmUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Frames\Director.xaml.cs">
-      <DependentUpon>Director.xaml</DependentUpon>
+    <Compile Include="Frames\DirectorUC.xaml.cs">
+      <DependentUpon>DirectorUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Frames\FilmDesc.xaml.cs">
-      <DependentUpon>FilmDesc.xaml</DependentUpon>
+    <Compile Include="Frames\FilmDescUC.xaml.cs">
+      <DependentUpon>FilmDescUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Frames\Independant.xaml.cs">
-      <DependentUpon>Independant.xaml</DependentUpon>
+    <Compile Include="Frames\IndependantUC.xaml.cs">
+      <DependentUpon>IndependantUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Frames\ModifFilm.xaml.cs">
-      <DependentUpon>ModifFilm.xaml</DependentUpon>
+    <Compile Include="Frames\ModifFilmUC.xaml.cs">
+      <DependentUpon>ModifFilmUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Frames\ModifReal.xaml.cs">
-      <DependentUpon>ModifReal.xaml</DependentUpon>
+    <Compile Include="Frames\ModifRealUC.xaml.cs">
+      <DependentUpon>ModifRealUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Func2UserControlConverter.cs" />
     <Compile Include="UserControl\BarreDeRecherche.xaml.cs">
       <DependentUpon>BarreDeRecherche.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\UserControl1.xaml.cs">
-      <DependentUpon>UserControl1.xaml</DependentUpon>
+    <Compile Include="UserControl\Vignette.xaml.cs">
+      <DependentUpon>Vignette.xaml</DependentUpon>
     </Compile>
-    <Page Include="Frames\Accueil1.xaml">
+    <Page Include="Frames\AccueilUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Frames\AddDirector.xaml">
+    <Page Include="Frames\AddDirectorUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Frames\AddFilm.xaml">
+    <Page Include="Frames\AddFilmUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Frames\Director.xaml">
+    <Page Include="Frames\DirectorUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Frames\FilmDesc.xaml">
+    <Page Include="Frames\FilmDescUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Frames\Independant.xaml">
+    <Page Include="Frames\IndependantUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Frames\ModifFilm.xaml">
+    <Page Include="Frames\ModifFilmUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Frames\ModifReal.xaml">
+    <Page Include="Frames\ModifRealUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,7 +133,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UserControl\UserControl1.xaml">
+    <Page Include="UserControl\Vignette.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

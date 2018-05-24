@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace CoFiAppV1.Frames
 {
     /// <summary>
-    /// Logique d'interaction pour Independant.xaml
+    /// Logique d'interaction pour IndependantUC.xaml
     /// </summary>
-    public partial class Independant : Page
+    public partial class IndependantUC : UserControl
     {
-        public Independant()
+        public IndependantUC()
         {
             InitializeComponent();
         }

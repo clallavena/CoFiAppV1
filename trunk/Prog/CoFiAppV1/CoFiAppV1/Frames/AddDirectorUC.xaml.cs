@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace CoFiAppV1.Frames
 {
     /// <summary>
-    /// Logique d'interaction pour Accueil1.xaml
+    /// Logique d'interaction pour AddDirectorUC.xaml
     /// </summary>
-    public partial class Accueil1 : Page
+    public partial class AddDirectorUC : UserControl
     {
-        public Accueil1()
+        public AddDirectorUC()
         {
             InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
         }
     }
 }
