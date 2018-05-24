@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Metier
 {
     /// <summary>
-    /// La classe Film est réprésenté par un titre, une date de sortie, une liste d'étiquettes, un synonpsis et une liste de personnes
+    /// La classe Film est réprésenté par un titre, une date de sortie, une liste d'étiquettes, un synopsis et une liste de personnes
     /// </summary>
     public class Film : IEquatable<Film>
     {
@@ -16,7 +16,7 @@ namespace Metier
         /// </summary>
         public string Titre
         {
-            get; private set;
+            get; set;
         }
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace Metier
         /// </summary>
         public int DateDeSortie
         {
-            get; private set;
+            get; set;
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace Metier
         /// </summary>
         public List<Tag> ListTags
         {
-            get; private set;
+            get; set;
         }
 
         /// <summary>
@@ -41,15 +41,15 @@ namespace Metier
         /// </summary>
         public string Synopsis
         {
-            get; private set;
+            get; set;
         }
 
         /// <summary>
         /// Association des différentes personnes présentes pour la réalisation du film
-        /// </summary>
+        /// </summary>       
         public Dictionary<Job, List<Personne>> Personnes
         {
-            get; private set;
+            get; set;
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Metier
             Synopsis = synopsis;
             //BEURK :
             Personnes = personnes;
-
+            
             foreach (var e in listTags)
             {
                 ListTags.Add(e);
