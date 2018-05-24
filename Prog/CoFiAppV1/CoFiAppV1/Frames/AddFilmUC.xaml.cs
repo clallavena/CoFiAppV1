@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace CoFiAppV1.Frames
 {
     /// <summary>
-    /// Logique d'interaction pour ModifReal.xaml
+    /// Logique d'interaction pour AddFilmUC.xaml
     /// </summary>
-    public partial class ModifReal : Page
+    public partial class AddFilmUC : UserControl
     {
-        public ModifReal()
+        public AddFilmUC()
         {
             InitializeComponent();
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Metier;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,18 +17,22 @@ using System.Windows.Shapes;
 namespace CoFiAppV1.Frames
 {
     /// <summary>
-    /// Logique d'interaction pour Director.xaml
+    /// Logique d'interaction pour ModifFilmUC.xaml
     /// </summary>
-    public partial class Director : Page
+    public partial class ModifFilmUC : UserControl
     {
-        public Director()
+        public Manager LeManager
         {
-            InitializeComponent();
+            get
+            {
+                return (Application.Current as App).LeManager;
+            }
         }
 
-        private void InitializeComponent()
+        public ModifFilmUC()
         {
-            throw new NotImplementedException();
+            InitializeComponent();
+            DataContext = LeManager;
         }
     }
 }

@@ -28,7 +28,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <UserControl>
-                        <local:UserControl1 Titre="{Binding Titre}"/>
+                        <local:Vignette PTitre="{Binding Titre}"/>
                     </UserControl>
 
                 </DataTemplate>
@@ -38,7 +38,12 @@
             
         </ListBox>
 
+        
         <ContentControl Grid.Column="1" Grid.RowSpan="2" ContentTemplate="{StaticResource filmDesc}"/>
+        
+        <!--
+        <ContentControl Grid.Column="1" Grid.RowSpan="2" DataContext="{Binding Parts}" Content="{Binding Value, Converter=Func2UserControlConverter}"/>
+        -->
 
-
-    </Grid></Window>
+    </Grid>
+</Window>

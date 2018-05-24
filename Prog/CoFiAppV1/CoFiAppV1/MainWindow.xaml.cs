@@ -1,4 +1,5 @@
-﻿using Metier;
+﻿using CoFiAppV1.Frames;
+using Metier;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,11 @@ namespace CoFiAppV1
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Dictionary<string, Func<UserControl>> Parts { get; set; } = new Dictionary<string, Func<UserControl>>
+        {
+            ["FilmDesc"] = () => new FilmDescUC(),
+        };
+
         public Manager LeManager
         {
             get
