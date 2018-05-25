@@ -48,5 +48,18 @@ namespace CoFiAppV1.Frames
         {
             UserControl accueil = new AccueilUC();
         }
+
+        private void Signalement(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                LeManager.Signaler(LeManager.FilmSelected);
+                MessageBox.Show("le signalement a été effectué avec succès !");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("le signalement n'a pas pu être envoyé, veuillez contacter un administrateur ! \n" + ex.ToString());
+            }            
+        }
     }
 }

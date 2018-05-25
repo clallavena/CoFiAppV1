@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using Metier.RechercheFilms;
@@ -113,16 +114,43 @@ namespace Metier
         /// Méthode permettant de signaler un film si le contenu de celui n'est pas approprié
         /// </summary>
         /// <param name="film"></param>
-        public void SignalerFilm(Film film)
+        public void Signaler(Film film)
         {
-        }
+            MailMessage mail = new MailMessage();
+            SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
 
+            mail.From = new MailAddress("cofiappcontact@gmail.com");
+            mail.To.Add(new MailAddress("clement.allavena@etu.uca.fr"));
+            mail.To.Add(new MailAddress("esteban.barland@etu.uca.fr"));
+            mail.Subject = "[CoFiApp] Signalement de Film";
+            mail.Body = "Le film " + film.Titre + " a été signalé par un utilisateur !";
+
+            smtpServer.Port = 587;
+            smtpServer.Credentials = new System.Net.NetworkCredential("cofiappcontact@gmail.com", "cofiappmail");
+            smtpServer.EnableSsl = true;
+
+            smtpServer.Send(mail);
+        }
         /// <summary>
         /// Méthode permettant de signaler une personne qui est un réalisateur si le contenu de celui n'est pas approprié
         /// </summary>
         /// <param name="real"></param>
-        public void SignalerReal(Personne real)
+            public void Signaler(Personne real)
         {
+            MailMessage mail = new MailMessage();
+            SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
+
+            mail.From = new MailAddress("cofiappcontact@gmail.com");
+            mail.To.Add(new MailAddress("clement.allavena@etu.uca.fr"));
+            mail.To.Add(new MailAddress("esteban.barland@etu.uca.fr"));
+            mail.Subject = "[CoFiApp] Signalement de Film";
+            mail.Body = "Le réalisateur " + real.Nom + " " + real.Prenom + " a été signalé par un utilisateur !";
+
+            smtpServer.Port = 587;
+            smtpServer.Credentials = new System.Net.NetworkCredential("cofiappcontact@gmail.com", "cofiappmail");
+            smtpServer.EnableSsl = true;
+
+            smtpServer.Send(mail);
 
         }
 

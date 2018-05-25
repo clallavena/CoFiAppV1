@@ -86,7 +86,7 @@
                 <!--Acteurs-->
 
                 <!--Bouton Signaler-->
-                <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="Signaler" Width="100" Height="30"/>
+                <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="Signaler" Width="100" Height="30" Click="Signalement"/>
                 <!--Bouton Signaler-->
 
             </StackPanel>
