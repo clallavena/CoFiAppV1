@@ -7,6 +7,10 @@
         xmlns:local="clr-namespace:CoFiAppV1"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280">
+
+    <Window.Resources>
+        <local:Func2UserControlConverter x:Key="UCconverter" />
+    </Window.Resources>
     <Grid>
         <!--Définition de la grid-->
         <Grid.ColumnDefinitions>
@@ -23,14 +27,13 @@
             <local:BarreDeRecherche/>
         </UserControl>
 
-        <ListBox VerticalAlignment="Top" Height="Auto" Grid.Column="0" Grid.Row="1" Background="Aqua"
+        <ListBox VerticalAlignment="Top" Height="Auto" Grid.Column="0" Grid.Row="1" Background="Aqua" IsSynchronizedWithCurrentItem="True"
                  ItemsSource="{Binding Films}" SelectedItem="{Binding FilmSelected, Mode=TwoWay}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <UserControl>
                         <local:Vignette PTitre="{Binding Titre}"/>
                     </UserControl>
-
                 </DataTemplate>
             </ListBox.ItemTemplate>
             
@@ -41,8 +44,10 @@
         
         <ContentControl Grid.Column="1" Grid.RowSpan="2" ContentTemplate="{StaticResource filmDesc}"/>
         
+
         <!--
-        <ContentControl Grid.Column="1" Grid.RowSpan="2" DataContext="{Binding Parts}" Content="{Binding Value, Converter=Func2UserControlConverter}"/>
+        <ContentControl Grid.Column="1" Grid.RowSpan="2" DataContext="{Binding Parts}"
+                        Content="{Binding Value, Converter={StaticResource UCconverter}}"/>
         -->
 
     </Grid>
