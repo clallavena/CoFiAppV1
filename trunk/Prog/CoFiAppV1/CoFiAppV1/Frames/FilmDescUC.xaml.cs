@@ -33,9 +33,7 @@ namespace CoFiAppV1.Frames
             InitializeComponent();
             DataContext = LeManager;
         }
-
-
-
+        
         public string Titre
         {
             get { return (string)GetValue(TitreProperty); }
@@ -48,7 +46,7 @@ namespace CoFiAppV1.Frames
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            UserControl accueil = new AccueilUC();
         }
     }
 }

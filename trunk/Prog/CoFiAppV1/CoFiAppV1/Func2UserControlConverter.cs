@@ -15,7 +15,7 @@ namespace CoFiAppV1
         {
             Func<UserControl> creator = value as Func<UserControl>;
             if (creator == null) return null;
-            return creator();
+            return creator;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
