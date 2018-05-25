@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Metier;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,31 @@ namespace CoFiAppV1.Frames
     /// </summary>
     public partial class DirectorUC : UserControl
     {
+        public Manager LeManager
+        {
+            get
+            {
+                return (Application.Current as App).LeManager;
+            }
+        }
+
         public DirectorUC()
         {
             InitializeComponent();
+        }
+
+        private void Signalement(object sender, RoutedEventArgs e)
+        {
+            ///ajouter un realisateur sélected pour pouvoir le récupérer ici
+            /*try
+            {
+                LeManager.Signaler();
+                MessageBox.Show("le signalement a été effectué avec succès !");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("le signalement n'a pas pu être envoyé, veuillez contacter un administrateur ! \n" + ex.ToString());
+            }*/
         }
     }
 }
