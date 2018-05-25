@@ -24,5 +24,11 @@ namespace CoFiAppV1.Frames
         {
             InitializeComponent();
         }
+
+        private void Admin_Click(object sender, RoutedEventArgs e)
+        {
+            LogAdmin admin = new LogAdmin();
+            admin.Show();
+        }
     }
 }

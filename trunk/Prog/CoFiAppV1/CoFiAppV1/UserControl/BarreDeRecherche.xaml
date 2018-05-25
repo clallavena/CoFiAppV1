@@ -12,7 +12,7 @@
             <ColumnDefinition Width="25*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBox TextWrapping="Wrap" Grid.Row="0" Margin="5" Text="Rechercher" FontSize="15" FontStyle="Italic"/>
+        <TextBox TextWrapping="Wrap" Grid.Row="0" Margin="5" FontSize="15" FontStyle="Italic" Text="Rechercher..."/>
         <Button Grid.Column="1" Background="Gray">
             <Viewbox Stretch="Uniform">
                 <Image Source="../img/loupe.png" Height="50" Width="30"/>
