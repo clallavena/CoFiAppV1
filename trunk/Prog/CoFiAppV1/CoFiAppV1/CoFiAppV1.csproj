@@ -79,6 +79,9 @@
       <DependentUpon>ModifRealUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Func2UserControlConverter.cs" />
+    <Compile Include="LogAdmin.xaml.cs">
+      <DependentUpon>LogAdmin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\BarreDeRecherche.xaml.cs">
       <DependentUpon>BarreDeRecherche.xaml</DependentUpon>
     </Compile>
@@ -114,6 +117,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Frames\ModifRealUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LogAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

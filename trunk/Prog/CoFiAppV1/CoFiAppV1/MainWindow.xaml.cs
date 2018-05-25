@@ -25,6 +25,13 @@ namespace CoFiAppV1
         public Dictionary<string, Func<UserControl>> Parts { get; set; } = new Dictionary<string, Func<UserControl>>
         {
             ["FilmDesc"] = () => new FilmDescUC(),
+            ["Accueil"] = () => new AccueilUC(),
+            ["AddDirector"] = () => new AddDirectorUC(),
+            ["AddFilm"] = () => new AddFilmUC(),
+            ["Director"] = () => new DirectorUC(),
+            ["Independant"] = () => new IndependantUC(),
+            ["ModifFilm"] = () => new ModifFilmUC(),
+            ["ModifReal"] = () => new ModifRealUC(),
         };
 
         public Manager LeManager
