@@ -42,7 +42,7 @@
         </ListBox>
 
         
-        <ContentControl Grid.Column="1" Grid.RowSpan="2" ContentTemplate="{StaticResource filmDesc}"/>
+        <ContentControl Grid.Column="1" Grid.RowSpan="2" ContentTemplate="{StaticResource accueil}"/>
         
 
         <!--

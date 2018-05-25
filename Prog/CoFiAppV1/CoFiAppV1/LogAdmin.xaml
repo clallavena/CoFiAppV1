@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CoFiAppV1"
         mc:Ignorable="d"
-        Title="LogAdmin" Height="300" Width="400">
+        Title="LogAdmin" Height="500" Width="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30*"/>
@@ -20,20 +20,21 @@
 
         <Border Grid.Row="1" Grid.Column="1" BorderThickness="2" BorderBrush="Black" CornerRadius="10"/>
 
-        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label Content="Login Admin" FontWeight="Bold"/>
             <WrapPanel Margin="0,5">
                 <TextBlock Text="Username : " FontSize="10"/>
-                <TextBox Width="50" Height="Auto" />
+                <TextBox Width="50" Height="Auto" TextWrapping="Wrap" />
             </WrapPanel>
             <WrapPanel Margin="0, 15">
-                <TextBlock Text="PassWord : " FontSize="10"/>
-                <TextBox Width="50" Height="Auto" Margin="1,0,0,0" />
+                <TextBlock Text="Password : " FontSize="10"/>
+                <PasswordBox Width="50" Height="Auto" Margin="3,0,0,0" Name="pswBox"/>
             </WrapPanel>
         </StackPanel>
 
 
-        <Button Grid.Row="2" Grid.Column="2" Content="Quitter" Height="20" Width="50" FontSize="10" />
+        <Button Grid.Row="2" Grid.Column="1" Content="Se connecter" Height="30" Width="90" FontSize="15" />
+        <Button Grid.Row="2" Grid.Column="2" Content="Quitter" Height="30" Width="60" FontSize="15" VerticalAlignment="Bottom" Click="Click_Quit"/>
 
     </Grid>
 </Window>
