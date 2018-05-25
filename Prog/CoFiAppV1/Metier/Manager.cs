@@ -115,7 +115,6 @@ namespace Metier
         /// <param name="film"></param>
         public void SignalerFilm(Film film)
         {
-
         }
 
         /// <summary>
