@@ -1,0 +1,8 @@
+color code for the app:
+
+button: EC7FF | 6BDAFF | EFDEBE
+background: 646363 
+police: CDCDCD
+
+à essayer
+000040 | fffdd0 | FFF0F5
