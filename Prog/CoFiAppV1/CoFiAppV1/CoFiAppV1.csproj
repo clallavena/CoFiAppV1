@@ -82,6 +82,7 @@
     <Compile Include="LogAdmin.xaml.cs">
       <DependentUpon>LogAdmin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NavigationManager.cs" />
     <Compile Include="UserControl\BarreDeRecherche.xaml.cs">
       <DependentUpon>BarreDeRecherche.xaml</DependentUpon>
     </Compile>

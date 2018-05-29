@@ -30,5 +30,13 @@ namespace CoFiAppV1.Frames
             LogAdmin admin = new LogAdmin();
             admin.Show();
         }
+
+        public NavigationManager NavManager => (Application.Current as App).NavManager;
+
+
+        private void Inde_Click(object sender, RoutedEventArgs e)
+        {
+            NavManager.SelectedPart = NavManager.Parts["Independant"]();
+        }
     }
 }

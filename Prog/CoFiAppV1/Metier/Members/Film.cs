@@ -67,8 +67,11 @@ namespace Metier
             Titre = titre;
             DateDeSortie = dateDeSortie;
             Synopsis = synopsis;
-            //BEURK :
-            Personnes = personnes;
+
+            foreach (KeyValuePair<Job, List<Personne>> p in personnes)
+            {
+                Personnes.Add(p.Key, p.Value);
+            }
             
             foreach (var e in listTags)
             {
