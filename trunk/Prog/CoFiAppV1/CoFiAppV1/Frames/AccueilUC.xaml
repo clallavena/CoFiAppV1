@@ -23,7 +23,7 @@
 
             <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center">
                 <Button Content="Admin" FontSize="25" Width="150" Height="35" Click="Admin_Click"/>
-                <Button Content="Indépendant" FontSize="25" Width="150" Height="35"/>
+                <Button Content="Indépendant" FontSize="25" Width="150" Height="35" Click="Inde_Click"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right">
                 <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="+ Ajouter" FontSize="25" Width="150" Height="35"/>

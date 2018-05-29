@@ -17,5 +17,7 @@ namespace CoFiAppV1
     {
         public Manager LeManager { get; set; } = new Manager(new StubDataManager());
 
+        public NavigationManager NavManager { get; set; } = new NavigationManager();
+
     }
 }

@@ -22,17 +22,7 @@ namespace CoFiAppV1
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Dictionary<string, Func<UserControl>> Parts { get; set; } = new Dictionary<string, Func<UserControl>>
-        {
-            ["FilmDesc"] = () => new FilmDescUC(),
-            ["Accueil"] = () => new AccueilUC(),
-            ["AddDirector"] = () => new AddDirectorUC(),
-            ["AddFilm"] = () => new AddFilmUC(),
-            ["Director"] = () => new DirectorUC(),
-            ["Independant"] = () => new IndependantUC(),
-            ["ModifFilm"] = () => new ModifFilmUC(),
-            ["ModifReal"] = () => new ModifRealUC(),
-        };
+        public Dictionary<string, Func<UserControl>> Parts => (Application.Current as App).NavManager.Parts;
 
         public Manager LeManager
         {
@@ -46,8 +36,10 @@ namespace CoFiAppV1
         {
             InitializeComponent();
             LeManager.Chargement();
-            DataContext = LeManager;
+            DataContext = this;
+            NavManager.SelectedPart = new AccueilUC();
         }
-        
+
+        public NavigationManager NavManager => (Application.Current as App).NavManager;
     }
 }
