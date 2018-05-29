@@ -24,5 +24,21 @@ namespace CoFiAppV1
         {
             InitializeComponent();
         }
+
+        private void SearchB_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (searchB.Text == "Rechercher")
+            {
+                searchB.Text = "";
+            }
+        }
+
+        private void SearchB_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (searchB.Text == "")
+            {
+                searchB.Text = "Rechercher";
+            }
+        }
     }
 }

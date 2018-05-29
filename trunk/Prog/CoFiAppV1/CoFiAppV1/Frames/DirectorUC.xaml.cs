@@ -21,6 +21,8 @@ namespace CoFiAppV1.Frames
     /// </summary>
     public partial class DirectorUC : UserControl
     {
+        public NavigationManager NavManager => (Application.Current as App).NavManager;
+
         public Manager LeManager
         {
             get
@@ -46,6 +48,11 @@ namespace CoFiAppV1.Frames
             {
                 MessageBox.Show("le signalement n'a pas pu être envoyé, veuillez contacter un administrateur ! \n" + ex.ToString());
             }*/
+        }
+
+        private void Accueil_Click(object sender, RoutedEventArgs e)
+        {
+            NavManager.SelectedPart = NavManager.Parts["Accueil"]();
         }
     }
 }

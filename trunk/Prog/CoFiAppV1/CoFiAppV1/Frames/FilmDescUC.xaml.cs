@@ -21,6 +21,8 @@ namespace CoFiAppV1.Frames
     /// </summary>
     public partial class FilmDescUC : UserControl
     {
+        public NavigationManager NavManager => (Application.Current as App).NavManager;
+
         public Manager LeManager
         {
             get
@@ -44,9 +46,9 @@ namespace CoFiAppV1.Frames
         public static readonly DependencyProperty TitreProperty =
             DependencyProperty.Register("Titre", typeof(string), typeof(FilmDescUC), new PropertyMetadata("sans titre"));
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Accueil_Click(object sender, RoutedEventArgs e)
         {
-            UserControl accueil = new AccueilUC();
+            NavManager.SelectedPart = NavManager.Parts["Accueil"]();
         }
 
         private void Signalement(object sender, RoutedEventArgs e)

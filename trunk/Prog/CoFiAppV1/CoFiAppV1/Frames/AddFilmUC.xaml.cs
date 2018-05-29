@@ -21,6 +21,7 @@ namespace CoFiAppV1.Frames
     public partial class AddFilmUC : UserControl
     {
         public NavigationManager NavManager => (Application.Current as App).NavManager;
+
         public AddFilmUC()
         {
             InitializeComponent();

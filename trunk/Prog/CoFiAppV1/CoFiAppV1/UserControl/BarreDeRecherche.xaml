@@ -6,14 +6,15 @@
              xmlns:local="clr-namespace:CoFiAppV1"
              mc:Ignorable="d" 
              d:DesignHeight="70" d:DesignWidth="250">
-    <Grid Background="Gray">
+    <Grid Background="{StaticResource defaultColor}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="75*"/>
             <ColumnDefinition Width="25*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBox TextWrapping="Wrap" Grid.Row="0" Margin="5" FontSize="15" FontStyle="Italic" Text="Rechercher..."/>
-        <Button Grid.Column="1" Background="Gray">
+        <TextBox Name="searchB" Background="{StaticResource defaultBackground}" TextWrapping="Wrap" Grid.Row="0" Margin="5"
+                 FontSize="15" FontStyle="Italic" Text="Rechercher" KeyDown="SearchB_KeyDown" LostFocus="SearchB_LostFocus"/>
+        <Button Grid.Column="1" Background="{StaticResource defaultColor}">
             <Viewbox Stretch="Uniform">
                 <Image Source="../img/loupe.png" Height="50" Width="30"/>
             </Viewbox>
