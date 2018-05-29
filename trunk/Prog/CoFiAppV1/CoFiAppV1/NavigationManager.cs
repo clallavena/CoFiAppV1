@@ -28,15 +28,9 @@ namespace CoFiAppV1
             ["ModifReal"] = () => new ModifRealUC(),
         };
         
-        void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            if(PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-
-//            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        void OnPropertyChanged([CallerMemberName] string propertyName = null) =>
+           PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        
 
         public UserControl SelectedPart
         {

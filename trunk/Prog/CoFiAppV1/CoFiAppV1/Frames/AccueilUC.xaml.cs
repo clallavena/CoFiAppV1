@@ -38,5 +38,19 @@ namespace CoFiAppV1.Frames
         {
             NavManager.SelectedPart = NavManager.Parts["Independant"]();
         }
+
+        private void Ajouter_Click(object sender, RoutedEventArgs e)
+        {
+            //A modifier et à personnaliser! 
+            MessageBox.Show("Que Voulez-vous ajoutez ? ", "Ajouter", MessageBoxButton.YesNoCancel);
+
+            NavManager.SelectedPart = NavManager.Parts["AddFilm"]();
+        }
+
+        private void Supprimer_Click(object sender, RoutedEventArgs e)
+        {
+            //A MODIFIER
+            MessageBox.Show("Que Voulez-vous ajoutez ? ", "Ajouter", MessageBoxButton.YesNoCancel);
+        }
     }
 }

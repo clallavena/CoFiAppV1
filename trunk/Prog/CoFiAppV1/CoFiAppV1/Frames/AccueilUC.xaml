@@ -22,12 +22,12 @@
             </Grid.RowDefinitions>
 
             <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center">
-                <Button Content="Admin" FontSize="25" Width="150" Height="35" Click="Admin_Click"/>
-                <Button Content="Indépendant" FontSize="25" Width="150" Height="35" Click="Inde_Click"/>
+                <Button Content="Admin" Style="{StaticResource stylePourTousLesBouttons}" Click="Admin_Click"/>
+                <Button Content="Indépendant" Style="{StaticResource stylePourTousLesBouttons}" Click="Inde_Click"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right">
-                <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="+ Ajouter" FontSize="25" Width="150" Height="35"/>
-                <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="- Supprimer" FontSize="25" Width="150" Height="35"/>
+                <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="+ Ajouter" Style="{StaticResource stylePourTousLesBouttons}" Click="Ajouter_Click"/>
+                <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="- Supprimer" Style="{StaticResource stylePourTousLesBouttons}" Click="Supprimer_Click"/>
             </StackPanel>
 
 
@@ -35,9 +35,9 @@
                 <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="../img/logo.png" />
             </Viewbox>
 
-            <TextBlock FontWeight="Bold" Text="CofiApp" Grid.ColumnSpan="3" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60"/>
+            <TextBlock FontWeight="Bold" Text="CofiApp" Grid.ColumnSpan="3" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Foreground="#CDCDCD"/>
 
-            <TextBlock Margin="5,30,5,30" Grid.ColumnSpan="3" Grid.Row="3" FontSize="20" TextWrapping="Wrap" Text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sollicitudin risus. Nulla ac posuere orci, tempor dignissim nulla. Duis in volutpat arcu. Sed imperdiet leo elit, at bibendum arcu dapibus a. Sed vestibulum risus sed arcu suscipit, ut cursus quam eleifend. Mauris porta nulla erat, eu cursus lorem eleifend vitae. Nunc dapibus est nunc. Sed velit sem, varius non imperdiet sed, sagittis quis tellus. Phasellus id posuere diam, ac faucibus arcu. Duis pharetra luctus sapien. Maecenas ac metus fermentum, maximus dui sed, placerat ligula. Maecenas placerat facilisis velit vehicula imperdiet. Maecenas sollicitudin tempus ligula, ac tincidunt odio euismod ut.
+            <TextBlock Margin="5,30,5,30" Grid.ColumnSpan="3" Grid.Row="3" FontSize="20" TextWrapping="Wrap" Foreground="#CDCDCD" Text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sollicitudin risus. Nulla ac posuere orci, tempor dignissim nulla. Duis in volutpat arcu. Sed imperdiet leo elit, at bibendum arcu dapibus a. Sed vestibulum risus sed arcu suscipit, ut cursus quam eleifend. Mauris porta nulla erat, eu cursus lorem eleifend vitae. Nunc dapibus est nunc. Sed velit sem, varius non imperdiet sed, sagittis quis tellus. Phasellus id posuere diam, ac faucibus arcu. Duis pharetra luctus sapien. Maecenas ac metus fermentum, maximus dui sed, placerat ligula. Maecenas placerat facilisis velit vehicula imperdiet. Maecenas sollicitudin tempus ligula, ac tincidunt odio euismod ut.
 
 Suspendisse tincidunt, lorem sit amet aliquet elementum, nisl sapien mattis ante, vel molestie neque massa nec orci. Fusce ultrices convallis sem mollis venenatis. Mauris semper id ipsum vitae maximus. Praesent molestie neque eget nulla ullamcorper feugiat. Nullam eu urna id neque dignissim ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Aliquam erat volutpat. Morbi a odio lectus. In hac habitasse platea dictumst. Nulla malesuada efficitur erat, vitae sollicitudin leo.  Sed vitae nulla tempor, ultrices arcu eget, venenatis neque. Phasellus vitae scelerisque ligula, at ultrices dolor. Integer ac turpis sit amet tortor pretium consectetur quis ut erat. Quisque ante lectus, ornare in nunc et, posuere venenatis dolor. Vivamus volutpat elementum leo, ac ullamcorper purus. In ut ligula augue. In et est non neque vehicula pellentesque sit amet non ipsum. Duis a finibus lacus, nec pellentesque urna. Cras eget nunc dolor. Suspendisse sit amet suscipit leo. Aliquam sed porta massa. Etiam mi risus, ultricies suscipit cursus vel, consequat vitae neque. Mauris finibus pharetra quam.
 

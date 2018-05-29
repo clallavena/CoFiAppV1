@@ -6,7 +6,8 @@
         xmlns:frames="clr-namespace:CoFiAppV1.Frames"
         xmlns:local="clr-namespace:CoFiAppV1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280">
+        Title="MainWindow" Height="720" Width="1280"
+        Background="{StaticResource defaultBackground}">
 
     <Window.Resources>
         <local:Func2UserControlConverter x:Key="UCconverter" />
@@ -27,8 +28,8 @@
             <local:BarreDeRecherche/>
         </UserControl>
 
-        <ListBox VerticalAlignment="Top" Height="Auto" Grid.Column="0" Grid.Row="1" Background="Aqua" IsSynchronizedWithCurrentItem="True"
-                 ItemsSource="{Binding Films}" SelectedItem="{Binding FilmSelected, Mode=TwoWay}">
+        <ListBox VerticalAlignment="Top" Height="Auto" Grid.Column="0" Grid.Row="1" Background="#EFDEBE" IsSynchronizedWithCurrentItem="True"
+                 ItemsSource="{Binding LeManager.Films}" SelectedItem="{Binding LeManager.FilmSelected, Mode=TwoWay}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <UserControl>
@@ -42,7 +43,7 @@
         </ListBox>
 
         
-        <ContentControl Grid.Column="1" Grid.RowSpan="2" Content="{Binding NavManager.SelectedPart}"/>
+        <ContentControl Grid.Column="1" Grid.RowSpan="2" Content="{Binding NavManager.SelectedPart}" VerticalAlignment="Top"/>
         
 
         <!--
