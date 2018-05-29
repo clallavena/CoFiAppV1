@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CoFiAppV1"
         mc:Ignorable="d"
-        Title="LogAdmin" Height="500" Width="600">
+        Title="LogAdmin" Height="500" Width="600"
+        Background="{StaticResource defaultBackground}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30*"/>
@@ -33,8 +34,8 @@
         </StackPanel>
 
 
-        <Button Grid.Row="2" Grid.Column="1" Content="Se connecter" Height="30" Width="90" FontSize="15" />
-        <Button Grid.Row="2" Grid.Column="2" Content="Quitter" Height="30" Width="60" FontSize="15" VerticalAlignment="Bottom" Click="Click_Quit"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="Se connecter" Height="30" Width="90" FontSize="15" Style="{StaticResource stylePourTousLesBouttons}"/>
+        <Button Grid.Row="2" Grid.Column="2" Content="Quitter" Height="30" Width="60" FontSize="15" VerticalAlignment="Bottom" Click="Click_Quit" Style="{StaticResource stylePourTousLesBouttons}"/>
 
     </Grid>
 </Window>

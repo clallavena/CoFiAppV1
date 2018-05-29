@@ -20,9 +20,17 @@ namespace CoFiAppV1.Frames
     /// </summary>
     public partial class IndependantUC : UserControl
     {
+
+        public NavigationManager NavManager => (Application.Current as App).NavManager;
+
         public IndependantUC()
         {
             InitializeComponent();
+        }
+
+        private void Accueil_Click(object sender, RoutedEventArgs e)
+        {
+            NavManager.SelectedPart = NavManager.Parts["Accueil"]();
         }
     }
 }

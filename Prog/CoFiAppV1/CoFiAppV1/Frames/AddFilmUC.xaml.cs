@@ -20,9 +20,15 @@ namespace CoFiAppV1.Frames
     /// </summary>
     public partial class AddFilmUC : UserControl
     {
+        public NavigationManager NavManager => (Application.Current as App).NavManager;
         public AddFilmUC()
         {
             InitializeComponent();
+        }
+
+        private void Accueil_Click(object sender, RoutedEventArgs e)
+        {
+            NavManager.SelectedPart = NavManager.Parts["Accueil"]();
         }
     }
 }

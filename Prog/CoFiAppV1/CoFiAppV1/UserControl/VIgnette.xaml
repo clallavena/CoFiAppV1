@@ -7,8 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="300"
              x:Name="root">
-    
-    <Grid Background="Aqua">
+
+    <Grid Background="#EFDEBE">
         <!--Définition de la grid-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
