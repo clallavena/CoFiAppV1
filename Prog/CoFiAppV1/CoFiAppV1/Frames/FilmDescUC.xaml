@@ -22,7 +22,7 @@
             </Grid.RowDefinitions>
 
             <!--Bouton-->
-            <Button Style="{StaticResource stylePourTousLesBouttons}" HorizontalAlignment="Left" Content="Accueil" Click="Button_Click"/>
+            <Button Style="{StaticResource stylePourTousLesBouttons}" HorizontalAlignment="Left" Content="Accueil" Click="Accueil_Click"/>
             <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right">
                 <Button Style="{StaticResource stylePourTousLesBouttons}" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Content="+ Ajouter"/>
                 <Button Style="{StaticResource stylePourTousLesBouttons}" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Content="- Supprimer"/>
@@ -86,7 +86,7 @@
                 <!--Acteurs-->
 
                 <!--Bouton Signaler-->
-                <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="Signaler" Width="100" Height="30" Click="Signalement"/>
+                <Button Style="{StaticResource stylePourTousLesBouttons}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="Signaler" Click="Signalement"/>
                 <!--Bouton Signaler-->
 
             </StackPanel>

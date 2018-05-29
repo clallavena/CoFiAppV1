@@ -24,7 +24,7 @@ namespace CoFiAppV1
             InitializeComponent();
         }
 
-        private void Click_Quit(object sender, RoutedEventArgs e)
+        private void Quit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

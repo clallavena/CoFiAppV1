@@ -28,8 +28,8 @@
             <local:BarreDeRecherche/>
         </UserControl>
 
-        <ListBox VerticalAlignment="Top" Height="Auto" Grid.Column="0" Grid.Row="1" Background="#EFDEBE" IsSynchronizedWithCurrentItem="True"
-                 ItemsSource="{Binding LeManager.Films}" SelectedItem="{Binding LeManager.FilmSelected, Mode=TwoWay}">
+        <ListBox VerticalAlignment="Top" Height="Auto" Grid.Column="0" Grid.Row="1" Background="{StaticResource defaultColor}" IsSynchronizedWithCurrentItem="True"
+                 ItemsSource="{Binding LeManager.Films}" SelectedItem="{Binding LeManager.FilmSelected, Mode=TwoWay}" SelectionChanged="ListBox_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <UserControl>

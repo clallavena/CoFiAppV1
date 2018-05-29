@@ -21,6 +21,8 @@ namespace CoFiAppV1.Frames
     /// </summary>
     public partial class ModifFilmUC : UserControl
     {
+        public NavigationManager NavManager => (Application.Current as App).NavManager;
+
         public Manager LeManager
         {
             get
@@ -33,6 +35,11 @@ namespace CoFiAppV1.Frames
         {
             InitializeComponent();
             DataContext = LeManager;
+        }
+
+        private void Accueil_Click(object sender, RoutedEventArgs e)
+        {
+            NavManager.SelectedPart = NavManager.Parts["Accueil"]();
         }
     }
 }

@@ -22,6 +22,8 @@ namespace CoFiAppV1
     /// </summary>
     public partial class MainWindow : Window
     {
+        public NavigationManager NavManager => (Application.Current as App).NavManager;
+
         public Dictionary<string, Func<UserControl>> Parts => (Application.Current as App).NavManager.Parts;
 
         public Manager LeManager
@@ -40,6 +42,9 @@ namespace CoFiAppV1
             NavManager.SelectedPart = new AccueilUC();
         }
 
-        public NavigationManager NavManager => (Application.Current as App).NavManager;
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            NavManager.SelectedPart = NavManager.Parts["FilmDesc"]();
+        }
     }
 }

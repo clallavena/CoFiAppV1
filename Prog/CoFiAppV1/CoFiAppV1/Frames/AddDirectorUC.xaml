@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Grid.Row="0">
-            <Button Style="{StaticResource stylePourTousLesBouttons}" Content="Accueil" Margin="5"/>
+            <Button Style="{StaticResource stylePourTousLesBouttons}" Content="Accueil" Margin="5" Click="Accueil_Click"/>
         </StackPanel>
 
         <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">

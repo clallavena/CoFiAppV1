@@ -20,9 +20,16 @@ namespace CoFiAppV1.Frames
     /// </summary>
     public partial class ModifRealUC : UserControl
     {
+        public NavigationManager NavManager => (Application.Current as App).NavManager;
+
         public ModifRealUC()
         {
             InitializeComponent();
+        }
+
+        private void Accueil_Click(object sender, RoutedEventArgs e)
+        {
+            NavManager.SelectedPart = NavManager.Parts["Accueil"]();
         }
     }
 }

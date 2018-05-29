@@ -22,7 +22,7 @@
             </Grid.RowDefinitions>
 
             <!--Bouttons haut de page-->
-            <Button Style="{StaticResource stylePourTousLesBouttons}" HorizontalAlignment="Left" Content="Accueil" />
+            <Button Style="{StaticResource stylePourTousLesBouttons}" HorizontalAlignment="Left" Content="Accueil" Click="Accueil_Click"/>
             <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right">
                 <Button Style="{StaticResource stylePourTousLesBouttons}" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Content="+ Ajouter" />
                 <Button Style="{StaticResource stylePourTousLesBouttons}" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Content="- Supprimer"/>

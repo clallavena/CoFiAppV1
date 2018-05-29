@@ -20,9 +20,16 @@ namespace CoFiAppV1.Frames
     /// </summary>
     public partial class AddDirectorUC : UserControl
     {
+        public NavigationManager NavManager => (Application.Current as App).NavManager;
+
         public AddDirectorUC()
         {
             InitializeComponent();
+        }
+
+        private void Accueil_Click(object sender, RoutedEventArgs e)
+        {
+            NavManager.SelectedPart = NavManager.Parts["Accueil"]();
         }
     }
 }

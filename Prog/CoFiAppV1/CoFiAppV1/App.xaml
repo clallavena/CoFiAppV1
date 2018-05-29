@@ -6,7 +6,8 @@
              StartupUri="MainWindow.xaml"
              xmlns:system="clr-namespace:System;assembly=mscorlib">
     <Application.Resources>
-        <SolidColorBrush x:Key="defaultBackground">#646363</SolidColorBrush>
+        <SolidColorBrush x:Key="defaultBackground">#98B6B4</SolidColorBrush>
+        <SolidColorBrush x:Key="defaultColor">#00899B</SolidColorBrush>
         <system:Double x:Key="defaultFontSize">20</system:Double>
 
         <Style x:Key="stylePourTousLesBouttons" TargetType="{x:Type Button}">
@@ -15,8 +16,33 @@
             <Setter Property="Height" Value="25"/>
             <Setter Property="Width" Value="150"/>
             <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="Background" Value="#EFDEBE"/>
+            <Setter Property="Background" Value="{StaticResource defaultColor}"/>
         </Style>
+        
+        <Style x:Key="styleButtons" TargetType="{x:Type Button}">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="{StaticResource defaultColor}"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Pink"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
         <Style x:Key="styleToggleButtonsModif" TargetType="{x:Type ToggleButton}">
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="15"/>
@@ -24,11 +50,13 @@
             <Setter Property="Width" Value="150"/>
             <Setter Property="Content" Value="Modifier"/>
         </Style>
+        
         <Style x:Key="stylePourLesViewboxs" TargetType="{x:Type Viewbox}">
             <Setter Property="Width" Value="150"/>
             <Setter Property="Height" Value="200"/>
             <Setter Property="Stretch" Value="Uniform"/>
         </Style>
+        
         <Style x:Key="stylePourTextBox" TargetType="{x:Type TextBox}">
             <Setter Property="Height" Value="40"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
