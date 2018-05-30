@@ -14,7 +14,8 @@ namespace Metier
         /// <summary>
         /// Nom d'utilisateur de l'administrateur
         /// </summary>
-        public string Username {
+        public string Username
+        {
             get; private set;
         }
 
@@ -37,6 +38,18 @@ namespace Metier
             Password = password;
         }
 
+        public override bool Equals(object obj)
+        {
+            if (object.ReferenceEquals(obj, null)) return false;
+            if (object.ReferenceEquals(obj, this)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return this.Equals(obj as Admin);
+        }
+        public bool Equals(Admin admin)
+        {
+            return (this.Username == admin.Username && this.Password == admin.Password);
+        }
+
         /// <summary>
         /// Rédéfinition de la méthode ToString pour un meilleur affichage
         /// </summary>
@@ -45,5 +58,12 @@ namespace Metier
             return $"Username: {Username} Password: {Password}";
         }
 
+        public override int GetHashCode()
+        {
+            var hashCode = 568732665;
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Username);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Password);
+            return hashCode;
+        }
     }
 }
