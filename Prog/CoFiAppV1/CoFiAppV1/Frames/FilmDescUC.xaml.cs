@@ -35,7 +35,7 @@ namespace CoFiAppV1.Frames
             InitializeComponent();
             DataContext = LeManager;
         }
-        
+
         public string Titre
         {
             get { return (string)GetValue(TitreProperty); }
@@ -61,7 +61,21 @@ namespace CoFiAppV1.Frames
             catch (Exception ex)
             {
                 MessageBox.Show("le signalement n'a pas pu être envoyé, veuillez contacter un administrateur ! \n" + ex.ToString());
-            }            
+            }
+        }
+
+        private void Ajouter_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Voulez-vous ajouter un Réalisateur ?", "Ajouter Réal", MessageBoxButton.YesNoCancel);
+
+            if (result.ToString().Equals("Yes")) NavManager.SelectedPart = NavManager.Parts["AddDirector"]();
+            
+
+        }
+
+        private void Supprimer_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

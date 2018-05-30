@@ -12,12 +12,31 @@ namespace Metier
     public class Manager
     {
 
+        private Admin currentUser;
+
         /// <summary>
         /// Utilisateur avec les droits administrateurs
         /// </summary>
         public Admin CurrentUser
         {
-            get; private set;
+            get { return currentUser; }
+            set { currentUser = value; }
+        }
+
+        /// <summary>
+        /// Liste des Administrateur de l'application
+        /// </summary>
+        private List<Admin> admins = new List<Admin>();
+
+        /// <summary>
+        /// Collection d'Administrateur de l'application
+        /// </summary>
+        public IEnumerable<Admin> ListAdmin
+        {
+            get
+            {
+                return admins;
+            }
         }
 
         /// <summary>
@@ -73,6 +92,7 @@ namespace Metier
         {
             films.AddRange(Dm.ChargementFilms());
             reals.AddRange(Dm.ChargementReal());
+            admins.AddRange(Dm.ChargementAdmin());
         }
 
         /// <summary>
@@ -135,7 +155,7 @@ namespace Metier
         /// Méthode permettant de signaler une personne qui est un réalisateur si le contenu de celui n'est pas approprié
         /// </summary>
         /// <param name="real"></param>
-            public void Signaler(Personne real)
+        public void Signaler(Personne real)
         {
             MailMessage mail = new MailMessage();
             SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
@@ -221,7 +241,7 @@ namespace Metier
 
             if (li.Count() == 1)
             {
-                foreach(Film f in li)
+                foreach (Film f in li)
                 {
                     f.Titre = titre;
                     f.DateDeSortie = dateDeSortie;

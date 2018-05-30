@@ -37,10 +37,10 @@
                 <Label Grid.ColumnSpan="2" Content="Login Admin" FontSize="{StaticResource defaultFontSize}" FontWeight="Bold" HorizontalAlignment="Center"/>
 
                 <TextBlock Grid.Row="1" HorizontalAlignment="Right" Text="Username : " Margin="0,10" FontSize="{StaticResource defaultFontSize}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Width="200" Margin="0,10" Height="Auto" TextWrapping="Wrap" FontSize="{StaticResource defaultFontSize}" />
+                <TextBox Grid.Row="1" Grid.Column="1" Width="200" Margin="0,10" Height="Auto" TextWrapping="Wrap" FontSize="{StaticResource defaultFontSize}" x:Name="Username_TextBox" />
 
                 <TextBlock Grid.Row="2" HorizontalAlignment="Right" Text="Password : " Margin="0,10" FontSize="{StaticResource defaultFontSize}"/>
-                <PasswordBox Grid.Row="2" Grid.Column="1" Width="200" Margin="0,10" Height="Auto" FontSize="{StaticResource defaultFontSize}"/>
+                <PasswordBox Grid.Row="2" Grid.Column="1" Width="200" Margin="0,10" Height="Auto" FontSize="{StaticResource defaultFontSize}" x:Name="PassWord_TextBox"/>
             </Grid>
             
             
@@ -49,7 +49,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40" Orientation="Horizontal">
-            <Button Content="Se connecter" Style="{StaticResource stylePourTousLesBouttons}"/>
+            <Button Content="Se connecter" Style="{StaticResource stylePourTousLesBouttons}" Click="Connection_Click"/>
             <Button Content="Quitter" Click="Quit_Click" Style="{StaticResource stylePourTousLesBouttons}"/>
 
 

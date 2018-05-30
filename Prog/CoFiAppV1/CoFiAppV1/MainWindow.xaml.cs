@@ -34,17 +34,20 @@ namespace CoFiAppV1
             }
         }
 
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (LeManager.FilmSelected != null)
+            {
+                NavManager.SelectedPart = NavManager.Parts["FilmDesc"]();
+            }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
             LeManager.Chargement();
             DataContext = this;
-            NavManager.SelectedPart = new AccueilUC();
-        }
-
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            NavManager.SelectedPart = NavManager.Parts["FilmDesc"]();
+            NavManager.SelectedPart = NavManager.Parts["Accueil"]();
         }
     }
 }

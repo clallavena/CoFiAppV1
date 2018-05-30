@@ -9,7 +9,16 @@ namespace Metier.DataManager
 {
     public class StubDataManager : IDataManager
     {
+        public IEnumerable<Admin> ChargementAdmin()
+        {
+            List<Admin> admins = new List<Admin>
+            {
+                new Admin("esbarland", "coucou"),
+                new Admin("clallavena", "bigboss")
+            };
 
+            return admins;
+        }
 
         public IEnumerable<Film> ChargementFilms()
         {
