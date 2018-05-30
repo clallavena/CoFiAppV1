@@ -10,6 +10,7 @@
         <SolidColorBrush x:Key="defaultColor">#00899B</SolidColorBrush>
         <system:Double x:Key="defaultFontSize">20</system:Double>
 
+        <!--Ancien style des boutons-->        
         <Style x:Key="stylePourTousLesBouttons" TargetType="{x:Type Button}">
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="15"/>
@@ -18,7 +19,17 @@
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="Background" Value="{StaticResource defaultColor}"/>
         </Style>
+
+        <Style x:Key="styleToggleButtonsModif" TargetType="{x:Type ToggleButton}">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Content" Value="Modifier"/>
+        </Style>
+        <!--Ancien style des boutons-->
         
+        <!--Nouveau style des boutons-->
         <Style x:Key="styleButtons" TargetType="{x:Type Button}">
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="15"/>
@@ -42,14 +53,34 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        
-        <Style x:Key="styleToggleButtonsModif" TargetType="{x:Type ToggleButton}">
+
+        <Style x:Key="styleToggleButtons" TargetType="{x:Type ToggleButton}">
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="15"/>
-            <Setter Property="Height" Value="40"/>
+            <Setter Property="Height" Value="25"/>
             <Setter Property="Width" Value="150"/>
-            <Setter Property="Content" Value="Modifier"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="{StaticResource defaultColor}"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Background" Value="Pink"/>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="False">
+                    <Setter Property="Background" Value="{StaticResource defaultColor}"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
+        <!--Nouveau style des boutons-->
         
         <Style x:Key="stylePourLesViewboxs" TargetType="{x:Type Viewbox}">
             <Setter Property="Width" Value="150"/>

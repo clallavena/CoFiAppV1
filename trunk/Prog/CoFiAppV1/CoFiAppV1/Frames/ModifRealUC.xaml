@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CoFiAppV1.Frames"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="800" d:DesignWidth="800"
              Background="{StaticResource defaultBackground}"
              FontSize="{StaticResource defaultFontSize}">
 
@@ -15,72 +15,65 @@
             <RowDefinition Height="90*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="0">
-            <Button Style="{StaticResource stylePourTousLesBouttons}" Content="Accueil" Margin="5" Click="Accueil_Click"/>
-        </StackPanel>
+        <Button Style="{StaticResource styleButtons}" Content="Accueil" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Accueil_Click"/>
+        <ToggleButton Style="{StaticResource styleToggleButtons}" Content="Modifier" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
         <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="10*"/>
-                    <RowDefinition Height="80*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="10*"/>
+
                     <RowDefinition Height="10*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="30*"/>
-                    <ColumnDefinition Width="30*"/>
-                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="40*"/>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="10*"/>
                 </Grid.ColumnDefinitions>
 
+                <!--
+                Il faut tout changer à partir d'ici et reprendre l'exemple de modifFilm
+                -->
+                
                 <!--Partie de gauche-->
                 <Label Content="Modifier un Réalisateur" FontSize="35" FontWeight="Bold" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
 
-                <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0, 25">
-                    <Label Content="Nom: " HorizontalAlignment="Right" />
-                    <Label Content="Prénom: " HorizontalAlignment="Right"  Margin="0, 15"/>
-                    <Label Content="Date de Naissance: " HorizontalAlignment="Right"  Margin="0, 15"/>
-                    <Label Content="Date mort (ne pas renseigné si null): " HorizontalAlignment="Right"  Margin="0, 15"/>
-                    <Label Content="Nationalité: " HorizontalAlignment="Right"  Margin="0, 15"/>
-                    <Label Content="Biographie: " HorizontalAlignment="Right"  Margin="0, 15"/>
-                    <Label Content="Photo: " HorizontalAlignment="Right"  Margin="0, 15"/>
-                    <Label Content="Films notables: " HorizontalAlignment="Right"  Margin="0, 15"/>
-                </StackPanel>
+                <Label Grid.Row="1" Content="Nom: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,15"/>
+                <Label Grid.Row="2" Content="Prénom: " HorizontalAlignment="Right"  Margin="0, 15"/>
+                <Label Grid.Row="3" Content="Date de Naissance: " HorizontalAlignment="Right"  Margin="0, 15"/>
+                <Label Grid.Row="4" Content="Date mort (ne pas renseigné si null): " HorizontalAlignment="Right"  Margin="0, 15"/>
+                <Label Grid.Row="5" Content="Nationalité: " HorizontalAlignment="Right"  Margin="0, 15"/>
+                <Label Grid.Row="6" Content="Biographie: " HorizontalAlignment="Right"  Margin="0, 15"/>
+                <Label Grid.Row="7" Content="Photo: " HorizontalAlignment="Right"  Margin="0, 15"/>
+                <Label Grid.Row="8" Content="Films notables: " HorizontalAlignment="Right"  Margin="0, 15"/>
+
                 <!--Partie de gauche-->
 
-                <Button Grid.ColumnSpan="3" Grid.Row="2" HorizontalAlignment="Center" Content="Confirmer Modif" Width="200" Height="35" />
-
-                <!--Partie Centrale-->
-                <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="0,25" Width="350" >
-                    <TextBox Style="{StaticResource stylePourTextBox}"/>
-                    <TextBox Style="{StaticResource stylePourTextBox}" Margin="0, 15"/>
-                    <TextBox Style="{StaticResource stylePourTextBox}" Margin="0, 10"/>
-                    <TextBox Style="{StaticResource stylePourTextBox}" Margin="0, 15"/>
-                    <TextBox Style="{StaticResource stylePourTextBox}" Margin="0, 15"/>
-                    <TextBox Style="{StaticResource stylePourTextBox}" Margin="0, 10"/>
-                    <Button Content="+ Ajouter Image"  Margin="0,20"/>
-                    <WrapPanel HorizontalAlignment="Left">
-                        <ComboBox SelectedIndex="0" HorizontalContentAlignment="Center" Margin="0, 20">
-                            <TextBlock Text="Film1" />
-                            <TextBlock Text="Film2" />
-                            <TextBlock Text="Film3" />
-                        </ComboBox>
-                        <Button Content="Ajouter Film" Margin="25,0" Height="40" />
-                    </WrapPanel>
-                </StackPanel>
-                <!--Partie Centrale-->
-
-                <!--Partie de Droite-->
-                <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" Margin="25, 25">
-                    <ToggleButton Style="{StaticResource styleToggleButtonsModif}"/>
-                    <ToggleButton Style="{StaticResource styleToggleButtonsModif}" Margin="0, 15"/>
-                    <ToggleButton Style="{StaticResource styleToggleButtonsModif}" Margin="0, 10"/>
-                    <ToggleButton Style="{StaticResource styleToggleButtonsModif}" Margin="0, 15"/>
-                    <ToggleButton Style="{StaticResource styleToggleButtonsModif}" Margin="0, 15"/>
-                    <ToggleButton Style="{StaticResource styleToggleButtonsModif}" Margin="0, 10"/>
-                    <ToggleButton Style="{StaticResource styleToggleButtonsModif}" Margin="0, 15"/>
-                    <ToggleButton Style="{StaticResource styleToggleButtonsModif}" Margin="0, 15"/>
-                </StackPanel>
-                <!--Partie de Droite-->
+                <!--Partie de droite-->
+                <TextBox Style="{StaticResource stylePourTextBox}"/>
+                <TextBox Style="{StaticResource stylePourTextBox}" Margin="0, 15"/>
+                <TextBox Style="{StaticResource stylePourTextBox}" Margin="0, 10"/>
+                <TextBox Style="{StaticResource stylePourTextBox}" Margin="0, 15"/>
+                <TextBox Style="{StaticResource stylePourTextBox}" Margin="0, 15"/>
+                <TextBox Style="{StaticResource stylePourTextBox}" Margin="0, 10"/>
+                <Button Content="+ Ajouter Image"  Margin="0,20"/>
+                <WrapPanel HorizontalAlignment="Left">
+                    <ComboBox SelectedIndex="0" HorizontalContentAlignment="Center" Margin="0, 20">
+                        <TextBlock Text="Film1" />
+                        <TextBlock Text="Film2" />
+                        <TextBlock Text="Film3" />
+                    </ComboBox>
+                    <Button Content="Ajouter Film" Margin="25,0" Height="40" />
+                </WrapPanel>
+                <!--Partie de droite-->
 
             </Grid>
         </ScrollViewer>
