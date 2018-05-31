@@ -47,8 +47,8 @@
         </StackPanel>
 
         <StackPanel Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40" Orientation="Horizontal">
-            <Button Content="Se connecter" Style="{StaticResource stylePourTousLesBouttons}" Click="Connection_Click"/>
-            <Button Content="Quitter" Click="Quit_Click" Style="{StaticResource stylePourTousLesBouttons}"/>
+            <Button Content="Se connecter" Style="{StaticResource styleButtons}" Click="Connection_Click"/>
+            <Button Content="Quitter" Click="Quit_Click" Style="{StaticResource styleButtons}"/>
 
 
         </StackPanel>
