@@ -55,7 +55,7 @@ namespace Metier.DataManager
 
 
             //Ajout de film à la liste
-            Film forrest = new Film("Forrest Gump", 1994, "Film dramatique, racontant l'histoire d'un homme à travers l'histoire de l'amérique qui a plein de problèmes partout où il va. ", filmForrest, Tag.Drame, Tag.Comedie_Dramatique);
+            Film forrest = new Film("Forrest Gump", 1994, "Film dramatique, racontant l'histoire d'un homme à travers l'histoire de l'amérique qui a plein de problèmes partout où il va. ", filmForrest, Tag.Drame, Tag.Comedie_Dramatique, Tag.Independant);
             films.Add(forrest);
             Film interstellar = new Film("Interstellar", 2014, "Film de science-fiction, racontant l'histoire d'explorateurs partis chercher une planète plus acceuillante à travers un voyage interstellaire.", filmInterstellar, Tag.Science_Fiction, Tag.Drame);
             films.Add(interstellar);

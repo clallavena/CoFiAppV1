@@ -37,7 +37,7 @@ namespace Metier
         }
 
         /// <summary>
-        /// Synonpsis du film
+        /// Synopsis du film
         /// </summary>
         public string Synopsis
         {
@@ -76,7 +76,7 @@ namespace Metier
             foreach (var e in listTags)
             {
                 ListTags.Add(e);
-            }
+            }          
         }
 
         /// <summary>

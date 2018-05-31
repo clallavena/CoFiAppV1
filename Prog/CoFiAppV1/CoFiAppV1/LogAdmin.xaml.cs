@@ -41,12 +41,25 @@ namespace CoFiAppV1
 
         private void Connection_Click(object sender, RoutedEventArgs e)
         {
+            Connexion();
+        }
+
+        private void PassWord_TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Connexion();
+            }
+        }
+
+        private void Connexion()
+        {
             string username = Username_TextBox.Text;
             string password = PassWord_TextBox.Password;
 
             Admin admin = new Admin(username, password);
-            
-            foreach(Admin a in LeManager.ListAdmin)
+
+            foreach (Admin a in LeManager.ListAdmin)
             {
                 if (a.Equals(admin))
                 {

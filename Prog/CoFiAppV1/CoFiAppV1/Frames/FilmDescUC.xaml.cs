@@ -1,6 +1,7 @@
 ﻿using Metier;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,10 +20,10 @@ namespace CoFiAppV1.Frames
     /// <summary>
     /// Logique d'interaction pour FilmDesc.xaml
     /// </summary>
-    public partial class FilmDescUC : UserControl
+    public partial class FilmDescUC : UserControl, INotifyPropertyChanged 
     {
         public NavigationManager NavManager => (Application.Current as App).NavManager;
-
+        public event PropertyChangedEventHandler PropertyChanged;
         public Manager LeManager
         {
             get
@@ -75,7 +76,26 @@ namespace CoFiAppV1.Frames
 
         private void Supprimer_Click(object sender, RoutedEventArgs e)
         {
+            if (LeManager.CurrentUser != null)
+            {
+                MessageBoxResult result = MessageBox.Show("Voulez vous supprimez ce film ?", "Supprimer", MessageBoxButton.YesNoCancel, MessageBoxImage.Exclamation);
 
+                if (result.ToString().Equals("Yes"))
+                {
+                    if (LeManager.SupprimerFilm(LeManager.FilmSelected)) MessageBox.Show("Suppression effectué avec succés", "Suppression", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                    else MessageBox.Show("Erreur lors de la suppression", "Suppression", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                NotifyPropertyChanged("LeManager.Films");
+            }
+            else
+            {
+                MessageBox.Show("Il faut être administrateur!", "Permission non accordée", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        public void NotifyPropertyChanged(String info)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(info));
         }
     }
 }
