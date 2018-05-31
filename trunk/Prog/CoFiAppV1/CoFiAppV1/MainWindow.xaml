@@ -12,6 +12,7 @@
     <Window.Resources>
         <local:Func2UserControlConverter x:Key="UCconverter" />
     </Window.Resources>
+    
     <Grid>
         <!--Définition de la grid-->
         <Grid.ColumnDefinitions>
@@ -24,12 +25,15 @@
         </Grid.RowDefinitions>
         <!--Définition de la grid-->
 
+        <!--Barre de recherche-->
         <UserControl Grid.Row="0" Grid.Column="0" Margin="5">
             <local:BarreDeRecherche/>
         </UserControl>
+        <!--Barre de recherche-->
 
+        <!--Liste des films affichés dans la partie de gauche-->
         <ListBox VerticalAlignment="Top" Height="Auto" Grid.Column="0" Grid.Row="1" Background="{StaticResource defaultColor}" IsSynchronizedWithCurrentItem="True"
-                 ItemsSource="{Binding LeManager.Films}" SelectedItem="{Binding LeManager.FilmSelected, Mode=TwoWay}" SelectionChanged="ListBox_SelectionChanged">
+                 ItemsSource="{Binding LeManager.Films, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding LeManager.FilmSelected, Mode=TwoWay}" SelectionChanged="ListBox_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <UserControl>
@@ -37,19 +41,12 @@
                     </UserControl>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-            
-            <!--Début d'une séléction-->
-            
         </ListBox>
+        <!--Liste des films affichés dans la partie de gauche-->
 
-        
+        <!--Controleur de la page principal-->
         <ContentControl Grid.Column="1" Grid.RowSpan="2" Content="{Binding NavManager.SelectedPart}" VerticalAlignment="Top"/>
+        <!--Controleur de la page principal-->
         
-
-        <!--
-        <ContentControl Grid.Column="1" Grid.RowSpan="2" DataContext="{Binding Parts}"
-                        Content="{Binding Value, Converter={StaticResource UCconverter}}"/>
-        -->
-
     </Grid>
 </Window>

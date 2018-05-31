@@ -50,13 +50,14 @@
 
         <!-- Liste -->
         <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto">
-            <ListBox VerticalAlignment="Top" Width="Auto" Background="{StaticResource defaultColor}">
-                <local:Vignette/>
-                <local:Vignette/>
-                <local:Vignette/>
-                <local:Vignette/>
-                <local:Vignette/>
-                <local:Vignette/>
+            <ListBox VerticalAlignment="Top" Background="{StaticResource defaultColor}" ItemsSource="{Binding listInde}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <UserControl>
+                            <local:Vignette PTitre="{Binding Titre}"/>
+                        </UserControl>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
             </ListBox>
         </ScrollViewer>
 

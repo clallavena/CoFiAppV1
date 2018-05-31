@@ -198,15 +198,17 @@ namespace Metier
         /// Méthode permettant de supprimer un film
         /// </summary>
         /// <param name="film"></param>
-        public void SupprimerFilm(Film film)
+        public bool SupprimerFilm(Film film)
         {
             if (films.Contains(film))
             {
                 films.Remove(film);
+                return true;
             }
             else
             {
                 Debug.WriteLine("Film inexistant");
+                return false;
             }
 
         }
