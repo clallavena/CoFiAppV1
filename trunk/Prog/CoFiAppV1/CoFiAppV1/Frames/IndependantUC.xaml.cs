@@ -38,6 +38,7 @@ namespace CoFiAppV1.Frames
         public IndependantUC()
         {
             InitializeComponent();
+            DataContext = this;
             //A revoir la liste des films indépendants car ça ne marche pas
             foreach (Film f in LeManager.Films)
             {

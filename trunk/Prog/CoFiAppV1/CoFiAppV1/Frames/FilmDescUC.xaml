@@ -41,7 +41,15 @@
                 
                 <StackPanel HorizontalAlignment="Left" Margin="5" Orientation="Horizontal">
                     <TextBlock FontWeight="DemiBold" Text="Réalisateur: " />
-                    <TextBlock TextDecorations="Underline" Foreground="Blue" DataContext="{Binding FilmSelected}" Text="{Binding Personnes}" />
+                    <!--<TextBlock TextDecorations="Underline" Foreground="Blue" DataContext="{Binding FilmSelected}" Text="{Binding Personnes}" />-->
+                    <ListView Background="{StaticResource defaultBackground}" DataContext="{Binding FilmSelected}" 
+                              ItemsSource="{Binding Personnes}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Key}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </StackPanel>
 
                 <StackPanel HorizontalAlignment="Left" Margin="5" Orientation="Horizontal">
@@ -51,7 +59,11 @@
 
                 <StackPanel HorizontalAlignment="Left" Margin="5" Orientation="Horizontal">
                     <TextBlock FontWeight="DemiBold" Text="Tags: "/>
-                    <TextBlock TextDecorations="Underline" Foreground="Blue" DataContext="{Binding FilmSelected}" Text="{Binding ListTags}"/>
+                    <!--<TextBlock TextDecorations="Underline" Foreground="Blue" DataContext="{Binding FilmSelected}" Text="{Binding ListTags}"/>-->
+                    <ListView Background="{StaticResource defaultBackground}" DataContext="{Binding FilmSelected}" ItemsSource="{Binding ListTags}">
+                    </ListView>
+                    
+                    
                 </StackPanel>
                 
             </StackPanel>
