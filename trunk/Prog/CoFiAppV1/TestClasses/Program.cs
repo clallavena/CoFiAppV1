@@ -1,5 +1,6 @@
 ﻿using Metier;
 using Metier.DataManager;
+using Metier.RechercheFilms;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -65,6 +66,15 @@ namespace TestClasses
             //Test de la recherche//
             IEnumerable<Film> fl = m.RechercherReal("Lucas", "george");
 
+            //Test recherche Film
+            RechFilmParNom re = new RechFilmParNom();
+            IEnumerable<Film> liF = re.RechercheFilm("Forrest", m.Films);
+
+            foreach(Film fi in liF)
+            {
+                Console.WriteLine(fi.Titre);
+            }
+
             //foreach (Film fi in fl)
             //{
             //    Console.WriteLine(fi.Titre);
@@ -106,16 +116,16 @@ namespace TestClasses
             //Console.WriteLine("/////////////////////////////////////////////");
 
 
-            //Test de l'ajout de Réal//
+            ////Test de l'ajout de Réal//
 
-            m.AjouterReal(new Personne("Barland", "Esteban", new DateTime(1999, 10, 17), "Espingouin", "Vivant à St-Christophe, avec ses 3 habitants, Esteban rêver de grandeur cinématographique."));
+            //m.AjouterReal(new Personne("Barland", "Esteban", new DateTime(1999, 10, 17), "Espingouin", "Vivant à St-Christophe, avec ses 3 habitants, Esteban rêver de grandeur cinématographique."));
 
-            foreach(Personne p in m.ListReal)
-            {
-                Console.WriteLine(p);
-            }
+            //foreach(Personne p in m.ListReal)
+            //{
+            //    Console.WriteLine(p);
+            //}
 
-            m.AjouterReal(new Personne("Nolan", "Christophe", new DateTime(1970, 07, 30), "Anglais", "Prout"));
+            //m.AjouterReal(new Personne("Nolan", "Christophe", new DateTime(1970, 07, 30), "Anglais", "Prout"));
 
         }
     }

@@ -7,10 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Metier.RechercheFilms;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace Metier
 {
-    public class Manager
+    public class Manager : INotifyPropertyChanged
     {
 
         private Admin currentUser;
@@ -28,6 +29,17 @@ namespace Metier
         /// Liste des Administrateur de l'application
         /// </summary>
         private List<Admin> admins = new List<Admin>();
+
+        private List<Film> filmRecherche = new List<Film>();
+
+        public IEnumerable<Film> ListFilmRecherche
+        {
+            get
+            {
+                return filmRecherche;
+            }
+            set { }
+        }
 
         /// <summary>
         /// Collection d'Administrateur de l'application
@@ -78,6 +90,9 @@ namespace Metier
         }
 
         private IRecherchePersonne rech = new RechParFilm();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         IDataManager Dm
         {
             get;
@@ -95,6 +110,7 @@ namespace Metier
             {
                 films.Add(f);
             }
+            FilmsParNom = Films;
             reals.AddRange(Dm.ChargementReal());
             admins.AddRange(Dm.ChargementAdmin());
         }
@@ -194,9 +210,26 @@ namespace Metier
         /// <param name="recherche"></param>
         public IEnumerable<Film> RechercherFilm(string recherche, ObservableCollection<Film> Films)
         {
+            if(string.IsNullOrWhiteSpace(recherche) || recherche == "Rechercher")
+            {
+                FilmsParNom = Films;
+                return FilmsParNom;
+            }
             RechFilmParNom re = new RechFilmParNom();
-            return re.RechercheFilm(recherche, Films);
+            FilmsParNom = re.RechercheFilm(recherche, Films).ToList();
+            return FilmsParNom;
         }
+
+        public IEnumerable<Film> FilmsParNom
+        {
+            get => filmsParNom;
+            set
+            {
+                filmsParNom = value;
+                NotifyPropertyChanged(nameof(FilmsParNom));
+            }
+        }
+        IEnumerable<Film> filmsParNom;
 
         /// <summary>
         /// Méthode permettant de supprimer un film
@@ -276,6 +309,9 @@ namespace Metier
 
         }
 
-        //public IEnumerable<Personne>
+        public void NotifyPropertyChanged(String info)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(info));
+        }
     }
 }

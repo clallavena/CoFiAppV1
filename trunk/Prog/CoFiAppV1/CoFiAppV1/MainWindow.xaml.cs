@@ -50,5 +50,11 @@ namespace CoFiAppV1
             DataContext = this;
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
         }
+
+        private void ListBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            //ListBox.SelectedIndex = -1;
+            //ListBox.SelectedItem = LeManager.FilmSelected;
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Metier;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,13 @@ namespace CoFiAppV1
     /// </summary>
     public partial class BarreDeRecherche : UserControl
     {
+        public Manager LeManager
+        {
+            get
+            {
+                return (Application.Current as App).LeManager;
+            }
+        }
         public BarreDeRecherche()
         {
             InitializeComponent();
@@ -39,6 +47,11 @@ namespace CoFiAppV1
             {
                 searchB.Text = "Rechercher";
             }
+        }
+
+        public void Loupe_Click(object sender, RoutedEventArgs e)
+        {
+            LeManager.RechercherFilm(searchB.Text, LeManager.Films);
         }
     }
 }
