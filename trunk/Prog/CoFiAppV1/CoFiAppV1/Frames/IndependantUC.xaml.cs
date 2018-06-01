@@ -31,7 +31,13 @@ namespace CoFiAppV1.Frames
         }
 
 
-        List<Film> listInde = new List<Film>();
+        private List<Film> listInde = new List<Film>();
+
+        public IEnumerable<Film> ListInde
+        {
+            get { return listInde; }
+            private set { }
+        }
 
         public NavigationManager NavManager => (Application.Current as App).NavManager;
 
@@ -39,7 +45,6 @@ namespace CoFiAppV1.Frames
         {
             InitializeComponent();
             DataContext = this;
-            //A revoir la liste des films indépendants car ça ne marche pas
             foreach (Film f in LeManager.Films)
             {
                 if (f.ListTags.Contains(Metier.Tag.Independant))

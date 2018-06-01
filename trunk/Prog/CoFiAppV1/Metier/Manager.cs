@@ -6,6 +6,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using Metier.RechercheFilms;
+using System.Collections.ObjectModel;
 
 namespace Metier
 {
@@ -58,9 +59,9 @@ namespace Metier
         /// <summary>
         /// Liste de tous les films
         /// </summary>
-        private List<Film> films = new List<Film>();
+        private ObservableCollection<Film> films = new ObservableCollection<Film>();
 
-        public IEnumerable<Film> Films
+        public ObservableCollection<Film> Films
         {
             get
             {
@@ -90,7 +91,10 @@ namespace Metier
 
         public void Chargement()
         {
-            films.AddRange(Dm.ChargementFilms());
+            foreach (Film f in Dm.ChargementFilms())
+            {
+                films.Add(f);
+            }
             reals.AddRange(Dm.ChargementReal());
             admins.AddRange(Dm.ChargementAdmin());
         }
@@ -188,7 +192,7 @@ namespace Metier
         /// Méthode permettant de rechercher parmi la liste des films selon le titre de celui-ci
         /// </summary>
         /// <param name="recherche"></param>
-        public IEnumerable<Film> RechercherFilm(string recherche, List<Film> Films)
+        public IEnumerable<Film> RechercherFilm(string recherche, ObservableCollection<Film> Films)
         {
             RechFilmParNom re = new RechFilmParNom();
             return re.RechercheFilm(recherche, Films);
@@ -271,5 +275,7 @@ namespace Metier
         {
 
         }
+
+        //public IEnumerable<Personne>
     }
 }

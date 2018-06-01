@@ -35,6 +35,7 @@ namespace Metier.DataManager
             listPA_f1.Add(new Personne("Wright", "Robin"));
 
             listPR_f1.Add(new Personne("Zemeckis", "Robert", new DateTime(1952, 05, 14), "Americain", "Fabuleux Réal"));
+            listPR_f1.Add(new Personne("Lucas", "Georges", new DateTime(1852, 05, 14), "Americain", "Fabuleux Réal"));
 
             filmForrest.Add(Job.Acteur, listPA_f1);
             filmForrest.Add(Job.Realisateur, listPR_f1);
