@@ -31,10 +31,32 @@ namespace CoFiAppV1.Frames
             }
         }
 
+        private List<Personne> lpr = new List<Personne>();
+
+        public IEnumerable<Personne> Lpr
+        {
+            get { return lpr; }
+            set { }
+        }
+
+        private List<Personne> lpa = new List<Personne>();
+
+        public IEnumerable<Personne> Lpa
+        {
+            get { return lpa; }
+            set { }
+        }
+
         public ModifFilmUC()
         {
             InitializeComponent();
-            DataContext = LeManager;
+            DataContext = this;
+            foreach (Film f in LeManager.Films)
+            {
+                lpr.AddRange(f.Personnes.Where(p => p.Key == Job.Realisateur).SelectMany(s => s.Value).ToList());
+            }
+            //lpr = LeManager.FilmSelected.Personnes.Where(p => p.Key == Job.Realisateur).SelectMany(s => s.Value).ToList();
+            lpa = LeManager.FilmSelected.Personnes.Where(p => p.Key == Job.Acteur).SelectMany(s => s.Value).ToList();
         }
 
         private void Accueil_Click(object sender, RoutedEventArgs e)
