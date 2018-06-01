@@ -96,7 +96,7 @@ namespace CoFiAppV1.Frames
                     if (LeManager.SupprimerFilm(LeManager.FilmSelected)) MessageBox.Show("Suppression effectué avec succés", "Suppression", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                     else MessageBox.Show("Erreur lors de la suppression", "Suppression", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-                NotifyPropertyChanged("LeManager.Films");
+                NotifyPropertyChanged("LeManager.FilmsParNom");
             }
             else
             {
