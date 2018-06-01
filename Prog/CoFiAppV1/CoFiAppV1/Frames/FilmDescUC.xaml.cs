@@ -108,5 +108,23 @@ namespace CoFiAppV1.Frames
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(info));
         }
+
+        private void Modifier_Click(object sender, RoutedEventArgs e)
+        {
+            NavManager.SelectedPart = NavManager.Parts["ModifFilm"]();
+            /*if (LeManager.CurrentUser != null)
+            {
+                MessageBoxResult result = MessageBox.Show("Voulez vous modifier ce film ?", "Modifer", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                if (result.ToString().Equals("Yes"))
+                {
+                    NavManager.SelectedPart = NavManager.Parts["ModifFilm"]();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Il faut être administrateur!", "Permission non accordée", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }*/
+        }
     }
 }

@@ -79,6 +79,7 @@
       <DependentUpon>ModifRealUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Func2UserControlConverter.cs" />
+    <Compile Include="IsCheckedToVisibilityConverter.cs" />
     <Compile Include="LogAdmin.xaml.cs">
       <DependentUpon>LogAdmin.xaml</DependentUpon>
     </Compile>

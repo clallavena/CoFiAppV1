@@ -92,6 +92,10 @@
             <Setter Property="Height" Value="40"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
+        <Style x:Key="stylePourTextBlock" TargetType="{x:Type TextBlock}">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
 
         <DataTemplate x:Key="accueil">
             <frames:AccueilUC/>
