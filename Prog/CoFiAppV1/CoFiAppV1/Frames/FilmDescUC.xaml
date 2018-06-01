@@ -37,30 +37,39 @@
 
             <!--En-tête de Film-->
             <StackPanel Grid.Column="1" Grid.Row="1">
-                <TextBlock DataContext="{Binding FilmSelected}" Text="{Binding Titre}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="50" Margin="5" FontWeight="Bold"/>
+                <TextBlock DataContext="{Binding LeManager.FilmSelected}" Text="{Binding Titre}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="50" Margin="5" FontWeight="Bold"/>
                 
                 <StackPanel HorizontalAlignment="Left" Margin="5" Orientation="Horizontal">
-                    <TextBlock FontWeight="DemiBold" Text="Réalisateur: " />
+                    <TextBlock FontWeight="DemiBold" Text="Réalisateur(s): " />
                     <!--<TextBlock TextDecorations="Underline" Foreground="Blue" DataContext="{Binding FilmSelected}" Text="{Binding Personnes}" />-->
-                    <ListView Background="{StaticResource defaultBackground}" DataContext="{Binding FilmSelected}" 
-                              ItemsSource="{Binding Personnes}">
+                    <ListView Background="{StaticResource defaultBackground}" ItemsSource="{Binding Lp}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Key}"/>
+                                <TextBlock Text="{Binding Nom}">
+                                    <TextBlock Text=" ">
+                                        <TextBlock Text="{Binding Prenom}" />
+                                    </TextBlock>
+                                </TextBlock>
                             </DataTemplate>
                         </ListView.ItemTemplate>
+
                     </ListView>
                 </StackPanel>
 
                 <StackPanel HorizontalAlignment="Left" Margin="5" Orientation="Horizontal">
                     <TextBlock FontWeight="DemiBold" Text="Date de Sortie: " />
-                    <TextBlock DataContext="{Binding FilmSelected}" Text="{Binding DateDeSortie}" />
+                    <TextBlock DataContext="{Binding LeManager.FilmSelected}" Text="{Binding DateDeSortie}" />
                 </StackPanel>
 
                 <StackPanel HorizontalAlignment="Left" Margin="5" Orientation="Horizontal">
                     <TextBlock FontWeight="DemiBold" Text="Tags: "/>
                     <!--<TextBlock TextDecorations="Underline" Foreground="Blue" DataContext="{Binding FilmSelected}" Text="{Binding ListTags}"/>-->
-                    <ListView Background="{StaticResource defaultBackground}" DataContext="{Binding FilmSelected}" ItemsSource="{Binding ListTags}">
+                    <ListView Background="{StaticResource defaultBackground}" DataContext="{Binding LeManager.FilmSelected}" ItemsSource="{Binding ListTags}">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"></StackPanel>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
                     </ListView>
                     
                     
@@ -75,7 +84,7 @@
                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap">
                     <Run FontWeight="Bold">Synopsis: </Run>
                 </TextBlock>
-                <TextBlock DataContext="{Binding FilmSelected}" Text="{Binding Synopsis}" Margin="0,0,0, 20" FontSize="16" TextWrapping="Wrap" />
+                <TextBlock DataContext="{Binding LeManager.FilmSelected}" Text="{Binding Synopsis}" Margin="0,0,0, 20" FontSize="16" TextWrapping="Wrap" />
                 <TextBlock Text="Acteurs: " FontWeight="Bold" />
                 <!--Synopsis-->
 

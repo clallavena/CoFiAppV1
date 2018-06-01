@@ -31,10 +31,21 @@ namespace CoFiAppV1.Frames
                 return (Application.Current as App).LeManager;
             }
         }
+
+        private List<Personne> lp = new List<Personne>();
+
+        public IEnumerable<Personne> Lp
+        {
+            get { return lp; }
+            set { }
+        }
+
         public FilmDescUC()
         {
             InitializeComponent();
-            DataContext = LeManager;
+            DataContext = this;
+
+            lp = LeManager.FilmSelected.Personnes.Where(p => p.Key == Job.Realisateur).SelectMany(s => s.Value).ToList();
         }
 
         public string Titre
