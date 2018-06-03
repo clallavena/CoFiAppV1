@@ -23,7 +23,7 @@ namespace Metier.RechercheFilms
         public IEnumerable<Film> RechercheFilm(string critere, IEnumerable<Film> films)
         {
 
-            return films.Where(s => s.Titre.StartsWith(critere));
+            return films.Where(s => s.Titre.ToLower().StartsWith(critere.ToLower()));
 
         }
     }
