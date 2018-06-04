@@ -4,13 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:frames="clr-namespace:CoFiAppV1.Frames"
+        xmlns:conv="clr-namespace:CoFiAppV1.Converter"
         xmlns:local="clr-namespace:CoFiAppV1"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280"
         Background="{StaticResource defaultBackground}">
 
     <Window.Resources>
-        <local:Func2UserControlConverter x:Key="UCconverter" />
+        <conv:Func2UserControlConverter x:Key="UCconverter" />
+        <conv:String2UriConverter x:Key="string2UriConverter"/>
     </Window.Resources>
     
     <Grid>
@@ -38,7 +40,8 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <UserControl>
-                        <local:Vignette PTitre="{Binding Titre}"/>
+                        <local:Vignette PTitre="{Binding Titre}"
+                                        PImage="{Binding PathFile, Converter={StaticResource string2UriConverter}}"/>
                     </UserControl>
                 </DataTemplate>
             </ListBox.ItemTemplate>

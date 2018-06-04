@@ -72,5 +72,18 @@ namespace CoFiAppV1
 
             MessageBox.Show("Nom d'utilisateur ou Mot de passe incorrecte", "Erreur connexion", MessageBoxButton.OK);
         }
+
+        private void Deconnection_Click(object sender, RoutedEventArgs e)
+        {
+            if (LeManager.CurrentUser != null)
+            {
+                LeManager.CurrentUser = null;
+                MessageBox.Show("Déconnexion effectué avec succés!", "Déconnexion réussi", MessageBoxButton.OK);
+            }
+            else
+            {
+                MessageBox.Show("Vous n'êtes pas connecté en tant qu'administrateur", "Erreur Deconnexion", MessageBoxButton.OK);
+            }
+        }
     }
 }

@@ -4,10 +4,17 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:CoFiAppV1.Frames"
+      xmlns:conv="clr-namespace:CoFiAppV1.Converter"
       mc:Ignorable="d" 
+      x:Name="root"
       d:DesignHeight="720" d:DesignWidth="1280"
       Background="{StaticResource defaultBackground}"
       FontSize="{StaticResource defaultFontSize}">
+    
+    <UserControl.Resources>
+        <conv:Func2UserControlConverter x:Key="UCconverter" />
+        <conv:String2UriConverter x:Key="string2UriConverter"/>
+    </UserControl.Resources>
 
     <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="1">
         <Grid Grid.Column="1" Grid.Row="1">
@@ -32,7 +39,7 @@
 
             <!--Affiche du Film-->
             <Viewbox Stretch="Uniform" Grid.Column="0" Grid.Row="1" Width="220" Height="220" Margin="10" HorizontalAlignment="Center">
-                <Image VerticalAlignment="Top" Source="../img/Shining.jpg" />
+                <Image VerticalAlignment="Top" DataContext="{Binding LeManager.FilmSelected}" Source="{Binding PathFile, Converter={StaticResource string2UriConverter}}"/>
             </Viewbox>
             <!--Affiche du Film-->
 
