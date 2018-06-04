@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Metier
 {
     /// <summary>
-    /// La classe Film est réprésenté par un titre, une date de sortie, une liste d'étiquettes, un synopsis et une liste de personnes
+    /// La classe Film est réprésenté par un titre, une date de sortie, une liste d'étiquettes, une chemin d'accés à l'image du film, un synopsis et une liste de personnes
     /// </summary>
     public class Film : IEquatable<Film>
     {
@@ -43,6 +43,11 @@ namespace Metier
         {
             get; set;
         }
+
+        /// <summary>
+        /// Chemin d'accés à l'image
+        /// </summary>
+        public string PathFile => $"{Titre.ToLower().Replace(" ", string.Empty)}.jpg";
 
         /// <summary>
         /// Association des différentes personnes présentes pour la réalisation du film

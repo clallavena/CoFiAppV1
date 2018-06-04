@@ -75,6 +75,8 @@ namespace TestClasses
                 Console.WriteLine(fi.Titre);
             }
 
+            Console.WriteLine(f2.PathFile);
+
             //foreach (Film fi in fl)
             //{
             //    Console.WriteLine(fi.Titre);

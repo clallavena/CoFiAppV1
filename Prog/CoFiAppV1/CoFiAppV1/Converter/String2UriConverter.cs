@@ -4,18 +4,19 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace CoFiAppV1
+namespace CoFiAppV1.Converter
 {
-    public class Func2UserControlConverter : IValueConverter
+    class String2UriConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            Func<UserControl> creator = value as Func<UserControl>;
-            if (creator == null) return null;
-            return creator;
+            string imageName = value as string;
+            if (string.IsNullOrWhiteSpace(imageName)) throw new ArgumentException("le nom de l'image doit être différent de null, vide ou blanc, et doit être un string.");
+
+            Uri uri = new Uri($"/img/{imageName}", UriKind.RelativeOrAbsolute);
+            return uri;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

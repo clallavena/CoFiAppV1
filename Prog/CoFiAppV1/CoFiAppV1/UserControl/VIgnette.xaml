@@ -23,7 +23,7 @@
             <TextBlock Grid.Column="0" Text="{Binding PTitre, ElementName=root}" FontWeight="Bold" FontSize="22" VerticalAlignment="Center" TextWrapping="Wrap"/>
             <Viewbox Grid.Column="1" Stretch="Uniform"  >
                 <!--Changer l'image-->
-                <Image Source="../img/Shining.jpg" Height="100" Width="100" HorizontalAlignment="Right"/>
+                <Image Source="{Binding PImage, ElementName=root}" Height="100" Width="100" HorizontalAlignment="Right"/>
             </Viewbox>
             <!--Fin d'une séléction-->
     </Grid>

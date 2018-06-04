@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converter\String2UriConverter.cs" />
     <Compile Include="Frames\AccueilUC.xaml.cs">
       <DependentUpon>AccueilUC.xaml</DependentUpon>
     </Compile>
@@ -78,8 +79,8 @@
     <Compile Include="Frames\ModifRealUC.xaml.cs">
       <DependentUpon>ModifRealUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Func2UserControlConverter.cs" />
-    <Compile Include="IsCheckedToVisibilityConverter.cs" />
+    <Compile Include="Converter\Func2UserControlConverter.cs" />
+    <Compile Include="Converter\IsCheckedToVisibilityConverter.cs" />
     <Compile Include="LogAdmin.xaml.cs">
       <DependentUpon>LogAdmin.xaml</DependentUpon>
     </Compile>
@@ -198,6 +199,12 @@
       <Project>{dcab952b-2374-41ea-82db-cf94d66a2760}</Project>
       <Name>Metier</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\forrestgump.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\interstellar.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
