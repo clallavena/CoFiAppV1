@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,7 @@ namespace Metier
         /// Liste des étiquettes
         /// Cette liste comprend les différents types d'un film peur avoir (par exemple : action et aventure)
         /// </summary>
-        public List<Tag> ListTags
+        public ObservableCollection<Tag> ListTags
         {
             get; set;
         }
@@ -67,7 +68,7 @@ namespace Metier
         /// <param name="listTags"></param>
         public Film(string titre, int dateDeSortie, string synopsis, Dictionary<Job, List<Personne>> personnes, params Tag[] listTags)
         {
-            ListTags = new List<Tag>();
+            ListTags = new ObservableCollection<Tag>();
             Personnes = new Dictionary<Job, List<Personne>>();
             Titre = titre;
             DateDeSortie = dateDeSortie;

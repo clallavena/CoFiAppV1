@@ -1,6 +1,7 @@
 ﻿using Metier;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,17 @@ namespace CoFiAppV1.Frames
     public partial class ModifFilmUC : UserControl
     {
         public NavigationManager NavManager => (Application.Current as App).NavManager;
+
+        private IEnumerable<String> listAllTag = Enum.GetValues(typeof(Metier.Tag)).Cast<Tag>().Select(s => s.ToString()).ToList();
+
+        public IEnumerable<String> ListAllTag
+        {
+            get
+            {
+                return listAllTag;
+            }
+            set {}
+        }
 
         public Manager LeManager
         {
@@ -62,6 +74,42 @@ namespace CoFiAppV1.Frames
         private void Accueil_Click(object sender, RoutedEventArgs e)
         {
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
+        }
+
+        private void DeleteTag_Click(object sender, RoutedEventArgs e)
+        {
+            if (listTags.SelectedItem == null) return;
+
+            string tagToDelete = listTags.SelectedItem.ToString();
+
+            foreach (Tag t in LeManager.FilmSelected.ListTags)
+            {
+                if (t.ToString() == tagToDelete)
+                {
+                    LeManager.FilmSelected.ListTags.Remove(t);
+                    MessageBox.Show("Vous avez supprimé le tag " + tagToDelete + " avec succès", "Suppresion de tag", MessageBoxButton.OK);
+                    return;
+                }
+            }
+        }
+
+        private void AddTag_Click(object sender, RoutedEventArgs e)
+        {
+            if (listAllTags.SelectedItem == null) return;
+            
+            Tag tagToAdd = (Tag)Enum.Parse(typeof(Tag), listAllTags.SelectedItem.ToString());
+            if (LeManager.FilmSelected.ListTags.Contains(tagToAdd)) return;
+
+            LeManager.FilmSelected.ListTags.Add(tagToAdd);
+            MessageBox.Show("Vous avez ajouté le tag " + tagToAdd + " avec succès", "Ajout de tag", MessageBoxButton.OK);
+        }
+
+        private void DeleteActor_Click(object sender, RoutedEventArgs e)
+        {
+           /* if (listActors.SelectedItem == null) return;
+
+            string actorToDelete = listActors.ToString();
+            Debug.Write(actorToDelete);*/
         }
     }
 }

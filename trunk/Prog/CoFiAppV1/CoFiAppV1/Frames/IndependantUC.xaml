@@ -56,12 +56,12 @@
 
         <!-- Liste -->
         <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto">
-            <ListBox VerticalAlignment="Top" Background="{StaticResource defaultColor}" ItemsSource="{Binding ListInde}">
+            <ListBox VerticalAlignment="Top" Background="{StaticResource defaultColor}" ItemsSource="{Binding ListInde}" SelectedItem="{Binding LeManager.FilmSelected}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <UserControl>
                             <local:Vignette PTitre="{Binding Titre}"
-                                            PImage="{Binding PathFile, Converter={StaticResource string2UriConverter}}"/>
+                                            PImage="{Binding PathFile, Converter={StaticResource string2UriConverter}}" MouseDoubleClick="Vignette_MouseDoubleClick"/>
                         </UserControl>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
