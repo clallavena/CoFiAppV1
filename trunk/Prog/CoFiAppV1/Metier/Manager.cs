@@ -171,6 +171,7 @@ namespace Metier
 
             smtpServer.Send(mail);
         }
+
         /// <summary>
         /// Méthode permettant de signaler une personne qui est un réalisateur si le contenu de celui n'est pas approprié
         /// </summary>
