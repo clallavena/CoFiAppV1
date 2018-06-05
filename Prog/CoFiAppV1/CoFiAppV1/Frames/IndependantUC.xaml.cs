@@ -58,5 +58,10 @@ namespace CoFiAppV1.Frames
         {
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
         }
+
+        private void Vignette_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            NavManager.SelectedPart = NavManager.Parts["FilmDesc"]();
+        }
     }
 }

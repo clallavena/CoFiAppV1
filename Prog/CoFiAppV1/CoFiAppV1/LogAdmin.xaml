@@ -51,7 +51,7 @@
                 <Button Content="Se connecter" Style="{StaticResource styleButtons}" Click="Connection_Click"/>
                 <Button Content="Quitter" Style="{StaticResource styleButtons}" Click="Quit_Click"/>
             </StackPanel>
-            <Button Content="Se Deconnecter" Style="{StaticResource styleButtons}" Margin="5" Click="Deconnection_Click"/>
+            <Button Content="Se déconnecter" Style="{StaticResource styleButtons}" Margin="5" Click="Deconnection_Click"/>
         </StackPanel>
     </Grid>
 </Window>

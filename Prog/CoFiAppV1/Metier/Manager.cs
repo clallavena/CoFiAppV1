@@ -211,7 +211,7 @@ namespace Metier
         /// <param name="recherche"></param>
         public IEnumerable<Film> RechercherFilm(string recherche, ObservableCollection<Film> Films)
         {
-            if(string.IsNullOrWhiteSpace(recherche) || recherche == "Rechercher")
+            if (string.IsNullOrWhiteSpace(recherche) || recherche == "Rechercher")
             {
                 FilmsParNom = Films;
                 return FilmsParNom;
@@ -223,7 +223,11 @@ namespace Metier
 
         public IEnumerable<Film> FilmsParNom
         {
-            get => filmsParNom;
+            get
+            {
+                return filmsParNom;
+            }
+
             set
             {
                 filmsParNom = value;

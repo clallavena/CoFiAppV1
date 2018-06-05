@@ -4,13 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CoFiAppV1"
-             xmlns:local1="clr-namespace:CoFiAppV1.Converter"
+             xmlns:conv="clr-namespace:CoFiAppV1.Converter"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="800"
+             d:DesignHeight="800" d:DesignWidth="1200"
              Background="{StaticResource defaultBackground}"
              FontSize="{StaticResource defaultFontSize}">
     <UserControl.Resources>
-        <local1:IsCheckedToVisibilityConverter x:Key="ToggleButtonConverter"/>
+        <conv:IsCheckedToVisibilityConverter x:Key="ToggleButtonConverter"/>
     </UserControl.Resources>
     
     <Grid>
@@ -36,8 +36,8 @@
                     <RowDefinition Height="10*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="40*"/>
-                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="70*"/>
                     <ColumnDefinition Width="10*"/>
                 </Grid.ColumnDefinitions>
 
@@ -58,7 +58,7 @@
                 <ComboBox Grid.Row="1" Grid.Column="1" SelectedIndex="-1" HorizontalContentAlignment="Left" Margin="0,20" ItemsSource="{Binding Lpr}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal" Width="auto">
                                 <TextBlock Text="{Binding Nom}" />
                                 <TextBlock Text=" " />
                                 <TextBlock Text="{Binding Prenom}" />
@@ -73,17 +73,21 @@
                 <TextBox Grid.Row="3" Grid.Column="1" Visibility="{Binding IsChecked, ElementName=toggleButton, Converter={StaticResource ToggleButtonConverter}}" Style="{StaticResource stylePourTextBox}" Margin="0,20" DataContext="{Binding LeManager.FilmSelected}" Text="{Binding DateDeSortie}"/>
 
                 <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,20">
-                    <ComboBox SelectedIndex="0" DataContext="{Binding LeManager.FilmSelected}" ItemsSource="{Binding ListTags}">
+                    <ComboBox Name="listTags" Width="auto" SelectedIndex="0" DataContext="{Binding LeManager.FilmSelected}" ItemsSource="{Binding ListTags}">
                     </ComboBox>
-                    <Button Style="{StaticResource styleButtons}" Content="Ajouter" Width="80" Margin="20,0" />
-                    <Button Style="{StaticResource styleButtons}" Content="Supprimer" Width="80" />
+                    <Button Style="{StaticResource styleButtons}" Content="Supprimer" Margin="20,0" Width="80" Click="DeleteTag_Click"/>
+                    <ComboBox Name="listAllTags" Grid.Column="1" Grid.Row="4" Width="auto" ItemsSource="{Binding ListAllTag}" >
+                    </ComboBox>
+                    <Button Style="{StaticResource styleButtons}" Content="Ajouter" Margin="20,0" Width="80" Click="AddTag_Click"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,20">
-                    <ComboBox SelectedIndex="0" HorizontalContentAlignment="Center" ItemsSource="{Binding Lpa}">
+                    <ComboBox Name="listActors" SelectedIndex="0" HorizontalContentAlignment="Center" ItemsSource="{Binding Lpa}">
                     </ComboBox>
+                    <Button Style="{StaticResource styleButtons}" Content="Supprimer" Width="80" Click="DeleteActor_Click"/>
+                    <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource stylePourTextBlock}" Text="{Binding DateDeSortie}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Visibility="{Binding IsChecked, ElementName=toggleButton, Converter={StaticResource ToggleButtonConverter}}" Style="{StaticResource stylePourTextBox}" Text="{Binding DateDeSortie}"/>
                     <Button Style="{StaticResource styleButtons}" Content="Ajouter" Width="80" Margin="20,0" />
-                    <Button Style="{StaticResource styleButtons}" Content="Supprimer" Width="80" />
                 </StackPanel>
 
                 <TextBlock Grid.Row="6" Grid.Column="1" Style="{StaticResource stylePourTextBlock}" Margin="0,20" DataContext="{Binding LeManager.FilmSelected}" Text="{Binding Synopsis}"/>
