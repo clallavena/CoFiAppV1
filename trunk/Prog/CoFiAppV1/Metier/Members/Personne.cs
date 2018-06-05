@@ -60,6 +60,16 @@ namespace Metier
             get; private set;
         }
 
+        public Personne(Personne p)
+        {
+            Nom = p.Nom;
+            Prenom = p.Prenom;
+            DateDeNaissance = p.DateDeNaissance;
+            DateDeMort = p.DateDeMort;
+            Nationalite = p.Nationalite;
+            Biographie = p.Biographie;
+        }
+
         /// <summary>
         /// Constructeur avec un nom et un prénom
         /// </summary>
