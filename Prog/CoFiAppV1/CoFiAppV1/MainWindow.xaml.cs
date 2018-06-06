@@ -53,7 +53,7 @@ namespace CoFiAppV1
 
         private void ListBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            ListBox.SelectedIndex =-1;
+            //ListBox.SelectedIndex =-1;
         }
     }
 }

@@ -16,6 +16,16 @@ namespace Metier
 
         private Admin currentUser;
 
+
+        /// <summary>
+        /// Liste des étiquettes
+        /// Cette liste comprend les différents types d'un film peur avoir (par exemple : action et aventure)
+        /// </summary>
+        public ObservableCollection<Tag> ListTags
+        {
+            get; set;
+        }
+
         /// <summary>
         /// Utilisateur avec les droits administrateurs
         /// </summary>

@@ -37,9 +37,9 @@
                 <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0, 25">
                     <Label  Content="Choisissez parmis la liste de réalisateur connus: " />
                     <Label  Content="Titre: " HorizontalAlignment="Right"  Margin="0, 15"/>
-                    <Label  Content="Tags (séparé par des ','): " HorizontalAlignment="Right"  Margin="0, 15"/>
+                    <Label  Content="Tags (max 3, min 1): " HorizontalAlignment="Right"  Margin="0, 15"/>
                     <Label  Content="Date de Sortie: " HorizontalAlignment="Right"  Margin="0, 15"/>
-                    <Label  Content="Acteurs: " HorizontalAlignment="Right"  Margin="0, 15"/>
+                    <Label  Content="Acteurs (Nom, Prenom): " HorizontalAlignment="Right"  Margin="0, 15"/>
                     <Label  Content="Synopsis: " HorizontalAlignment="Right"  Margin="0, 15"/>
                     <Label  Content="Affiche du film: " HorizontalAlignment="Right"  Margin="0, 15"/>
                 </StackPanel>
@@ -61,15 +61,26 @@
                         </ComboBox.ItemTemplate>
                     </ComboBox>
                     <TextBox Style="{StaticResource stylePourTextBox}" Margin="0, 15" Name="TitreBox"/>
-                    <TextBox Style="{StaticResource stylePourTextBox}" Margin="0, 15" Name="TagsBox"/>
+                    
+                    <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,20">
+                        <ComboBox Name="listTags1" Width="auto" SelectedIndex="0" ItemsSource="{Binding ListAllTag}">
+                        </ComboBox>
+                        <ComboBox Name="listTags2" Grid.Column="1" Grid.Row="4" Width="auto" ItemsSource="{Binding ListAllTag}" Margin="20,0">
+                        </ComboBox>
+                        <ComboBox Name="listTags3" Grid.Column="1" Grid.Row="4" Width="auto" ItemsSource="{Binding ListAllTag}" >
+                        </ComboBox>
+                    </StackPanel>
+                    
                     <TextBox Style="{StaticResource stylePourTextBox}" Margin="0, 10" Name="DateDeSortieBox"/>
                     <WrapPanel HorizontalAlignment="Left">
-                        <ComboBox SelectedIndex="0" HorizontalContentAlignment="Center" Margin="0, 20" Name="ComboActeurs">
-                            <TextBlock Text="Acteur1" />
-                            <TextBlock Text="Acteur2" />
-                            <TextBlock Text="Acteur3" />
-                        </ComboBox>
-                        <Button Content="Ajouter Acteur" Margin="25,0" Height="40" />
+                        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,20">
+                            <ComboBox Name="listActors" SelectedIndex="0" HorizontalContentAlignment="Center" ItemsSource="{Binding LiA}">
+                            </ComboBox>
+                            <Button Style="{StaticResource styleButtons}" Content="Supprimer" Width="80" Click="DeleteActor_Click"/>
+                            <TextBox Name="Nom_TextBox" Grid.Row="3" Grid.Column="1" Style="{StaticResource stylePourTextBox}" Text="{Binding DateDeSortie}" TextWrapping="Wrap" Width="50" Margin="5,0,5,0"/>
+                            <TextBox Name="Prenom_TextBox" Grid.Row="3" Grid.Column="1" Style="{StaticResource stylePourTextBox}" Text="{Binding DateDeSortie}" TextWrapping="Wrap" Width="50"/>
+                            <Button Style="{StaticResource styleButtons}" Content="Ajouter" Width="80" Margin="20,0" Click="AjouterActeur_Click" />
+                        </StackPanel>
                     </WrapPanel>
                     <TextBox Style="{StaticResource stylePourTextBox}" Margin="0, 10" Name="SynopsisBox"/>
                     <Button Content="+ Ajouter Image"  Margin="0,25" Name="AfficheButton"/>
