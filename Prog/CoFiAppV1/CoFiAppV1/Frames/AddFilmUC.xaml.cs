@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -200,6 +201,21 @@ namespace CoFiAppV1.Frames
             Nom_TextBox.Clear();
             Prenom_TextBox.Clear();
             MessageBox.Show("Vous avez ajouté l'acteur " + pAdd.Nom + " " + pAdd.Prenom + " avec succès", "Ajout d'acteur", MessageBoxButton.OK);
+        }
+
+        private void OpenFileBrowser_Click(object sender, RoutedEventArgs e)
+        {
+            //A voir comment faire en sorte que ça nous soit utile
+            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            dlg.InitialDirectory = "C:\\Users\\Public\\Desktop";
+            dlg.DefaultExt = ".jpg | .png | .gif";
+            dlg.Filter = "All images files (.jpg, .png, .gif)|*.jpg;*.png;*.gif|JPG files (.jpg)|*.jpg|PNG files (.png)|*.png|GIF files (.gif)|*.gif";
+            
+            bool? result = dlg.ShowDialog();
+            
+            if (result == true)
+            {
+            }
         }
     }
 }

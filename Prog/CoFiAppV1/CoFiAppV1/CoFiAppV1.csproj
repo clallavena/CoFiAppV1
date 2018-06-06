@@ -189,9 +189,6 @@
     <Resource Include="img\Kubrick.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\ClockworkOrange.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="img\logo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +205,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\noavatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\ttt.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
