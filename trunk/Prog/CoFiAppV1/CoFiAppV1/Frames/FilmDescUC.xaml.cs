@@ -125,7 +125,6 @@ namespace CoFiAppV1.Frames
 
         private void Modifier_Click(object sender, RoutedEventArgs e)
         {
-            NavManager.SelectedPart = NavManager.Parts["ModifFilm"]();
             if (LeManager.CurrentUser != null)
             {
                 MessageBoxResult result = MessageBox.Show("Voulez vous modifier ce film ?", "Modifer", MessageBoxButton.YesNo, MessageBoxImage.Question);
