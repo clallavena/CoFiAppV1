@@ -206,5 +206,8 @@
   <ItemGroup>
     <Resource Include="img\interstellar.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\noavatar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,7 +10,7 @@
       d:DesignHeight="720" d:DesignWidth="1280"
       Background="{StaticResource defaultBackground}"
       FontSize="{StaticResource defaultFontSize}">
-    
+
     <UserControl.Resources>
         <conv:Func2UserControlConverter x:Key="UCconverter" />
         <conv:String2UriConverter x:Key="string2UriConverter"/>
@@ -71,7 +71,6 @@
 
                 <StackPanel HorizontalAlignment="Left" Margin="5" Orientation="Horizontal">
                     <TextBlock FontWeight="DemiBold" Text="Tags: "/>
-                    <!--<TextBlock TextDecorations="Underline" Foreground="Blue" DataContext="{Binding FilmSelected}" Text="{Binding ListTags}"/>-->
                     <ListView Background="{StaticResource defaultBackground}" DataContext="{Binding LeManager.FilmSelected}" ItemsSource="{Binding ListTags}">
                         <ListView.ItemsPanel>
                             <ItemsPanelTemplate>
@@ -97,7 +96,29 @@
                 <!--Synopsis-->
 
                 <!--Acteurs-->
-                <WrapPanel Margin="0, 10, 0, 0">
+                <ListView Background="{StaticResource defaultBackground}" ItemsSource="{Binding Lpa}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <Viewbox Style="{StaticResource stylePourLesViewboxs}">
+                                    <Image Source="../img/noavatar.png"/>
+                                </Viewbox>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Nom}" />
+                                    <TextBlock Text=" " />
+                                    <TextBlock Text="{Binding Prenom}" />
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"></StackPanel>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                </ListView>
+
+                <!--<WrapPanel Margin="0, 10">
                     <StackPanel>
                         <Viewbox Style="{StaticResource stylePourLesViewboxs}">
                             <Image Source="../img/JackN.jpg"/>
@@ -110,7 +131,8 @@
                         </Viewbox>
                         <Label HorizontalAlignment="Center" Content="Shelley Duvall" />
                     </StackPanel>
-                </WrapPanel>
+                </WrapPanel>-->
+
                 <!--Acteurs-->
 
                 <!--Bouton Signaler-->
