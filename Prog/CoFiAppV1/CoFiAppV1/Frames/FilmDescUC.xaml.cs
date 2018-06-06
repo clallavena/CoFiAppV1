@@ -40,12 +40,21 @@ namespace CoFiAppV1.Frames
             set { }
         }
 
+        private List<Personne> lpa = new List<Personne>();
+
+        public IEnumerable<Personne> Lpa
+        {
+            get { return lpa; }
+            set { }
+        }
+
         public FilmDescUC()
         {
             InitializeComponent();
             DataContext = this;
 
             lp = LeManager.FilmSelected.Personnes.Where(p => p.Key == Job.Realisateur).SelectMany(s => s.Value).ToList();
+            lpa = LeManager.FilmSelected.Personnes.Where(p => p.Key == Job.Acteur).SelectMany(s => s.Value).ToList();
         }
 
         public string Titre
