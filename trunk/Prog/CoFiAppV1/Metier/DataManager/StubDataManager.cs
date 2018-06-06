@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,12 +71,13 @@ namespace Metier.DataManager
         /// Chargement d'une liste de réalisateur de base, retourne une liste de Réalisateur. //!! Solution provisoire !!\\
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Personne> ChargementReal()
+        public ObservableCollection<Personne> ChargementReal()
         {
-            List<Personne> reals = new List<Personne>();
+            ObservableCollection<Personne> reals = new ObservableCollection<Personne>();
 
             reals.Add(new Personne("Nolan", "Christophe", new DateTime(1970, 07, 30), "Anglais", "XOXOXO"));
             reals.Add(new Personne("Zemeckis", "Robert", new DateTime(1952, 05, 14), "Americain", "Fabuleux Réal"));
+            reals.Add(new Personne("Lucas", "Georges", new DateTime(1852, 05, 14), "Americain", "Fabuleux Réal"));
 
             return reals;
         }

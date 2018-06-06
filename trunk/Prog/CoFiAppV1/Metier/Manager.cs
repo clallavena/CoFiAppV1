@@ -65,12 +65,12 @@ namespace Metier
         /// <summary>
         /// Liste des réalisateur connue
         /// </summary>
-        private List<Personne> reals = new List<Personne>();
+        private ObservableCollection<Personne> reals = new ObservableCollection<Personne>();
 
         /// <summary>
         /// Collection de Réalisateur connu de type Personne
         /// </summary>
-        public IEnumerable<Personne> ListReal
+        public ObservableCollection<Personne> ListReal
         {
             get
             {
@@ -121,7 +121,12 @@ namespace Metier
                 films.Add(f);
             }
             FilmsParNom = Films;
-            reals.AddRange(Dm.ChargementReal());
+
+            foreach (Personne p in Dm.ChargementReal())
+            {
+                reals.Add(p);
+            }
+
             admins.AddRange(Dm.ChargementAdmin());
         }
 

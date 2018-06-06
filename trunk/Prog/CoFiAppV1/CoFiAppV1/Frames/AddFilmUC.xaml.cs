@@ -25,9 +25,11 @@ namespace CoFiAppV1.Frames
     {
         public NavigationManager NavManager => (Application.Current as App).NavManager;
 
-        private ObservableCollection<Personne> listeActeur = new ObservableCollection<Personne>();
 
         Dictionary<Job, List<Personne>> personnesAdd = new Dictionary<Job, List<Personne>>();
+
+
+        private ObservableCollection<Personne> listeActeur = new ObservableCollection<Personne>();
 
         public ObservableCollection<Personne> LiA
         {
@@ -36,7 +38,7 @@ namespace CoFiAppV1.Frames
                 return listeActeur;
             }
             set { }
-        } 
+        }
 
         private IEnumerable<String> listAllTag = Enum.GetValues(typeof(Metier.Tag)).Cast<Tag>().Select(s => s.ToString()).ToList();
 
@@ -55,7 +57,7 @@ namespace CoFiAppV1.Frames
             {
                 return (Application.Current as App).LeManager;
             }
-        }    
+        }
 
         public AddFilmUC()
         {
@@ -74,91 +76,118 @@ namespace CoFiAppV1.Frames
             int Sortie;
             string Synopsis;
             Personne buff;
-            List<Personne> li = new List<Personne>();
+            List<Personne> lir = new List<Personne>();
             Tag tag1 = new Tag();
             Tag tag2 = new Tag();
             Tag tag3 = new Tag();
-            List<Tag> listTagFilm = new List<Tag>();
 
-            if (!string.IsNullOrEmpty(TitreBox.Text))
+            if (String.IsNullOrWhiteSpace(TitreBox.Text))
             {
-                Titre = TitreBox.Text;
+                MessageBox.Show("Le titre n'a pas été renseigné", "Erreur Ajout", MessageBoxButton.OK);
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(DateDeSortieBox.Text))
+            {
+                MessageBox.Show("La date de sortie n'a pas été renseigné", "Erreur Ajout", MessageBoxButton.OK);
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(SynopsisBox.Text))
+            {
+                MessageBox.Show("Le synopsis n'a pas été renseigné", "Erreur Ajout", MessageBoxButton.OK);
+                return;
+            }
 
-                try
+            try
+            {
+                Sortie = Int32.Parse(DateDeSortieBox.Text);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show(ex.Message, "Erreur Format Date de Sortie", MessageBoxButton.OK);
+                return;
+            }
+
+            Titre = TitreBox.Text;
+            Synopsis = SynopsisBox.Text;
+
+            foreach (Personne p in LeManager.ListReal)
+            {
+                if (ComboReal.Text.Contains(p.Nom))
                 {
-                   Sortie = Int32.Parse(DateDeSortieBox.Text);
+                    buff = new Personne(p);
+                    lir.Add(buff);
+                    personnesAdd.Add(Job.Realisateur, lir);
+                    break;
                 }
-                catch (FormatException ex)
-                {
-                    MessageBox.Show(ex.Message, "Erreur Format Date de Sortie", MessageBoxButton.OK);
-                    return;
-                }
-
-                Synopsis = SynopsisBox.Text;
-
-                foreach (Personne p in LeManager.ListReal)
-                {
-                    if (ComboReal.Text.Contains(p.Nom))
-                    {
-                        buff = new Personne(p);
-                        li.Add(buff);
-                        personnesAdd.Add(Job.Realisateur, li);
-                        break;
-                    }
-
-                }
+            }
 
 
-                tag1 = (Tag)Enum.Parse(typeof(Tag), listTags1.SelectedItem.ToString());
+            tag1 = (Tag)Enum.Parse(typeof(Tag), listTags1.SelectedItem.ToString());
 
-                if (listTags2.SelectedItem != null)
-                {
-                    tag2 = (Tag)Enum.Parse(typeof(Tag), listTags2.SelectedItem.ToString());
-                }
-                else
-                {
-                    Film f2 = new Film(Titre, Sortie, Synopsis, personnesAdd, tag1);
-                    LeManager.AjouterFilm(f2);
-                    return;
-                }
-
-                if (listTags3.SelectedItem != null)
-                {
-                    tag3 = (Tag)Enum.Parse(typeof(Tag), listTags3.SelectedItem.ToString());
-                }
-                else
-                {
-                    Film f3 = new Film(Titre, Sortie, Synopsis, personnesAdd, tag1, tag2);
-                    LeManager.AjouterFilm(f3);
-                    return;
-                }
-
-
-                personnesAdd.Add(Job.Acteur, LiA.ToList());
-                Film f = new Film(Titre, Sortie, Synopsis, personnesAdd, tag1, tag2, tag3);
-                LeManager.AjouterFilm(f);
+            if (listTags2.SelectedItem != null)
+            {
+                tag2 = (Tag)Enum.Parse(typeof(Tag), listTags2.SelectedItem.ToString());
             }
             else
             {
-                MessageBox.Show("Le titre n'a pas été renseigné", "Erreur Ajout", MessageBoxButton.OK);
+                personnesAdd.Add(Job.Acteur, listeActeur.ToList());
+                Film f2 = new Film(Titre, Sortie, Synopsis, personnesAdd, tag1);
+                LeManager.AjouterFilm(f2);
+                return;
             }
+
+            if (listTags3.SelectedItem != null)
+            {
+                tag3 = (Tag)Enum.Parse(typeof(Tag), listTags3.SelectedItem.ToString());
+            }
+            else
+            {
+                personnesAdd.Add(Job.Acteur, listeActeur.ToList());
+                Film f3 = new Film(Titre, Sortie, Synopsis, personnesAdd, tag1, tag2);
+                LeManager.AjouterFilm(f3);
+                return;
+            }
+
+
+            personnesAdd.Add(Job.Acteur, listeActeur.ToList());
+            Film f = new Film(Titre, Sortie, Synopsis, personnesAdd, tag1, tag2, tag3);
+            LeManager.AjouterFilm(f);
+
+
         }
 
         private void DeleteActor_Click(object sender, RoutedEventArgs e)
         {
+            if (listActors.SelectedIndex == -1)
+            {
+                MessageBox.Show("L'acteur sélectionné n'est pas valide", "Erreur suppression", MessageBoxButton.OK);
+                return;
+            }
+            string actorToDelete = listActors.SelectedItem.ToString();
+
+            foreach (Personne p in listeActeur)
+            {
+                if (listActors.Text.Contains(p.Nom) && listActors.Text.Contains(p.Prenom))
+                {
+                    Personne buff = new Personne(p);
+                    listeActeur.Remove(buff);
+                    MessageBox.Show("Vous avez supprimé l'acteur " + buff.Nom + " " + buff.Prenom + " avec succès", "Suppression d'acteur", MessageBoxButton.OK);
+                    return;
+                }
+            }
         }
 
         private void AjouterActeur_Click(object sender, RoutedEventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(Nom_TextBox.Text) || string.IsNullOrWhiteSpace(Prenom_TextBox.Text))
+            if (string.IsNullOrWhiteSpace(Nom_TextBox.Text) || string.IsNullOrWhiteSpace(Prenom_TextBox.Text))
             {
-                MessageBox.Show("Nom + Prenom mal ou non renseigné", "Ajout Impossible", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                MessageBox.Show("Nom + Prenom mal ou non renseigné", "Ajout Impossible", MessageBoxButton.OK);
                 return;
             }
 
             Personne pAdd = new Personne(Nom_TextBox.Text, Prenom_TextBox.Text);
 
-            foreach(Personne p in LiA)
+            foreach (Personne p in listeActeur)
             {
                 if (p.Equals(pAdd))
                 {
@@ -167,7 +196,10 @@ namespace CoFiAppV1.Frames
                 }
             }
 
-            LiA.Add(pAdd);
+            listeActeur.Add(pAdd);
+            Nom_TextBox.Clear();
+            Prenom_TextBox.Clear();
+            MessageBox.Show("Vous avez ajouté l'acteur " + pAdd.Nom + " " + pAdd.Prenom + " avec succès", "Ajout d'acteur", MessageBoxButton.OK);
         }
     }
 }
