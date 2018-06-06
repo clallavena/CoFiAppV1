@@ -74,15 +74,20 @@ namespace CoFiAppV1.Frames
 
         private void Signalement(object sender, RoutedEventArgs e)
         {
-            try
+            MessageBoxResult result = MessageBox.Show("Voulez vous signaler ce film ?", "Snignalement", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result.ToString().Equals("Yes"))
             {
-                LeManager.Signaler(LeManager.FilmSelected);
-                MessageBox.Show("le signalement a été effectué avec succès !");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("le signalement n'a pas pu être envoyé, veuillez contacter un administrateur ! \n" + ex.ToString());
-            }
+                try
+                {
+                    LeManager.Signaler(LeManager.FilmSelected);
+                    MessageBox.Show("le signalement a été effectué avec succès !");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("le signalement n'a pas pu être envoyé, veuillez contacter un administrateur ! \n" + ex.ToString());
+                }
+            }           
         }
 
         private void Ajouter_Click(object sender, RoutedEventArgs e)
@@ -121,7 +126,7 @@ namespace CoFiAppV1.Frames
         private void Modifier_Click(object sender, RoutedEventArgs e)
         {
             NavManager.SelectedPart = NavManager.Parts["ModifFilm"]();
-            /*if (LeManager.CurrentUser != null)
+            if (LeManager.CurrentUser != null)
             {
                 MessageBoxResult result = MessageBox.Show("Voulez vous modifier ce film ?", "Modifer", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
@@ -133,7 +138,7 @@ namespace CoFiAppV1.Frames
             else
             {
                 MessageBox.Show("Il faut être administrateur!", "Permission non accordée", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }*/
+            }
         }
     }
 }

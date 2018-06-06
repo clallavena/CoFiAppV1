@@ -1,6 +1,7 @@
 ﻿using Metier;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -32,7 +33,7 @@ namespace CoFiAppV1.Frames
             {
                 return listAllTag;
             }
-            set {}
+            set { }
         }
 
         public Manager LeManager
@@ -42,33 +43,42 @@ namespace CoFiAppV1.Frames
                 return (Application.Current as App).LeManager;
             }
         }
+        
+        private ObservableCollection<Personne> lpa = new ObservableCollection<Personne>();
 
-        private List<Personne> lpr = new List<Personne>();
-
-        public IEnumerable<Personne> Lpr
-        {
-            get { return lpr; }
-            set { }
-        }
-
-        private List<Personne> lpa = new List<Personne>();
-
-        public IEnumerable<Personne> Lpa
+        public ObservableCollection<Personne> Lpa
         {
             get { return lpa; }
             set { }
         }
 
+        private ObservableCollection<Personne> lpr = new ObservableCollection<Personne>();
+
+        public ObservableCollection<Personne> Lpr
+        {
+            get { return lpr; }
+            set { }
+        }
+
+        private List<Personne> lpaList = new List<Personne>();
+
+        private List<Personne> lprList = new List<Personne>();
+        
         public ModifFilmUC()
         {
             InitializeComponent();
             DataContext = this;
-            foreach (Film f in LeManager.Films)
+
+            lprList = LeManager.FilmSelected.Personnes.Where(p => p.Key == Job.Realisateur).SelectMany(s => s.Value).ToList();
+            foreach (Personne p in lprList)
             {
-                lpr.AddRange(f.Personnes.Where(p => p.Key == Job.Realisateur).SelectMany(s => s.Value).ToList());
+                lpr.Add(p);
             }
-            //lpr = LeManager.FilmSelected.Personnes.Where(p => p.Key == Job.Realisateur).SelectMany(s => s.Value).ToList();
-            lpa = LeManager.FilmSelected.Personnes.Where(p => p.Key == Job.Acteur).SelectMany(s => s.Value).ToList();
+            lpaList = LeManager.FilmSelected.Personnes.Where(p => p.Key == Job.Acteur).SelectMany(s => s.Value).ToList();
+            foreach (Personne p in lpaList)
+            {
+                lpa.Add(p);
+            }
         }
 
         private void Accueil_Click(object sender, RoutedEventArgs e)
@@ -78,8 +88,11 @@ namespace CoFiAppV1.Frames
 
         private void DeleteTag_Click(object sender, RoutedEventArgs e)
         {
-            if (listTags.SelectedItem == null) return;
-
+            if (listTags.SelectedItem == null)
+            {
+                MessageBox.Show("Le tag sélectionné n'est pas valide", "Erreur suppression", MessageBoxButton.OK);
+                return;
+            }
             string tagToDelete = listTags.SelectedItem.ToString();
 
             foreach (Tag t in LeManager.FilmSelected.ListTags)
@@ -87,7 +100,7 @@ namespace CoFiAppV1.Frames
                 if (t.ToString() == tagToDelete)
                 {
                     LeManager.FilmSelected.ListTags.Remove(t);
-                    MessageBox.Show("Vous avez supprimé le tag " + tagToDelete + " avec succès", "Suppresion de tag", MessageBoxButton.OK);
+                    MessageBox.Show("Vous avez supprimé le tag " + tagToDelete + " avec succès", "Suppression de tag", MessageBoxButton.OK);
                     return;
                 }
             }
@@ -95,21 +108,130 @@ namespace CoFiAppV1.Frames
 
         private void AddTag_Click(object sender, RoutedEventArgs e)
         {
-            if (listAllTags.SelectedItem == null) return;
-            
+            if (listAllTags.SelectedItem == null)
+            {
+                MessageBox.Show("Le tag sélectionné n'est pas valide", "Erreur ajout", MessageBoxButton.OK);
+                return;
+            }
+
             Tag tagToAdd = (Tag)Enum.Parse(typeof(Tag), listAllTags.SelectedItem.ToString());
             if (LeManager.FilmSelected.ListTags.Contains(tagToAdd)) return;
 
             LeManager.FilmSelected.ListTags.Add(tagToAdd);
+            listAllTags.SelectedIndex = -1;
             MessageBox.Show("Vous avez ajouté le tag " + tagToAdd + " avec succès", "Ajout de tag", MessageBoxButton.OK);
         }
 
         private void DeleteActor_Click(object sender, RoutedEventArgs e)
         {
-           /* if (listActors.SelectedItem == null) return;
+            if (listActors.SelectedIndex == -1)
+            {
+                MessageBox.Show("L'acteur sélectionné n'est pas valide", "Erreur suppression", MessageBoxButton.OK);
+                return;
+            }
+            string actorToDelete = listActors.SelectedItem.ToString();
 
-            string actorToDelete = listActors.ToString();
-            Debug.Write(actorToDelete);*/
+            foreach (Personne p in lpa)
+            {
+                if (listActors.Text.Contains(p.Nom) && listActors.Text.Contains(p.Prenom))
+                {
+                    Personne buff = new Personne(p);
+                    lpa.Remove(buff);
+                    LeManager.FilmSelected.Personnes.Remove(Job.Acteur);
+                    LeManager.FilmSelected.Personnes.Add(Job.Acteur, lpa.ToList());
+                    MessageBox.Show("Vous avez supprimé l'acteur " + buff.Nom + " " + buff.Prenom + " avec succès", "Suppression d'acteur", MessageBoxButton.OK);
+                    return;
+                }
+            }
+        }
+
+        private void AddActor_Click(object sender, RoutedEventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(NomActor.Text) || String.IsNullOrWhiteSpace(PrenomActor.Text))
+            {
+                MessageBox.Show("Les champs Nom et Prénom sont vides ou mal renseignés", "Erreur ajout", MessageBoxButton.OK);
+                return;
+            }
+
+            Personne personneToAdd = new Personne(NomActor.Text, PrenomActor.Text);
+
+            foreach (Personne p in lpa)
+            {
+                if (p.Equals(personneToAdd))
+                {
+                    MessageBox.Show("Cet acteur est déjà existant", "Erreur ajout", MessageBoxButton.OK);
+                    return;
+                }
+            }
+
+            NomActor.Clear();
+            PrenomActor.Clear();
+            //c'est pas bo fo changer
+            lpa.Add(personneToAdd);
+            LeManager.FilmSelected.Personnes.Remove(Job.Acteur);
+            LeManager.FilmSelected.Personnes.Add(Job.Acteur, lpa.ToList());
+            MessageBox.Show("Vous avez ajouté l'acteur " + personneToAdd.Nom + " " + personneToAdd.Prenom + " avec succès", "Ajout d'acteur", MessageBoxButton.OK);
+
+        }
+        
+        private void DeleteDirector_Click(object sender, RoutedEventArgs e)
+        {
+            if (listDirector.SelectedIndex == -1)
+            {
+                MessageBox.Show("Le réalisateur sélectionné n'est pas valide", "Erreur suppression", MessageBoxButton.OK);
+                return;
+            }
+            string directorToDelete = listDirector.SelectedItem.ToString();
+
+            foreach (Personne p in lpr)
+            {
+                if (listDirector.Text.Contains(p.Nom) && listDirector.Text.Contains(p.Prenom))
+                {
+                    Personne buff = new Personne(p);
+                    lpr.Remove(buff);
+                    LeManager.FilmSelected.Personnes.Remove(Job.Realisateur);
+                    LeManager.FilmSelected.Personnes.Add(Job.Realisateur, lpr.ToList());
+                    MessageBox.Show("Vous avez supprimé le réalisateur " + buff.Nom + " " + buff.Prenom + " avec succès", "Suppression de réalisateur", MessageBoxButton.OK);
+                    return;
+                }
+            }
+        }
+
+        private void AddDirector_Click(object sender, RoutedEventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(listAllDirectors.Text))
+            {
+                MessageBox.Show("Le réalisateur sélectionné n'est pas valide", "Erreur ajout", MessageBoxButton.OK);
+                return;
+            }
+
+            Personne directorToAdd = new Personne("", "");
+
+            foreach (Personne p in LeManager.ListReal)
+            {
+                if (listAllDirectors.Text.Contains(p.Nom) && listAllDirectors.Text.Contains(p.Prenom))
+                {
+                    directorToAdd = new Personne(p);
+                    break;
+                }
+
+            }
+
+            foreach (Personne p in lpr)
+            {
+                if (p.Equals(directorToAdd))
+                {
+                    MessageBox.Show("Ce réalisateur est déjà existant", "Erreur ajout", MessageBoxButton.OK);
+                    return;
+                }
+            }
+
+            listAllDirectors.SelectedIndex = -1;
+            //c'est pas bo fo changer
+            lpr.Add(directorToAdd);
+            LeManager.FilmSelected.Personnes.Remove(Job.Realisateur);
+            LeManager.FilmSelected.Personnes.Add(Job.Realisateur, lpr.ToList());
+            MessageBox.Show("Vous avez ajouté le réalisateur " + directorToAdd.Nom + " " + directorToAdd.Prenom + " avec succès", "Ajout de réalisateur", MessageBoxButton.OK);
         }
     }
 }
