@@ -70,6 +70,7 @@ namespace CoFiAppV1.Frames
         private void Accueil_Click(object sender, RoutedEventArgs e)
         {
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
+            LeManager.FilmSelected = null;
         }
 
         private void Signalement(object sender, RoutedEventArgs e)

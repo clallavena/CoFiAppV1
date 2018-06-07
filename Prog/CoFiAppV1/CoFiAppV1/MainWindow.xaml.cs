@@ -45,8 +45,8 @@ namespace CoFiAppV1
 
         public MainWindow()
         {
-            InitializeComponent();
             LeManager.Chargement();
+            InitializeComponent();
             DataContext = this;
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
         }

@@ -96,8 +96,16 @@ namespace Metier
         public Film FilmSelected
         {
             get { return filmSelected; }
-            set { filmSelected = value; }
+            set { filmSelected = value; NotifyPropertyChanged(nameof(FilmSelected)); }
         }
+
+        //private int filmIndexSelected;
+
+        //public int FilmIndexSelected
+        //{
+        //    get { return filmIndexSelected; }
+        //    set { filmIndexSelected = value; }
+        //}
 
         private IRecherchePersonne rech = new RechParFilm();
 

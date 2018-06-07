@@ -13,6 +13,7 @@ namespace CoFiAppV1
     /// <summary>
     /// Logique d'interaction pour App.xaml
     /// </summary>
+    
     public partial class App : Application
     {
         public Manager LeManager { get; set; } = new Manager(new StubDataManager());
@@ -20,4 +21,6 @@ namespace CoFiAppV1
         public NavigationManager NavManager { get; set; } = new NavigationManager();
 
     }
+
+    // Penser à acheter un croissant  à Alexis MILANI ;)
 }

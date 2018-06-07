@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace CoFiAppV1.Converter
             string imageName = value as string;
             if (string.IsNullOrWhiteSpace(imageName)) throw new ArgumentException("le nom de l'image doit être différent de null, vide ou blanc, et doit être un string.");
 
-            Uri uri = new Uri($"/img/{imageName}", UriKind.RelativeOrAbsolute);
+            Uri uri = new Uri($"{imageName}", UriKind.RelativeOrAbsolute);
             return uri;
         }
 

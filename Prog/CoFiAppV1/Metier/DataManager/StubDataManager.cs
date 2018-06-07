@@ -28,6 +28,7 @@ namespace Metier.DataManager
 
             //Film1
             Dictionary<Job, List<Personne>> filmForrest = new Dictionary<Job, List<Personne>>();
+            
             List<Personne> listPA_f1 = new List<Personne>();
             List<Personne> listPR_f1 = new List<Personne>();
 
@@ -58,8 +59,12 @@ namespace Metier.DataManager
 
             //Ajout de film à la liste
             Film forrest = new Film("Forrest Gump", 1994, "Film dramatique, racontant l'histoire d'un homme à travers l'histoire de l'amérique qui a plein de problèmes partout où il va. ", filmForrest, Tag.Drame, Tag.Comedie_Dramatique, Tag.Independant);
+            forrest.PathFile = "/../../img/forrestgump.jpg";
+
             films.Add(forrest);
+
             Film interstellar = new Film("Interstellar", 2014, "Film de science-fiction, racontant l'histoire d'explorateurs partis chercher une planète plus acceuillante à travers un voyage interstellaire.", filmInterstellar, Tag.Science_Fiction, Tag.Drame);
+            interstellar.PathFile = "/../../img/interstellar.jpg";
             films.Add(interstellar);
 
 
