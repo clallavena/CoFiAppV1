@@ -15,6 +15,7 @@ namespace Metier
         /// <summary>
         /// Titre du film
         /// </summary>
+
         public string Titre
         {
             get; set;
@@ -48,7 +49,11 @@ namespace Metier
         /// <summary>
         /// Chemin d'accés à l'image
         /// </summary>
-        public string PathFile => $"{Titre.ToLower().Replace(" ", string.Empty)}.jpg";
+        public string PathFile
+        {
+            get;
+            set;
+        }
 
         /// <summary>
         /// Association des différentes personnes présentes pour la réalisation du film

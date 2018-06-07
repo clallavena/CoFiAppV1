@@ -35,13 +35,14 @@
 
         <!--Liste des films affichés dans la partie de gauche-->
         <ListBox VerticalAlignment="Top" Height="Auto" Grid.Column="0" Grid.Row="1" Background="{StaticResource defaultColor}" IsSynchronizedWithCurrentItem="True"
-                 ItemsSource="{Binding LeManager.FilmsParNom, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding LeManager.FilmSelected, Mode=TwoWay}" 
+                 ItemsSource="{Binding LeManager.FilmsParNom, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding LeManager.FilmSelected, Mode=TwoWay}"
                  SelectionChanged="ListBox_SelectionChanged" LostFocus="ListBox_LostFocus" x:Name="ListBox">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <UserControl>
                         <local:Vignette PTitre="{Binding Titre}"
-                                        PImage="{Binding PathFile, Converter={StaticResource string2UriConverter}}"/>
+                                        PImage="{Binding PathFile}"/>
+                        <!-- , Converter={StaticResource string2UriConverter}-->
                     </UserControl>
                 </DataTemplate>
             </ListBox.ItemTemplate>

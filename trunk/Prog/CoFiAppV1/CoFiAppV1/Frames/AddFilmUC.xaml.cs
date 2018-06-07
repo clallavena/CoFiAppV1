@@ -43,6 +43,8 @@ namespace CoFiAppV1.Frames
 
         private IEnumerable<String> listAllTag = Enum.GetValues(typeof(Metier.Tag)).Cast<Tag>().Select(s => s.ToString()).ToList();
 
+        private string SourcePath;
+
         public IEnumerable<String> ListAllTag
         {
             get
@@ -69,6 +71,7 @@ namespace CoFiAppV1.Frames
         private void Accueil_Click(object sender, RoutedEventArgs e)
         {
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
+            LeManager.FilmSelected = null;
         }
 
         private void Ajouter_Click(object sender, RoutedEventArgs e)
@@ -131,8 +134,20 @@ namespace CoFiAppV1.Frames
             }
             else
             {
+                int index = 0;
+
+                for (; SourcePath[index] != '.'; ++index)
+                {}
+                
+                string extension = SourcePath.Remove(0, index);
+                string pathimg = $"\\..\\..\\img\\{Titre.ToLower().Replace(" ", string.Empty)}{extension}";
+
                 personnesAdd.Add(Job.Acteur, listeActeur.ToList());
+                File.Move(SourcePath, Directory.GetCurrentDirectory() + pathimg);
                 Film f2 = new Film(Titre, Sortie, Synopsis, personnesAdd, tag1);
+
+                f2.PathFile = Directory.GetCurrentDirectory() + pathimg;
+
                 LeManager.AjouterFilm(f2);
                 return;
             }
@@ -144,17 +159,20 @@ namespace CoFiAppV1.Frames
             else
             {
                 personnesAdd.Add(Job.Acteur, listeActeur.ToList());
+                File.Move(SourcePath, $"../img/{Titre.ToLower().Replace(" ", string.Empty)}.jpg");
                 Film f3 = new Film(Titre, Sortie, Synopsis, personnesAdd, tag1, tag2);
                 LeManager.AjouterFilm(f3);
                 return;
             }
 
+            File.Move(SourcePath, $"../img/{Titre.ToLower().Replace(" ", string.Empty)}.jpg");
 
             personnesAdd.Add(Job.Acteur, listeActeur.ToList());
             Film f = new Film(Titre, Sortie, Synopsis, personnesAdd, tag1, tag2, tag3);
             LeManager.AjouterFilm(f);
 
 
+            NavManager.SelectedPart = NavManager.Parts["Accueil"]();
         }
 
         private void DeleteActor_Click(object sender, RoutedEventArgs e)
@@ -202,11 +220,11 @@ namespace CoFiAppV1.Frames
             Prenom_TextBox.Clear();
             MessageBox.Show("Vous avez ajouté l'acteur " + pAdd.Nom + " " + pAdd.Prenom + " avec succès", "Ajout d'acteur", MessageBoxButton.OK);
         }
-
+        
         private void OpenFileBrowser_Click(object sender, RoutedEventArgs e)
         {
             //A voir comment faire en sorte que ça nous soit utile
-            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.InitialDirectory = "C:\\Users\\Public\\Desktop";
             dlg.DefaultExt = ".jpg | .png | .gif";
             dlg.Filter = "All images files (.jpg, .png, .gif)|*.jpg;*.png;*.gif|JPG files (.jpg)|*.jpg|PNG files (.png)|*.png|GIF files (.gif)|*.gif";
@@ -215,7 +233,9 @@ namespace CoFiAppV1.Frames
             
             if (result == true)
             {
+                SourcePath = dlg.FileName;
             }
         }
+
     }
 }

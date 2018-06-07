@@ -42,10 +42,8 @@ namespace CoFiAppV1
 
         // Using a DependencyProperty as the backing store for PImage.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty PImageProperty =
-            DependencyProperty.Register("PImage", typeof(string), typeof(Vignette), new PropertyMetadata("Shining.jpg"));
-
-
-
+            DependencyProperty.Register("PImage", typeof(string), typeof(Vignette), new PropertyMetadata("/../../img/Shining.jpg"));
+        
         // Using a DependencyProperty as the backing store for PTitre.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty PTitreProperty =
             DependencyProperty.Register("PTitre", typeof(string), typeof(Vignette), new PropertyMetadata("Sans nom"));

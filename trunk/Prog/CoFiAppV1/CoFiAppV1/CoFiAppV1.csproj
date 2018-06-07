@@ -209,5 +209,8 @@
   <ItemGroup>
     <Resource Include="img\ttt.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\ryzer.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
