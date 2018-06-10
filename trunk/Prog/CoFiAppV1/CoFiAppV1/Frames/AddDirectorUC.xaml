@@ -38,7 +38,7 @@
                     <Label Content="Nom: " HorizontalAlignment="Right" />
                     <Label Content="Prénom: " HorizontalAlignment="Right"  Margin="0, 15"/>
                     <Label Content="Date de Naissance: " HorizontalAlignment="Right"  Margin="0, 15"/>
-                    <Label Content="Date mort (ne pas renseigné si null): " HorizontalAlignment="Right"  Margin="0, 15"/>
+                    <Label Content="Date de mort (ne pas renseigner si nulle): " HorizontalAlignment="Right"  Margin="0, 15"/>
                     <Label Content="Nationalité: " HorizontalAlignment="Right"  Margin="0, 15"/>
                     <Label Content="Biographie: " HorizontalAlignment="Right"  Margin="0, 15"/>
                     <Label Content="Photo: " HorizontalAlignment="Right"  Margin="0, 15"/>
@@ -53,21 +53,18 @@
                     <TextBox Name="NomDirector" Style="{StaticResource stylePourTextBox}"/>
                     <TextBox Name="PrenomDirector" Style="{StaticResource stylePourTextBox}" Margin="0, 15"/>
                     <StackPanel Orientation="Horizontal">
-                        <ComboBox SelectedIndex="-1" Name="NaissanceJourDirector" Margin="0,15" Width="100">
-                            <TextBlock Text="1" />
+                        <ComboBox SelectedIndex="-1" Name="NaissanceJourDirector" Margin="0,15" Width="100" ItemsSource="{Binding Jours}">
                         </ComboBox>
-                        <ComboBox SelectedIndex="-1" Name="NaissanceMoisDirector" Margin="30,15" Width="100">
+                        <ComboBox SelectedIndex="-1" Name="NaissanceMoisDirector" Margin="30,15" Width="100" ItemsSource="{Binding Mois}">
                         </ComboBox>
-                        <ComboBox SelectedIndex="-1" Name="NaissanceAnneeDirector" Margin="0,15" Width="100">
-                        </ComboBox>
+                        <TextBox  Name="NaissanceAnneeDirector" Margin="0,15" Width="100"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <ComboBox SelectedIndex="-1" Name="MortJourDirector" Margin="0,15" Width="100">
+                        <ComboBox SelectedIndex="-1" Name="MortJourDirector" Margin="0,15" Width="100" ItemsSource="{Binding Jours}">
                         </ComboBox>
-                        <ComboBox SelectedIndex="-1" Name="MortMoisDirector" Margin="30,15" Width="100">
+                        <ComboBox SelectedIndex="-1" Name="MortMoisDirector" Margin="30,15" Width="100" ItemsSource="{Binding Mois}">
                         </ComboBox>
-                        <ComboBox SelectedIndex="-1" Name="MortAnneeDirector" Margin="0,15" Width="100">
-                        </ComboBox>
+                        <TextBox  Name="MortAnneeDirector" Margin="0,15" Width="100"/>
                     </StackPanel>
                     <TextBox Name="NationaliteDirector" Style="{StaticResource stylePourTextBox}" Margin="0, 15"/>
                     <TextBox Name="BiographieDirector" Style="{StaticResource stylePourTextBox}" Margin="0, 10"/>
