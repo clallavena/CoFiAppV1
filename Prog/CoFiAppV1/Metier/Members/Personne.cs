@@ -106,7 +106,7 @@ namespace Metier
         /// <param name="dateDeMort"></param>
         /// <param name="nationalite"></param>
         /// <param name="biographie"></param>
-        public Personne(string nom, string prenom, DateTime dateDeNaissance, DateTime dateDeMort, string nationalite, string biographie) : this(nom, prenom, dateDeNaissance, nationalite, biographie)
+        public Personne(string nom, string prenom, DateTime dateDeNaissance, DateTime? dateDeMort, string nationalite, string biographie) : this(nom, prenom, dateDeNaissance, nationalite, biographie)
         {
             DateDeMort = dateDeMort;
         }
