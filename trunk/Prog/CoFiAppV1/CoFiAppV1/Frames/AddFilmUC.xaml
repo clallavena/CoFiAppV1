@@ -27,17 +27,17 @@
                     <RowDefinition Height="10*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="40*"/>
-                    <ColumnDefinition Width="60*"/>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="70*"/>
                 </Grid.ColumnDefinitions>
 
                 <!--Partie de gauche-->
                 <Label Content="Ajouter un Film" FontSize="35" FontWeight="Bold" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
 
                 <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0, 25">
-                    <Label  Content="Choisissez parmis la liste de réalisateur connus: " />
+                    <Label  Content="Choisissez un réalisateur: " />
                     <Label  Content="Titre: " HorizontalAlignment="Right"  Margin="0, 15"/>
-                    <Label  Content="Tags (max 3, min 1): " HorizontalAlignment="Right"  Margin="0, 15"/>
+                    <Label  Content="Tags: " HorizontalAlignment="Right"  Margin="0, 15"/>
                     <Label  Content="Date de Sortie: " HorizontalAlignment="Right"  Margin="0, 15"/>
                     <Label  Content="Acteurs (Nom, Prenom): " HorizontalAlignment="Right"  Margin="0, 15"/>
                     <Label  Content="Synopsis: " HorizontalAlignment="Right"  Margin="0, 15"/>
@@ -49,7 +49,7 @@
 
                 <!--Partie de droite-->
                 <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="0,25" >
-                    <ComboBox SelectedIndex="0" HorizontalContentAlignment="Center" Name="ComboReal" DataContext="{Binding LeManager}" ItemsSource="{Binding ListReal}">
+                    <ComboBox SelectedIndex="-1" HorizontalContentAlignment="Center" Name="ComboReal" DataContext="{Binding LeManager}" ItemsSource="{Binding ListReal}">
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -61,24 +61,24 @@
                         </ComboBox.ItemTemplate>
                     </ComboBox>
                     <TextBox Style="{StaticResource stylePourTextBox}" Margin="0, 15" Name="TitreBox"/>
-                    
+
                     <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,20">
-                        <ComboBox Name="listTags1" Width="auto" SelectedIndex="0" ItemsSource="{Binding ListAllTag}">
+                        <ComboBox Name="listTags" Width="auto" SelectedIndex="0" ItemsSource="{Binding ListTagsFilm}">
                         </ComboBox>
-                        <ComboBox Name="listTags2" Grid.Column="1" Grid.Row="4" Width="auto" ItemsSource="{Binding ListAllTag}" Margin="20,0">
+                        <Button Style="{StaticResource styleButtons}" Content="Supprimer" Margin="20,0" Width="80" Click="SupprimerTag_Click"/>
+                        <ComboBox Name="listAllTags" Grid.Column="1" Grid.Row="4" Width="auto" ItemsSource="{Binding ListAllTag}" >
                         </ComboBox>
-                        <ComboBox Name="listTags3" Grid.Column="1" Grid.Row="4" Width="auto" ItemsSource="{Binding ListAllTag}" >
-                        </ComboBox>
+                        <Button Style="{StaticResource styleButtons}" Content="Ajouter" Margin="20,0" Width="80" Click="AjouterTag_Click"/>
                     </StackPanel>
-                    
+
                     <TextBox Style="{StaticResource stylePourTextBox}" Margin="0, 10" Name="DateDeSortieBox"/>
                     <WrapPanel HorizontalAlignment="Left">
                         <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,20">
                             <ComboBox Name="listActors" SelectedIndex="0" HorizontalContentAlignment="Center" ItemsSource="{Binding LiA}">
                             </ComboBox>
                             <Button Style="{StaticResource styleButtons}" Content="Supprimer" Width="80" Click="DeleteActor_Click"/>
-                            <TextBox Name="Nom_TextBox" Grid.Row="3" Grid.Column="1" Style="{StaticResource stylePourTextBox}" Text="{Binding DateDeSortie}" TextWrapping="Wrap" Width="50" Margin="5,0,5,0"/>
-                            <TextBox Name="Prenom_TextBox" Grid.Row="3" Grid.Column="1" Style="{StaticResource stylePourTextBox}" Text="{Binding DateDeSortie}" TextWrapping="Wrap" Width="50"/>
+                            <TextBox Name="Nom_TextBox" Grid.Row="3" Grid.Column="1" Style="{StaticResource stylePourTextBox}" Text="{Binding DateDeSortie}" TextWrapping="Wrap" Width="100" Margin="5,0,5,0"/>
+                            <TextBox Name="Prenom_TextBox" Grid.Row="3" Grid.Column="1" Style="{StaticResource stylePourTextBox}" Text="{Binding DateDeSortie}" TextWrapping="Wrap" Width="100"/>
                             <Button Style="{StaticResource styleButtons}" Content="Ajouter" Width="80" Margin="20,0" Click="AjouterActeur_Click" />
                         </StackPanel>
                     </WrapPanel>

@@ -79,21 +79,7 @@ namespace CoFiAppV1.Frames
                     NavManager.SelectedPart = NavManager.Parts["AddFilm"]();
                 }
             }
-
         }
-
-        private void Supprimer_Click(object sender, RoutedEventArgs e)
-        {
-            if (LeManager.CurrentUser != null)
-            {
-                MessageBox.Show("Test ok", "Test", MessageBoxButton.OK);
-            }
-            else
-            {
-                MessageBox.Show("Il faut être administrateur!", "Permission non accordée", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-
-
-        }
+                
     }
 }

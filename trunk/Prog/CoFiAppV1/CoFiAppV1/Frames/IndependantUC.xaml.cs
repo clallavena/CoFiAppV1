@@ -63,5 +63,25 @@ namespace CoFiAppV1.Frames
         {
             NavManager.SelectedPart = NavManager.Parts["FilmDesc"]();
         }
+
+        private void Ajouter_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Voulez-vous ajouter un Réalisateur ?", "Ajouter Réal", MessageBoxButton.YesNoCancel);
+
+            if (result.ToString().Equals("Yes"))
+            {
+                NavManager.SelectedPart = NavManager.Parts["AddDirector"]();
+            }
+            else if (result.ToString().Equals("No"))
+            {
+                MessageBoxResult result2 = MessageBox.Show("Voulez-vous ajouter un Film ?", "Ajouter Film", MessageBoxButton.YesNoCancel);
+
+                if (result2.ToString().Equals("Yes"))
+                {
+                    NavManager.SelectedPart = NavManager.Parts["AddFilm"]();
+                }
+            }
+        }
+
     }
 }

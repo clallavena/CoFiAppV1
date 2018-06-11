@@ -26,11 +26,23 @@ namespace CoFiAppV1.Frames
     {
         public NavigationManager NavManager => (Application.Current as App).NavManager;
 
-
         Dictionary<Job, List<Personne>> personnesAdd = new Dictionary<Job, List<Personne>>();
 
-
         private ObservableCollection<Personne> listeActeur = new ObservableCollection<Personne>();
+
+        private ObservableCollection<Tag> listTagsFilm = new ObservableCollection<Tag>();
+
+        public IEnumerable<Tag> ListTagsFilm
+        {
+            get
+            {
+                return listTagsFilm;
+            }
+            set
+            {
+
+            }
+        }
 
         public ObservableCollection<Personne> LiA
         {
@@ -81,9 +93,6 @@ namespace CoFiAppV1.Frames
             string Synopsis;
             Personne buff;
             List<Personne> lir = new List<Personne>();
-            Tag tag1 = new Tag();
-            Tag tag2 = new Tag();
-            Tag tag3 = new Tag();
 
             if (String.IsNullOrWhiteSpace(TitreBox.Text))
             {
@@ -98,6 +107,11 @@ namespace CoFiAppV1.Frames
             if (String.IsNullOrWhiteSpace(SynopsisBox.Text))
             {
                 MessageBox.Show("Le synopsis n'a pas été renseigné", "Erreur Ajout", MessageBoxButton.OK);
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(ComboReal.Text))
+            {
+                MessageBox.Show("Le réalisateur n'a pas été renseigné", "Erreur Ajout", MessageBoxButton.OK);
                 return;
             }
 
@@ -125,52 +139,29 @@ namespace CoFiAppV1.Frames
                 }
             }
 
+            string extension;
+            string pathimg;
 
-            tag1 = (Tag)Enum.Parse(typeof(Tag), listTags1.SelectedItem.ToString());
-
-            if (listTags2.SelectedItem != null)
-            {
-                tag2 = (Tag)Enum.Parse(typeof(Tag), listTags2.SelectedItem.ToString());
-            }
-            else
+            if (SourcePath != null)
             {
                 int index = 0;
 
                 for (; SourcePath[index] != '.'; ++index)
-                {}
-                
-                string extension = SourcePath.Remove(0, index);
-                string pathimg = $"\\..\\..\\img\\{Titre.ToLower().Replace(" ", string.Empty)}{extension}";
+                { }
 
-                personnesAdd.Add(Job.Acteur, listeActeur.ToList());
+                extension = SourcePath.Remove(0, index);
+                pathimg = $"\\..\\..\\img\\{Titre.ToLower().Replace(" ", string.Empty)}{extension}";
                 File.Move(SourcePath, Directory.GetCurrentDirectory() + pathimg);
-                Film f2 = new Film(Titre, Sortie, Synopsis, personnesAdd, tag1);
-
-                f2.PathFile = Directory.GetCurrentDirectory() + pathimg;
-
-                LeManager.AjouterFilm(f2);
-                return;
-            }
-
-            if (listTags3.SelectedItem != null)
-            {
-                tag3 = (Tag)Enum.Parse(typeof(Tag), listTags3.SelectedItem.ToString());
             }
             else
             {
-                personnesAdd.Add(Job.Acteur, listeActeur.ToList());
-                File.Move(SourcePath, $"../img/{Titre.ToLower().Replace(" ", string.Empty)}.jpg");
-                Film f3 = new Film(Titre, Sortie, Synopsis, personnesAdd, tag1, tag2);
-                LeManager.AjouterFilm(f3);
-                return;
+                pathimg = "\\..\\..\\img\\noavatar.png";
             }
 
-            File.Move(SourcePath, $"../img/{Titre.ToLower().Replace(" ", string.Empty)}.jpg");
-
             personnesAdd.Add(Job.Acteur, listeActeur.ToList());
-            Film f = new Film(Titre, Sortie, Synopsis, personnesAdd, tag1, tag2, tag3);
-            LeManager.AjouterFilm(f);
+            Film f = new Film(Titre, Sortie, Synopsis, personnesAdd, listTagsFilm, Directory.GetCurrentDirectory() + pathimg);
 
+            LeManager.AjouterFilm(f);
 
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
         }
@@ -220,22 +211,56 @@ namespace CoFiAppV1.Frames
             Prenom_TextBox.Clear();
             MessageBox.Show("Vous avez ajouté l'acteur " + pAdd.Nom + " " + pAdd.Prenom + " avec succès", "Ajout d'acteur", MessageBoxButton.OK);
         }
-        
+
         private void OpenFileBrowser_Click(object sender, RoutedEventArgs e)
         {
-            //A voir comment faire en sorte que ça nous soit utile
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.InitialDirectory = "C:\\Users\\Public\\Desktop";
             dlg.DefaultExt = ".jpg | .png | .gif";
             dlg.Filter = "All images files (.jpg, .png, .gif)|*.jpg;*.png;*.gif|JPG files (.jpg)|*.jpg|PNG files (.png)|*.png|GIF files (.gif)|*.gif";
-            
+
             bool? result = dlg.ShowDialog();
-            
+
             if (result == true)
             {
                 SourcePath = dlg.FileName;
             }
         }
 
+        private void SupprimerTag_Click(object sender, RoutedEventArgs e)
+        {
+            if (listTags.SelectedItem == null)
+            {
+                MessageBox.Show("Le tag sélectionné n'est pas valide", "Erreur suppression", MessageBoxButton.OK);
+                return;
+            }
+            string tagToDelete = listTags.SelectedItem.ToString();
+
+            foreach (Tag t in listTagsFilm)
+            {
+                if (t.ToString() == tagToDelete)
+                {
+                    listTagsFilm.Remove(t);
+                    MessageBox.Show("Vous avez supprimé le tag " + tagToDelete + " avec succès", "Suppression de tag", MessageBoxButton.OK);
+                    return;
+                }
+            }
+        }
+
+        private void AjouterTag_Click(object sender, RoutedEventArgs e)
+        {
+            if (listAllTags.SelectedItem == null)
+            {
+                MessageBox.Show("Le tag sélectionné n'est pas valide", "Erreur ajout", MessageBoxButton.OK);
+                return;
+            }
+
+            Tag tagToAdd = (Tag)Enum.Parse(typeof(Tag), listAllTags.SelectedItem.ToString());
+            if (listTagsFilm.Contains(tagToAdd)) return;
+
+            listTagsFilm.Add(tagToAdd);
+            listAllTags.SelectedIndex = -1;
+            MessageBox.Show("Vous avez ajouté le tag " + tagToAdd + " avec succès", "Ajout de tag", MessageBoxButton.OK);
+        }
     }
 }

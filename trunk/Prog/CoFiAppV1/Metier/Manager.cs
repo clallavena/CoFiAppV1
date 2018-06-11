@@ -91,6 +91,21 @@ namespace Metier
             }
         }
 
+
+        private Personne realSelected;
+
+        public Personne RealSelected
+        {
+            get
+            {
+                return realSelected;
+            }
+            set
+            {
+                realSelected = value;
+            }
+        }
+
         private Film filmSelected;
 
         public Film FilmSelected
@@ -98,15 +113,6 @@ namespace Metier
             get { return filmSelected; }
             set { filmSelected = value; NotifyPropertyChanged(nameof(FilmSelected)); }
         }
-
-        //private int filmIndexSelected;
-
-        //public int FilmIndexSelected
-        //{
-        //    get { return filmIndexSelected; }
-        //    set { filmIndexSelected = value; }
-        //}
-
         private IRecherchePersonne rech = new RechParFilm();
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -207,7 +213,7 @@ namespace Metier
             mail.From = new MailAddress("cofiappcontact@gmail.com");
             mail.To.Add(new MailAddress("clement.allavena@etu.uca.fr"));
             mail.To.Add(new MailAddress("esteban.barland@etu.uca.fr"));
-            mail.Subject = "[CoFiApp] Signalement de Film";
+            mail.Subject = "[CoFiApp] Signalement de Réalisateur";
             mail.Body = "Le réalisateur " + real.Nom + " " + real.Prenom + " a été signalé par un utilisateur !";
 
             smtpServer.Port = 587;
@@ -282,15 +288,28 @@ namespace Metier
         /// Méthode permettant de supprimer une personne qui est un réalisateur
         /// </summary>
         /// <param name="real"></param>
-        public void SupprimerReal(Personne real)
+        public bool SupprimerReal(Personne real)
         {
             if (reals.Contains(real))
             {
                 reals.Remove(real);
+                foreach (Film f in Films)
+                {
+                    List<Personne> buff = new List<Personne>();
+                    buff = f.Personnes.Where(s => s.Key == Job.Realisateur).SelectMany(s => s.Value).ToList();
+                    if (buff.Contains(real))
+                    {
+                        buff.Remove(real);
+                        f.Personnes.Remove(Job.Realisateur);
+                        f.Personnes.Add(Job.Realisateur, buff);
+                    }
+                }
+                return true;
             }
             else
             {
                 Debug.WriteLine("Réalisateur inexistant");
+                return false;
             }
 
         }

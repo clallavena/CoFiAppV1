@@ -48,8 +48,8 @@
                 <Label Grid.Row="3" Content="Date de Sortie: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,20"/>
                 <Label Grid.Row="4" Content="Tags: " HorizontalAlignment="Right"  VerticalAlignment="Center" Margin="0,20"/>
                 <Label Grid.Row="5" Content="Acteurs: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,20"/>
-                <Label Grid.Row="6" Content="Synopsis: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,20"/>
-                <Label Grid.Row="7" Content="Affiche du film: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,20"/>
+                <Label Grid.Row="6" Content="Affiche du film: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,20"/>
+                <Label Grid.Row="7" Content="Synopsis: " HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,20"/>
                 <!--Partie de gauche-->
 
                 <!--Partie de droite-->
@@ -107,10 +107,11 @@
                     <Button Style="{StaticResource styleButtons}" Content="Ajouter" Width="80" Click="AddActor_Click"/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="6" Grid.Column="1" Style="{StaticResource stylePourTextBlock}" Margin="0,20" DataContext="{Binding LeManager.FilmSelected}" Text="{Binding Synopsis}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Visibility="{Binding IsChecked, ElementName=toggleButton, Converter={StaticResource ToggleButtonConverter}}" Style="{StaticResource stylePourTextBox}" Margin="0,20" DataContext="{Binding LeManager.FilmSelected}" Text="{Binding Synopsis}"/>
+                <Button Grid.Row="6" Grid.Column="1" Style="{StaticResource styleButtons}" Content="Ajouter Image" HorizontalAlignment="Left" VerticalAlignment="Center" Click="OpenFileBrowser_Click"/>
+                
+                <TextBlock Grid.Row="7" Grid.Column="1" TextWrapping="Wrap" Style="{StaticResource stylePourTextBlock}" Margin="0,20" DataContext="{Binding LeManager.FilmSelected}" Text="{Binding Synopsis}"/>
+                <TextBox Grid.Row="7" Grid.Column="1" TextWrapping="Wrap" Visibility="{Binding IsChecked, ElementName=toggleButton, Converter={StaticResource ToggleButtonConverter}}" Style="{StaticResource stylePourTextBox}" Margin="0,20" DataContext="{Binding LeManager.FilmSelected}" Text="{Binding Synopsis}"/>
 
-                <Button Grid.Row="7" Grid.Column="1" Style="{StaticResource styleButtons}" Content="Ajouter Image" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
                 <!--Partie droite-->
 
