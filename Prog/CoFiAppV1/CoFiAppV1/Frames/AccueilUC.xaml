@@ -39,8 +39,7 @@
                 <Button Content="Indépendant" Style="{StaticResource styleButtons}" Click="Inde_Click"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right">
-                <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="+ Ajouter" Style="{StaticResource styleButtons}" Click="Ajouter_Click"/>
-                <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="- Supprimer" Style="{StaticResource styleButtons}" Click="Supprimer_Click"/>
+                <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Ajouter" Style="{StaticResource styleButtons}" Click="Ajouter_Click"/>
             </StackPanel>
 
 

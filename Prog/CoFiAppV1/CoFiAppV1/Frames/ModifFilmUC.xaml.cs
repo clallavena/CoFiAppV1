@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,7 +44,7 @@ namespace CoFiAppV1.Frames
                 return (Application.Current as App).LeManager;
             }
         }
-        
+
         private ObservableCollection<Personne> lpa = new ObservableCollection<Personne>();
 
         public ObservableCollection<Personne> Lpa
@@ -63,7 +64,9 @@ namespace CoFiAppV1.Frames
         private List<Personne> lpaList = new List<Personne>();
 
         private List<Personne> lprList = new List<Personne>();
-        
+
+        private String SourcePath;
+
         public ModifFilmUC()
         {
             InitializeComponent();
@@ -166,14 +169,13 @@ namespace CoFiAppV1.Frames
 
             NomActor.Clear();
             PrenomActor.Clear();
-            //c'est pas bo fo changer
             lpa.Add(personneToAdd);
             LeManager.FilmSelected.Personnes.Remove(Job.Acteur);
             LeManager.FilmSelected.Personnes.Add(Job.Acteur, lpa.ToList());
             MessageBox.Show("Vous avez ajouté l'acteur " + personneToAdd.Nom + " " + personneToAdd.Prenom + " avec succès", "Ajout d'acteur", MessageBoxButton.OK);
 
         }
-        
+
         private void DeleteDirector_Click(object sender, RoutedEventArgs e)
         {
             if (listDirector.SelectedIndex == -1)
@@ -227,11 +229,45 @@ namespace CoFiAppV1.Frames
             }
 
             listAllDirectors.SelectedIndex = -1;
-            //c'est pas bo fo changer
             lpr.Add(directorToAdd);
             LeManager.FilmSelected.Personnes.Remove(Job.Realisateur);
             LeManager.FilmSelected.Personnes.Add(Job.Realisateur, lpr.ToList());
             MessageBox.Show("Vous avez ajouté le réalisateur " + directorToAdd.Nom + " " + directorToAdd.Prenom + " avec succès", "Ajout de réalisateur", MessageBoxButton.OK);
+        }
+
+        private void OpenFileBrowser_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.InitialDirectory = "C:\\Users\\Public\\Desktop";
+            dlg.DefaultExt = ".jpg | .png | .gif";
+            dlg.Filter = "All images files (.jpg, .png, .gif)|*.jpg;*.png;*.gif|JPG files (.jpg)|*.jpg|PNG files (.png)|*.png|GIF files (.gif)|*.gif";
+
+            bool? result = dlg.ShowDialog();
+
+            if (result == true)
+            {
+                SourcePath = dlg.FileName;
+            }
+
+            string extension;
+            string pathimg;
+
+            if (SourcePath != null)
+            {
+                int index = 0;
+
+                for (; SourcePath[index] != '.'; ++index)
+                { }
+
+                extension = SourcePath.Remove(0, index);
+                pathimg = $"\\..\\..\\img\\{LeManager.FilmSelected.Titre.ToLower().Replace(" ", string.Empty)}{extension}";
+                File.Move(SourcePath, Directory.GetCurrentDirectory() + pathimg);
+            }
+            else
+            {
+                pathimg = "\\..\\..\\img\\noavatar.png";
+            }
+            LeManager.FilmSelected.PathFile = pathimg;
         }
     }
 }

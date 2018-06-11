@@ -122,9 +122,8 @@ namespace CoFiAppV1.Frames
             NaissanceMois = Int32.Parse(NaissanceMoisDirector.SelectedItem.ToString());
             NaissanceJour = Int32.Parse(NaissanceJourDirector.SelectedItem.ToString());
             Naissance = new DateTime(NaissanceAnnee, NaissanceMois, NaissanceJour);
-
-            //Exception levée quand j'exécute ce code à voir
-            /*if (MortJourDirector.SelectedIndex != -1)
+            
+            if (MortJourDirector.SelectedIndex != -1)
             {
                 MortJour = Int32.Parse(MortJourDirector.SelectedItem.ToString());
                 if (MortMoisDirector.SelectedIndex != -1)
@@ -156,23 +155,21 @@ namespace CoFiAppV1.Frames
             else
             {
                 Mort = new DateTime?();
-            }*/
+            }
 
             Nom = NomDirector.Text;
             Prenom = PrenomDirector.Text;
             Nationalite = NationaliteDirector.Text;
             Biographie = BiographieDirector.Text;
 
-            /*if (Mort == null)
+            if (Mort == null)
             {
                 directorToAdd = new Personne(Nom, Prenom, Naissance, Nationalite, Biographie);
             }
             else
             {
                 directorToAdd = new Personne(Nom, Prenom, Naissance, Mort, Nationalite, Biographie);
-            }*/
-
-            directorToAdd = new Personne(Nom, Prenom, Naissance, Nationalite, Biographie);
+            }
 
             LeManager.AjouterReal(directorToAdd);
             MessageBox.Show("Vous avez ajouter le réalisateur " + directorToAdd.Nom + " " + directorToAdd.Prenom + " avec succès.", "Ajout réalisateur", MessageBoxButton.OK, MessageBoxImage.Information);

@@ -25,10 +25,7 @@
 
         <!--Bouttons haut de page-->
         <Button Style="{StaticResource styleButtons}" HorizontalAlignment="Left" Content="Accueil" Click="Accueil_Click" />
-        <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right">
-            <Button Style="{StaticResource styleButtons}" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Content="+ Ajouter" />
-            <Button Style="{StaticResource styleButtons}" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Content="- Supprimer"/>
-        </StackPanel>
+        <Button Style="{StaticResource styleButtons}" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Content="Ajouter" Click="Ajouter_Click" />
 
 
         <!--En tête de la page-->

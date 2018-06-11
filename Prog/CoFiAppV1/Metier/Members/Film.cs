@@ -71,7 +71,7 @@ namespace Metier
         /// <param name="synopsis"></param>
         /// <param name="personnes"></param>
         /// <param name="listTags"></param>
-        public Film(string titre, int dateDeSortie, string synopsis, Dictionary<Job, List<Personne>> personnes, params Tag[] listTags)
+        public Film(string titre, int dateDeSortie, string synopsis, Dictionary<Job, List<Personne>> personnes, ObservableCollection<Tag> listTags, string pathFile)
         {
             ListTags = new ObservableCollection<Tag>();
             Personnes = new Dictionary<Job, List<Personne>>();
@@ -87,7 +87,8 @@ namespace Metier
             foreach (var e in listTags)
             {
                 ListTags.Add(e);
-            }          
+            }
+            PathFile = pathFile;
         }
 
         /// <summary>

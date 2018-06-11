@@ -16,20 +16,20 @@
     <Grid Background="{StaticResource defaultColor}">
         <!--Définition de la grid-->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <!--Définition de la grid-->
-        
-            <!--Début d'une séléction-->
-            <TextBlock Grid.Column="0" Text="{Binding PTitre, ElementName=root}" FontWeight="Bold" FontSize="22" VerticalAlignment="Center" TextWrapping="Wrap"/>
-            <Viewbox Grid.Column="1" Stretch="Uniform"  >
-                <!--Changer l'image-->
-                <Image Source="{Binding PImage, Converter={StaticResource string2UriConverter}, ElementName=root}" Height="100" Width="100" HorizontalAlignment="Right"/>
-            </Viewbox>
-            <!--Fin d'une séléction-->
+
+        <!--Début d'une séléction-->
+        <Viewbox Grid.Column="0">
+            <!--Changer l'image-->
+            <Image Source="{Binding PImage, Converter={StaticResource string2UriConverter}, ElementName=root}" Margin="20,0" Height="100" Width="100" Stretch="Uniform"/>
+        </Viewbox>
+        <TextBlock Grid.Column="1" Text="{Binding PTitre, ElementName=root}" FontWeight="Bold" FontSize="22" VerticalAlignment="Center" TextWrapping="Wrap"/>
+        <!--Fin d'une séléction-->
     </Grid>
 </UserControl>

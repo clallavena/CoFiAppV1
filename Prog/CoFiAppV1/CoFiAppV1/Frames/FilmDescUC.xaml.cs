@@ -75,7 +75,7 @@ namespace CoFiAppV1.Frames
 
         private void Signalement(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Voulez vous signaler ce film ?", "Snignalement", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult result = MessageBox.Show("Voulez vous signaler ce film ?", "Signalement", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             if (result.ToString().Equals("Yes"))
             {
@@ -95,9 +95,19 @@ namespace CoFiAppV1.Frames
         {
             MessageBoxResult result = MessageBox.Show("Voulez-vous ajouter un Réalisateur ?", "Ajouter Réal", MessageBoxButton.YesNoCancel);
 
-            if (result.ToString().Equals("Yes")) NavManager.SelectedPart = NavManager.Parts["AddDirector"]();
-            
+            if (result.ToString().Equals("Yes"))
+            {
+                NavManager.SelectedPart = NavManager.Parts["AddDirector"]();
+            }
+            else if (result.ToString().Equals("No"))
+            {
+                MessageBoxResult result2 = MessageBox.Show("Voulez-vous ajouter un Film ?", "Ajouter Film", MessageBoxButton.YesNoCancel);
 
+                if (result2.ToString().Equals("Yes"))
+                {
+                    NavManager.SelectedPart = NavManager.Parts["AddFilm"]();
+                }
+            }
         }
 
         private void Supprimer_Click(object sender, RoutedEventArgs e)
@@ -139,6 +149,12 @@ namespace CoFiAppV1.Frames
             {
                 MessageBox.Show("Il faut être administrateur!", "Permission non accordée", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+        }
+
+        private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            NavManager.SelectedPart = NavManager.Parts["Director"]();
+            LeManager.FilmSelected = null;
         }
     }
 }

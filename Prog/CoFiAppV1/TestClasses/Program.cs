@@ -51,11 +51,11 @@ namespace TestClasses
             perso2.Add(Job.Acteur, acteurs2);
             perso2.Add(Job.Realisateur, reals2);
 
-            Film f = new Film("Star Wars", 1990, "superbe histoire", personnes, Tag.Action, Tag.Aventure);
+            Film f = new Film("Star Wars", 1990, "superbe histoire", personnes, null, null);
 
-            Film f1 = new Film("Star Wars", 1990, "superbe histoire", personnes, Tag.Action, Tag.Aventure);
+            Film f1 = new Film("Star Wars", 1990, "superbe histoire", personnes, null, null);
 
-            Film f2 = new Film("Forrest Gump", 1994, "superbe histoire", perso2, Tag.Drame, Tag.Comedie_Dramatique);
+            Film f2 = new Film("Forrest Gump", 1994, "superbe histoire", perso2, null, null);
 
             //m.AjouterFilm(f);
             //m.AjouterFilm(f1);
