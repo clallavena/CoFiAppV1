@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPersonne xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Metier">
+  <Personne>
+    <Biographie>jkjk</Biographie>
+    <DateDeMort i:nil="true" />
+    <DateDeNaissance>0047-02-03T00:00:00</DateDeNaissance>
+    <Nationalite>jjk</Nationalite>
+    <Nom>jjk</Nom>
+    <Prenom>jkjkj</Prenom>
+  </Personne>
+  <Personne>
+    <Biographie>opoop</Biographie>
+    <DateDeMort i:nil="true" />
+    <DateDeNaissance>0696-02-03T00:00:00</DateDeNaissance>
+    <Nationalite>popo</Nationalite>
+    <Nom>opop</Nom>
+    <Prenom>op</Prenom>
+  </Personne>
+</ArrayOfPersonne>

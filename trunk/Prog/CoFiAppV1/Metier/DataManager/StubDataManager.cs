@@ -11,17 +11,6 @@ namespace Metier.DataManager
 {
     public class StubDataManager : IDataManager
     {
-        public IEnumerable<Admin> ChargementAdmin()
-        {
-            List<Admin> admins = new List<Admin>
-            {
-                new Admin("esbarland", "coucou"),
-                new Admin("clallavena", "bigboss")
-            };
-
-            return admins;
-        }
-
         public IEnumerable<Film> ChargementFilms()
         {
 
@@ -80,6 +69,10 @@ namespace Metier.DataManager
             return films;
         }
 
+        public void SauvegardeFilms(IEnumerable<Film> films)
+        {
+
+        }
 
         /// <summary>
         /// Chargement d'une liste de réalisateur de base, retourne une liste de Réalisateur. //!! Solution provisoire !!\\
@@ -96,9 +89,20 @@ namespace Metier.DataManager
             return reals;
         }
 
-        public void SauvegardeFilms(IEnumerable<Film> films)
+        public void SauvegardeReal(ObservableCollection<Personne> personnes)
         {
+            throw new NotImplementedException();
+        }
+        
+        public IEnumerable<Admin> ChargementAdmin()
+        {
+            List<Admin> admins = new List<Admin>
+            {
+                new Admin("esbarland", "coucou"),
+                new Admin("clallavena", "bigboss")
+            };
 
+            return admins;
         }
     }
 }

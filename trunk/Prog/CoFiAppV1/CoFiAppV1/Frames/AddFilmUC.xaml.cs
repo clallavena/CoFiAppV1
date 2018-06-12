@@ -164,6 +164,7 @@ namespace CoFiAppV1.Frames
             LeManager.AjouterFilm(f);
 
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
+            LeManager.FilmSelected = null;
         }
 
         private void DeleteActor_Click(object sender, RoutedEventArgs e)

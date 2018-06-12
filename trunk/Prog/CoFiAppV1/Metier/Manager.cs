@@ -8,14 +8,19 @@ using System.Threading.Tasks;
 using Metier.RechercheFilms;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Runtime.Serialization;
+using System.Xml;
+using System.Xml.Serialization;
+using Metier.DataManager;
+using System.IO;
 
 namespace Metier
 {
+    [DataContract]
     public class Manager : INotifyPropertyChanged
     {
 
         private Admin currentUser;
-
 
         /// <summary>
         /// Liste des étiquettes
@@ -38,18 +43,7 @@ namespace Metier
         /// <summary>
         /// Liste des Administrateur de l'application
         /// </summary>
-        private List<Admin> admins = new List<Admin>();
-
-        private List<Film> filmRecherche = new List<Film>();
-
-        public IEnumerable<Film> ListFilmRecherche
-        {
-            get
-            {
-                return filmRecherche;
-            }
-            set { }
-        }
+        private IEnumerable<Admin> admins = new List<Admin>();
 
         /// <summary>
         /// Collection d'Administrateur de l'application
@@ -63,6 +57,20 @@ namespace Metier
         }
 
         /// <summary>
+        /// Liste des films Recherchés
+        /// </summary>
+        private List<Film> filmRecherche = new List<Film>();
+
+        public IEnumerable<Film> ListFilmRecherche
+        {
+            get
+            {
+                return filmRecherche;
+            }
+            set { }
+        }
+
+        /// <summary>
         /// Liste des réalisateur connue
         /// </summary>
         private ObservableCollection<Personne> reals = new ObservableCollection<Personne>();
@@ -70,6 +78,7 @@ namespace Metier
         /// <summary>
         /// Collection de Réalisateur connu de type Personne
         /// </summary>
+        [DataMember]
         public ObservableCollection<Personne> ListReal
         {
             get
@@ -83,11 +92,32 @@ namespace Metier
         /// </summary>
         private ObservableCollection<Film> films = new ObservableCollection<Film>();
 
+        [DataMember]
         public ObservableCollection<Film> Films
         {
             get
             {
                 return films;
+            }
+            set
+            {
+                films = value;
+            }
+        }
+
+        private IEnumerable<Film> filmsParNom = new List<Film>();
+
+        public IEnumerable<Film> FilmsParNom
+        {
+            get
+            {
+                return filmsParNom;
+            }
+
+            set
+            {
+                filmsParNom = value;
+                NotifyPropertyChanged(nameof(FilmsParNom));
             }
         }
 
@@ -130,18 +160,30 @@ namespace Metier
 
         public void Chargement()
         {
-            foreach (Film f in Dm.ChargementFilms())
+            if (Dm.ChargementFilms() != null)
             {
-                films.Add(f);
-            }
-            FilmsParNom = Films;
-
-            foreach (Personne p in Dm.ChargementReal())
-            {
-                reals.Add(p);
+                foreach (Film f in Dm.ChargementFilms())
+                {
+                    Films.Add(f);
+                }
+                FilmsParNom = Films;
             }
 
-            admins.AddRange(Dm.ChargementAdmin());
+            if (Dm.ChargementReal() != null)
+            {
+                foreach (Personne p in Dm.ChargementReal())
+                {
+                    reals.Add(p);
+                }
+            }
+            
+            admins = Dm.ChargementAdmin();
+        }
+
+        public void Sauvegarde()
+        {
+            Dm.SauvegardeFilms(Films);
+            Dm.SauvegardeReal(ListReal);
         }
 
         /// <summary>
@@ -246,24 +288,9 @@ namespace Metier
                 return FilmsParNom;
             }
             RechFilmParNom re = new RechFilmParNom();
-            FilmsParNom = re.RechercheFilm(recherche, Films).ToList();
+            FilmsParNom = re.RechercheFilm(recherche, Films);
             return FilmsParNom;
         }
-
-        public IEnumerable<Film> FilmsParNom
-        {
-            get
-            {
-                return filmsParNom;
-            }
-
-            set
-            {
-                filmsParNom = value;
-                NotifyPropertyChanged(nameof(FilmsParNom));
-            }
-        }
-        IEnumerable<Film> filmsParNom;
 
         /// <summary>
         /// Méthode permettant de supprimer un film

@@ -15,6 +15,8 @@ namespace Metier
         void SauvegardeFilms(IEnumerable<Film> films);
 
         ObservableCollection<Personne> ChargementReal();
+        
+        void SauvegardeReal(ObservableCollection<Personne> personnes);
 
         IEnumerable<Admin> ChargementAdmin();
 
