@@ -30,16 +30,16 @@
             </StackPanel>
 
             <!--Photo du Réal-->
-            <Viewbox Stretch="Uniform" Grid.Column="0" Grid.Row="1" Width="220" Height="220" Margin="10" HorizontalAlignment="Center">
-                <Image VerticalAlignment="Top" Source="../img/noavatar.png" />
+            <Viewbox Stretch="Uniform" Grid.Column="0" Grid.Row="1" Width="220" Height="220" Margin="10" HorizontalAlignment="Left">
+                <Image VerticalAlignment="Top" DataContext="{Binding LeManager.RealSelected}" Source="{Binding PathFile}" />
             </Viewbox>
 
             <!--En tête-->
             <StackPanel Grid.Column="1" Grid.Row="1">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,15">
-                    <TextBlock DataContext="{Binding LeManager.RealSelected}" Text="{Binding Nom}" FontSize="50" FontWeight="Bold"/>
-                    <TextBlock Text=" " FontWeight="Bold" FontSize="50"/>
                     <TextBlock DataContext="{Binding LeManager.RealSelected}" Text="{Binding Prenom}" FontSize="50" FontWeight="Bold"/>
+                    <TextBlock Text=" " FontWeight="Bold" FontSize="50"/>
+                    <TextBlock DataContext="{Binding LeManager.RealSelected}" Text="{Binding Nom}" FontSize="50" FontWeight="Bold"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Left" Margin="5" Orientation="Horizontal">
                     <TextBlock FontWeight="DemiBold" Text="Date de naissance: " />
@@ -61,25 +61,7 @@
 
                 <TextBlock FontWeight="DemiBold" Text="Biographie: " />
                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" DataContext="{Binding LeManager.RealSelected}" Text="{Binding Biographie}" />
-                    
-                <TextBlock  FontWeight="Bold" >Films Notables:</TextBlock>
-
-                <!--Acteurs-->
-                <WrapPanel Margin="0, 10, 0, 0">
-                    <StackPanel>
-                        <Viewbox Style="{StaticResource stylePourLesViewboxs}">
-                            <Image Source="../img/Shining.jpg"/>
-                        </Viewbox>
-                        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Foreground="Blue" Text="The Shining" TextDecorations="Underline" />
-                    </StackPanel>
-                    <StackPanel Margin="50,0,0,0">
-                        <Viewbox Style="{StaticResource stylePourLesViewboxs}">
-                            <Image Source="../img/Shining.jpg"/>
-                        </Viewbox>
-                        <TextBlock TextWrapping="Wrap" Foreground="Blue" Text="Orange Mécanique" TextDecorations="Underline" />
-                    </StackPanel>
-                </WrapPanel>
-
+                 
                 <Button Style="{StaticResource styleButtons}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="Signaler" Click="Signalement"/>
 
             </StackPanel>

@@ -23,6 +23,7 @@ namespace Metier.DataManager
             {
                 using (Stream stream = File.OpenRead("../../../Metier/XML/List_Film.xml"))
                 {
+                    if (stream.Length == 0) return null;
                     deserialized = serializerListFilm.ReadObject(stream) as List<Film>;
                 }
                 return deserialized;
@@ -55,6 +56,7 @@ namespace Metier.DataManager
             {
                 using (Stream stream = File.OpenRead("../../../Metier/XML/List_Reals.xml"))
                 {
+                    if (stream.Length == 0) return null;
                     deserialized = serializerListReals.ReadObject(stream) as ObservableCollection<Personne>;
                 }
                 return deserialized;

@@ -1,6 +1,7 @@
 ﻿using Metier;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,8 @@ namespace CoFiAppV1.Frames
     /// </summary>
     public partial class AddDirectorUC : UserControl
     {
+        private string SourcePath;
+
         public NavigationManager NavManager => (Application.Current as App).NavManager;
 
         public Manager LeManager
@@ -58,6 +61,7 @@ namespace CoFiAppV1.Frames
         private void Accueil_Click(object sender, RoutedEventArgs e)
         {
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
+            LeManager.FilmSelected = null;
         }
 
         private void AddDirector_Click(object sender, RoutedEventArgs e)
@@ -161,19 +165,53 @@ namespace CoFiAppV1.Frames
             Prenom = PrenomDirector.Text;
             Nationalite = NationaliteDirector.Text;
             Biographie = BiographieDirector.Text;
+            
+            string extension;
+            string pathimg;
 
-            if (Mort == null)
+            if (SourcePath != null)
             {
-                directorToAdd = new Personne(Nom, Prenom, Naissance, Nationalite, Biographie);
+                int index = 0;
+
+                for (; SourcePath[index] != '.'; ++index)
+                { }
+
+                extension = SourcePath.Remove(0, index);
+                pathimg = $"\\..\\..\\img\\{Prenom.ToLower().Replace(" ", string.Empty) + "-" + Nom.ToLower().Replace(" ", string.Empty)}{extension}";
+                File.Move(SourcePath, Directory.GetCurrentDirectory() + pathimg);
             }
             else
             {
-                directorToAdd = new Personne(Nom, Prenom, Naissance, Mort, Nationalite, Biographie);
+                pathimg = "\\..\\..\\img\\noavatar.png";
+            }
+
+            if (Mort == null)
+            {
+                directorToAdd = new Personne(Nom, Prenom, Naissance, Nationalite, Biographie, Directory.GetCurrentDirectory() + pathimg);
+            }
+            else
+            {
+                directorToAdd = new Personne(Nom, Prenom, Naissance, Mort, Nationalite, Biographie, Directory.GetCurrentDirectory() + pathimg);
             }
 
             LeManager.AjouterReal(directorToAdd);
             MessageBox.Show("Vous avez ajouter le réalisateur " + directorToAdd.Nom + " " + directorToAdd.Prenom + " avec succès.", "Ajout réalisateur", MessageBoxButton.OK, MessageBoxImage.Information);
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
+        }
+
+        private void OpenFileBrowser_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.InitialDirectory = "C:\\Users\\Public\\Desktop";
+            dlg.DefaultExt = ".jpg | .png | .gif";
+            dlg.Filter = "All images files (.jpg, .png, .gif)|*.jpg;*.png;*.gif|JPG files (.jpg)|*.jpg|PNG files (.png)|*.png|GIF files (.gif)|*.gif";
+
+            bool? result = dlg.ShowDialog();
+
+            if (result == true)
+            {
+                SourcePath = dlg.FileName;
+            }
         }
     }
 }
