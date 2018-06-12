@@ -45,15 +45,20 @@ namespace CoFiAppV1
 
         public MainWindow()
         {
-            LeManager.Chargement();
             InitializeComponent();
             DataContext = this;
-            NavManager.SelectedPart = NavManager.Parts["Accueil"]();
         }
 
-        private void ListBox_LostFocus(object sender, RoutedEventArgs e)
+        private void Window_Closing(object sender, CancelEventArgs e)
         {
-            //ListBox.SelectedIndex =-1;
+            LeManager.Sauvegarde();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            LeManager.Chargement();
+            NavManager.SelectedPart = NavManager.Parts["Accueil"]();
+            LeManager.FilmSelected = null;
         }
     }
 }

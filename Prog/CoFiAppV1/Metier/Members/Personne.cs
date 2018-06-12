@@ -1,63 +1,84 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Metier
 {
     /// <summary>
     /// La classe Personne comporte un nom et un prénom
     /// </summary>
+    /// 
+
+    [DataContract]
     public class Personne
     {
         /// <summary>
         /// Nom de la personne
         /// </summary>
+        /// 
+        [DataMember]
         public string Nom
         {
-            get; private set;
+            get; set;
         }
 
 
         /// <summary>
         /// Prénom de la personne
         /// </summary>
+        /// 
+        [DataMember]
         public string Prenom
         {
-            get; private set;
+            get; set;
         }
 
         /// <summary>
         /// Date de naissance de la personne
         /// </summary>
+        /// 
+        [DataMember]
         public DateTime DateDeNaissance
         {
-            get; private set;
+            get; set;
         }
 
         /// <summary>
         /// Date de mort de la personne (optionnel)
         /// </summary>
+        /// 
+        [DataMember]
         public DateTime? DateDeMort
         {
-            get; private set;
+            get; set;
         }
 
         /// <summary>
         /// Nationalité de la personne
         /// </summary>
+        /// 
+        [DataMember]
         public string Nationalite
         {
-            get; private set;
+            get; set;
         }
 
         /// <summary>
         /// Biographie de la personne
         /// </summary>
+        /// 
+        [DataMember]
         public string Biographie
         {
-            get; private set;
+            get; set;
+        }
+
+        public Personne()
+        {
         }
 
         public Personne(Personne p)

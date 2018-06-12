@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Metier
 {
     /// <summary>
     /// La classe Film est réprésenté par un titre, une date de sortie, une liste d'étiquettes, une chemin d'accés à l'image du film, un synopsis et une liste de personnes
     /// </summary>
+    /// 
+    [DataContract]
     public class Film : IEquatable<Film>
     {
         /// <summary>
         /// Titre du film
         /// </summary>
 
+        [DataMember]
         public string Titre
         {
             get; set;
@@ -24,6 +29,7 @@ namespace Metier
         /// <summary>
         /// Date de sortie du film (année)
         /// </summary>
+        [DataMember(Name = "Date De Sortie")]
         public int DateDeSortie
         {
             get; set;
@@ -33,6 +39,8 @@ namespace Metier
         /// Liste des étiquettes
         /// Cette liste comprend les différents types d'un film peur avoir (par exemple : action et aventure)
         /// </summary>
+        /// 
+        [DataMember(Name = "Tags")]
         public ObservableCollection<Tag> ListTags
         {
             get; set;
@@ -41,6 +49,8 @@ namespace Metier
         /// <summary>
         /// Synopsis du film
         /// </summary>
+        /// 
+        [DataMember]
         public string Synopsis
         {
             get; set;
@@ -49,6 +59,8 @@ namespace Metier
         /// <summary>
         /// Chemin d'accés à l'image
         /// </summary>
+        /// 
+        [DataMember]
         public string PathFile
         {
             get;
@@ -57,10 +69,16 @@ namespace Metier
 
         /// <summary>
         /// Association des différentes personnes présentes pour la réalisation du film
-        /// </summary>       
+        /// </summary> 
+        /// 
+        [DataMember]
         public Dictionary<Job, List<Personne>> Personnes
         {
             get; set;
+        }
+
+        public Film()
+        {
         }
 
         /// <summary>

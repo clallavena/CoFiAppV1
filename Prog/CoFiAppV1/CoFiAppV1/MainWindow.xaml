@@ -8,7 +8,9 @@
         xmlns:local="clr-namespace:CoFiAppV1"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280"
-        Background="{StaticResource defaultBackground}">
+        Background="{StaticResource defaultBackground}"
+        Closing="Window_Closing"
+        Loaded="Window_Loaded">
 
     <Window.Resources>
         <conv:Func2UserControlConverter x:Key="UCconverter" />
@@ -36,7 +38,7 @@
         <!--Liste des films affichés dans la partie de gauche-->
         <ListBox VerticalAlignment="Top" Height="Auto" Grid.Column="0" Grid.Row="1" Background="{StaticResource defaultColor}" IsSynchronizedWithCurrentItem="True"
                  ItemsSource="{Binding LeManager.FilmsParNom, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding LeManager.FilmSelected, Mode=TwoWay}"
-                 SelectionChanged="ListBox_SelectionChanged" LostFocus="ListBox_LostFocus" x:Name="ListBox">
+                 SelectionChanged="ListBox_SelectionChanged" x:Name="ListBox">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <UserControl>
