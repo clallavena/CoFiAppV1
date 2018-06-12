@@ -13,6 +13,7 @@
             <DateDeNaissance>1952-05-14T00:00:00</DateDeNaissance>
             <Nationalite>Américain</Nationalite>
             <Nom>Zemeckis</Nom>
+            <PathFile i:nil="true" />
             <Prenom>Robert</Prenom>
           </Personne>
         </d3p1:Value>
@@ -26,6 +27,7 @@
             <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
             <Nationalite i:nil="true" />
             <Nom>Hanks</Nom>
+            <PathFile i:nil="true" />
             <Prenom>Tom</Prenom>
           </Personne>
           <Personne>
@@ -34,6 +36,7 @@
             <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
             <Nationalite i:nil="true" />
             <Nom>Wright</Nom>
+            <PathFile i:nil="true" />
             <Prenom>Robin</Prenom>
           </Personne>
           <Personne>
@@ -42,6 +45,7 @@
             <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
             <Nationalite i:nil="true" />
             <Nom>Sinise</Nom>
+            <PathFile i:nil="true" />
             <Prenom>Gary</Prenom>
           </Personne>
         </d3p1:Value>
@@ -67,6 +71,7 @@
             <DateDeNaissance>1952-05-14T00:00:00</DateDeNaissance>
             <Nationalite>Américain</Nationalite>
             <Nom>Zemeckis</Nom>
+            <PathFile i:nil="true" />
             <Prenom>Robert</Prenom>
           </Personne>
         </d3p1:Value>
@@ -80,6 +85,7 @@
             <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
             <Nationalite i:nil="true" />
             <Nom>J.Fox</Nom>
+            <PathFile i:nil="true" />
             <Prenom>Michael</Prenom>
           </Personne>
           <Personne>
@@ -88,6 +94,7 @@
             <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
             <Nationalite i:nil="true" />
             <Nom>Lloyd</Nom>
+            <PathFile i:nil="true" />
             <Prenom>Christopher</Prenom>
           </Personne>
           <Personne>
@@ -96,6 +103,7 @@
             <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
             <Nationalite i:nil="true" />
             <Nom>Thompson</Nom>
+            <PathFile i:nil="true" />
             <Prenom>Lea</Prenom>
           </Personne>
         </d3p1:Value>
@@ -120,6 +128,7 @@
             <DateDeNaissance>1991-05-11T00:00:00</DateDeNaissance>
             <Nationalite>Française</Nationalite>
             <Nom>Descraques</Nom>
+            <PathFile i:nil="true" />
             <Prenom>Raphaël</Prenom>
           </Personne>
         </d3p1:Value>
@@ -133,6 +142,7 @@
             <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
             <Nationalite i:nil="true" />
             <Nom>Descraques</Nom>
+            <PathFile i:nil="true" />
             <Prenom>Raphaël</Prenom>
           </Personne>
           <Personne>
@@ -141,6 +151,7 @@
             <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
             <Nationalite i:nil="true" />
             <Nom>Tirel</Nom>
+            <PathFile i:nil="true" />
             <Prenom>Vincent</Prenom>
           </Personne>
           <Personne>
@@ -149,6 +160,7 @@
             <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
             <Nationalite i:nil="true" />
             <Nom>Josselin</Nom>
+            <PathFile i:nil="true" />
             <Prenom>Julien</Prenom>
           </Personne>
         </d3p1:Value>
@@ -175,6 +187,7 @@
             <DateDeNaissance>1991-01-01T00:00:00</DateDeNaissance>
             <Nationalite>Italienne</Nationalite>
             <Nom>Pezzato</Nom>
+            <PathFile i:nil="true" />
             <Prenom>Gianmaria</Prenom>
           </Personne>
         </d3p1:Value>
@@ -188,6 +201,7 @@
             <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
             <Nationalite i:nil="true" />
             <Nom>Rossi</Nom>
+            <PathFile i:nil="true" />
             <Prenom>Stefano</Prenom>
           </Personne>
           <Personne>
@@ -196,6 +210,7 @@
             <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
             <Nationalite i:nil="true" />
             <Nom>Orcali</Nom>
+            <PathFile i:nil="true" />
             <Prenom>Maddalena</Prenom>
           </Personne>
         </d3p1:Value>
@@ -207,5 +222,62 @@
       <Tag>Fantastique</Tag>
     </Tags>
     <Titre>Voldemort Les origines de l'héritier</Titre>
+  </Film>
+  <Film>
+    <Date_x0020_De_x0020_Sortie>1993</Date_x0020_De_x0020_Sortie>
+    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\jurassicpark.jpg</PathFile>
+    <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+        <d3p1:Key>Realisateur</d3p1:Key>
+        <d3p1:Value>
+          <Personne>
+            <Biographie>Steven Spielberg est un réalisateur, scénariste et producteur de cinéma américain, né le 18 décembre 1946 à Cincinnati.</Biographie>
+            <DateDeMort i:nil="true" />
+            <DateDeNaissance>1946-12-18T00:00:00</DateDeNaissance>
+            <Nationalite>Américaine</Nationalite>
+            <Nom>Spielberg</Nom>
+            <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\steven-spielberg.jpg</PathFile>
+            <Prenom>Steven</Prenom>
+          </Personne>
+        </d3p1:Value>
+      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+        <d3p1:Key>Acteur</d3p1:Key>
+        <d3p1:Value>
+          <Personne>
+            <Biographie i:nil="true" />
+            <DateDeMort i:nil="true" />
+            <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
+            <Nationalite i:nil="true" />
+            <Nom>Goldblum</Nom>
+            <PathFile i:nil="true" />
+            <Prenom>Jeff</Prenom>
+          </Personne>
+          <Personne>
+            <Biographie i:nil="true" />
+            <DateDeMort i:nil="true" />
+            <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
+            <Nationalite i:nil="true" />
+            <Nom>Neil</Nom>
+            <PathFile i:nil="true" />
+            <Prenom>Sam</Prenom>
+          </Personne>
+          <Personne>
+            <Biographie i:nil="true" />
+            <DateDeMort i:nil="true" />
+            <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
+            <Nationalite i:nil="true" />
+            <Nom>Dern</Nom>
+            <PathFile i:nil="true" />
+            <Prenom>Laura</Prenom>
+          </Personne>
+        </d3p1:Value>
+      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+    </Personnes>
+    <Synopsis>Ne pas réveiller le chat qui dort, c'est ce que le milliardaire John Hammond aurait dû se rappeler avant de se lancer dans le clonage de dinosaures. C'est à partir d'une goutte de sang absorbée par un moustique fossilisé que John Hammond et son équipe ont réussi à faire renaître une dizaine d'espèces de dinosaures.</Synopsis>
+    <Tags>
+      <Tag>Science_Fiction</Tag>
+    </Tags>
+    <Titre>Jurassic Park</Titre>
   </Film>
 </ArrayOfFilm>

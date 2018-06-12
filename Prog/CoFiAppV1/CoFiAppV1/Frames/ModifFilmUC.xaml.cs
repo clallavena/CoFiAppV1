@@ -87,6 +87,7 @@ namespace CoFiAppV1.Frames
         private void Accueil_Click(object sender, RoutedEventArgs e)
         {
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
+            LeManager.FilmSelected = null;
         }
 
         private void DeleteTag_Click(object sender, RoutedEventArgs e)

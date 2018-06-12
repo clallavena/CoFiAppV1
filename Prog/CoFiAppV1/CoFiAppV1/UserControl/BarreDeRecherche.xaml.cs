@@ -21,6 +21,8 @@ namespace CoFiAppV1
     /// </summary>
     public partial class BarreDeRecherche : UserControl
     {
+        public NavigationManager NavManager => (Application.Current as App).NavManager;
+
         public Manager LeManager
         {
             get
@@ -35,14 +37,21 @@ namespace CoFiAppV1
 
         private void SearchB_KeyDown(object sender, KeyEventArgs e)
         {
-            if (searchB.Text == "Rechercher")
+            if (e.Key == Key.Enter)
             {
-                searchB.Text = "";
+                LeManager.RechercherFilm(searchB.Text, LeManager.Films);
             }
         }
 
         private void SearchB_LostFocus(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(searchB.Text))
+            {
+                LeManager.RechercherFilm(searchB.Text, LeManager.Films);
+                NavManager.SelectedPart = NavManager.Parts["Accueil"]();
+                LeManager.FilmSelected = null;
+            }
+
             if (searchB.Text == "")
             {
                 searchB.Text = "Rechercher";
@@ -52,6 +61,11 @@ namespace CoFiAppV1
         public void Loupe_Click(object sender, RoutedEventArgs e)
         {
             LeManager.RechercherFilm(searchB.Text, LeManager.Films);
+        }
+
+        private void SearchB_GotFocus(object sender, RoutedEventArgs e)
+        {
+            searchB.Text = "";
         }
     }
 }

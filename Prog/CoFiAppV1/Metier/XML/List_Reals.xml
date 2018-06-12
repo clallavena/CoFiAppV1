@@ -6,6 +6,7 @@
     <DateDeNaissance>1952-05-14T00:00:00</DateDeNaissance>
     <Nationalite>Américain</Nationalite>
     <Nom>Zemeckis</Nom>
+    <PathFile i:nil="true" />
     <Prenom>Robert</Prenom>
   </Personne>
   <Personne>
@@ -14,6 +15,7 @@
     <DateDeNaissance>1991-05-11T00:00:00</DateDeNaissance>
     <Nationalite>Française</Nationalite>
     <Nom>Descraques</Nom>
+    <PathFile i:nil="true" />
     <Prenom>Raphaël</Prenom>
   </Personne>
   <Personne>
@@ -22,6 +24,16 @@
     <DateDeNaissance>1991-01-01T00:00:00</DateDeNaissance>
     <Nationalite>Italienne</Nationalite>
     <Nom>Pezzato</Nom>
+    <PathFile i:nil="true" />
     <Prenom>Gianmaria</Prenom>
+  </Personne>
+  <Personne>
+    <Biographie>Steven Spielberg est un réalisateur, scénariste et producteur de cinéma américain, né le 18 décembre 1946 à Cincinnati.</Biographie>
+    <DateDeMort i:nil="true" />
+    <DateDeNaissance>1946-12-18T00:00:00</DateDeNaissance>
+    <Nationalite>Américaine</Nationalite>
+    <Nom>Spielberg</Nom>
+    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\steven-spielberg.jpg</PathFile>
+    <Prenom>Steven</Prenom>
   </Personne>
 </ArrayOfPersonne>

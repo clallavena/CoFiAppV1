@@ -178,7 +178,6 @@
     <Resource Include="img\loupe.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\backtothefuture.jpg" />
     <Resource Include="img\Shining.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -205,12 +204,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\noavatar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\ttt.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\ryzer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

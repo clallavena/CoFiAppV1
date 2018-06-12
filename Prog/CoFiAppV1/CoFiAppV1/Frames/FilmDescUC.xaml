@@ -54,9 +54,9 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Nom}"/>
+                                    <TextBlock Text="{Binding Prenom}"/>
                                     <TextBlock Text=" "/>
-                                    <TextBlock Text="{Binding Prenom}" />
+                                    <TextBlock Text="{Binding Nom}" />
                                 </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>
@@ -104,9 +104,9 @@
                                     <Image Source="../img/noavatar.png"/>
                                 </Viewbox>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Nom}" />
-                                    <TextBlock Text=" " />
                                     <TextBlock Text="{Binding Prenom}" />
+                                    <TextBlock Text=" " />
+                                    <TextBlock Text="{Binding Nom}" />
                                 </StackPanel>
                             </StackPanel>
                         </DataTemplate>

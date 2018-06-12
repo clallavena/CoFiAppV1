@@ -44,12 +44,9 @@
             <Label Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" FontWeight="Bold" FontSize="35" Content="Indépendant" />
             <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" >
             Bienvenue dans la partie Film Indépendant !
-            Notre application cherche à valoriser le travail de réalisateur indépendant, ici ils sont classés par ordre chronologique, vous pouvez toujours en chercher un grâce à l'outils de recherche!
+            Notre application cherche à valoriser le travail de réalisateur indépendant, ici ils sont classés par ordre chronologique!
             </TextBlock>
         </Grid>
-
-        <!-- Barre de Recherche -->
-        <local:BarreDeRecherche Grid.Row="2" DockPanel.Dock="Left" HorizontalAlignment="Left" Width="350"/>
 
         <!-- Liste -->
         <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto">

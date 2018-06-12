@@ -76,6 +76,13 @@ namespace Metier
         {
             get; set;
         }
+        
+        [DataMember]
+        public string PathFile
+        {
+            get;
+            set;
+        }
 
         public Personne()
         {
@@ -89,6 +96,7 @@ namespace Metier
             DateDeMort = p.DateDeMort;
             Nationalite = p.Nationalite;
             Biographie = p.Biographie;
+            PathFile = p.PathFile;
         }
 
         /// <summary>
@@ -110,12 +118,13 @@ namespace Metier
         /// <param name="dateDeNaissance"></param>
         /// <param name="nationalite"></param>
         /// <param name="biographie"></param>
-        public Personne(string nom, string prenom, DateTime dateDeNaissance, string nationalite, string biographie) : this(nom, prenom)
+        public Personne(string nom, string prenom, DateTime dateDeNaissance, string nationalite, string biographie, string pathfile) : this(nom, prenom)
         {
             DateDeNaissance = dateDeNaissance;
             Nationalite = nationalite;
             Biographie = biographie;
             DateDeMort = null;
+            PathFile = pathfile;
         }
 
         /// <summary>
@@ -127,7 +136,7 @@ namespace Metier
         /// <param name="dateDeMort"></param>
         /// <param name="nationalite"></param>
         /// <param name="biographie"></param>
-        public Personne(string nom, string prenom, DateTime dateDeNaissance, DateTime? dateDeMort, string nationalite, string biographie) : this(nom, prenom, dateDeNaissance, nationalite, biographie)
+        public Personne(string nom, string prenom, DateTime dateDeNaissance, DateTime? dateDeMort, string nationalite, string biographie, string pathfile) : this(nom, prenom, dateDeNaissance, nationalite, biographie, pathfile)
         {
             DateDeMort = dateDeMort;
         }

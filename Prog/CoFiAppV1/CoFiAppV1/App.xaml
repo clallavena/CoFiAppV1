@@ -96,16 +96,6 @@
             <Setter Property="Height" Value="40"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
-
-        <DataTemplate x:Key="accueil">
-            <frames:AccueilUC/>
-        </DataTemplate>
-        <DataTemplate x:Key="director">
-            <frames:DirectorUC/>
-        </DataTemplate>
-        <DataTemplate x:Key="filmDesc">
-            <frames:FilmDescUC/>
-        </DataTemplate>
-
+        
     </Application.Resources>
 </Application>

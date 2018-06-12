@@ -26,8 +26,8 @@ namespace Metier.DataManager
             listPA_f1.Add(new Personne("Sinise", "Gary"));
             listPA_f1.Add(new Personne("Wright", "Robin"));
 
-            listPR_f1.Add(new Personne("Zemeckis", "Robert", new DateTime(1952, 05, 14), "Americain", "Fabuleux Réal"));
-            listPR_f1.Add(new Personne("Lucas", "Georges", new DateTime(1852, 05, 14), new DateTime(1930, 11, 9), "Americain", "Fabuleux Réal"));
+            listPR_f1.Add(new Personne("Zemeckis", "Robert", new DateTime(1952, 05, 14), "Americain", "Fabuleux Réal", null));
+            listPR_f1.Add(new Personne("Lucas", "Georges", new DateTime(1852, 05, 14), new DateTime(1930, 11, 9), "Americain", "Fabuleux Réal", null));
 
             filmForrest.Add(Job.Acteur, listPA_f1);
             filmForrest.Add(Job.Realisateur, listPR_f1);
@@ -41,7 +41,7 @@ namespace Metier.DataManager
             listPA_f2.Add(new Personne("Hathaway", "Anne"));
             listPA_f2.Add(new Personne("Jessica", "Chastain"));
 
-            listPR_f2.Add(new Personne("Nolan", "Christophe", new DateTime(1970, 07, 30), "Anglais", "XOXOXO"));
+            listPR_f2.Add(new Personne("Nolan", "Christophe", new DateTime(1970, 07, 30), "Anglais", "XOXOXO", null));
 
             filmInterstellar.Add(Job.Acteur, listPA_f2);
             filmInterstellar.Add(Job.Realisateur, listPR_f2);
@@ -82,9 +82,9 @@ namespace Metier.DataManager
         {
             ObservableCollection<Personne> reals = new ObservableCollection<Personne>();
 
-            reals.Add(new Personne("Nolan", "Christophe", new DateTime(1970, 07, 30), "Anglais", "XOXOXO"));
-            reals.Add(new Personne("Zemeckis", "Robert", new DateTime(1952, 05, 14), "Americain", "Fabuleux Réal"));
-            reals.Add(new Personne("Lucas", "Georges", new DateTime(1852, 05, 14), "Americain", "Fabuleux Réal"));
+            reals.Add(new Personne("Nolan", "Christophe", new DateTime(1970, 07, 30), "Anglais", "XOXOXO", null));
+            reals.Add(new Personne("Zemeckis", "Robert", new DateTime(1952, 05, 14), "Americain", "Fabuleux Réal", null));
+            reals.Add(new Personne("Lucas", "Georges", new DateTime(1852, 05, 14), "Americain", "Fabuleux Réal", null));
 
             return reals;
         }

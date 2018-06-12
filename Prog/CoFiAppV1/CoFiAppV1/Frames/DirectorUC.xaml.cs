@@ -36,6 +36,7 @@ namespace CoFiAppV1.Frames
         {
             InitializeComponent();
             DataContext = this;
+            string a = LeManager.RealSelected.PathFile;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

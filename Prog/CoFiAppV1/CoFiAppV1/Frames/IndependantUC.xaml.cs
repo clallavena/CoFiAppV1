@@ -57,6 +57,7 @@ namespace CoFiAppV1.Frames
         private void Accueil_Click(object sender, RoutedEventArgs e)
         {
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
+            LeManager.FilmSelected = null;
         }
 
         private void Vignette_MouseDoubleClick(object sender, MouseButtonEventArgs e)

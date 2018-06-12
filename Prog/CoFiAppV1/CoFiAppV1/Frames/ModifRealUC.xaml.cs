@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Metier;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,14 @@ namespace CoFiAppV1.Frames
     {
         public NavigationManager NavManager => (Application.Current as App).NavManager;
 
+        public Manager LeManager
+        {
+            get
+            {
+                return (Application.Current as App).LeManager;
+            }
+        }
+
         public ModifRealUC()
         {
             InitializeComponent();
@@ -30,6 +39,7 @@ namespace CoFiAppV1.Frames
         private void Accueil_Click(object sender, RoutedEventArgs e)
         {
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
+            LeManager.FilmSelected = null;
         }
     }
 }

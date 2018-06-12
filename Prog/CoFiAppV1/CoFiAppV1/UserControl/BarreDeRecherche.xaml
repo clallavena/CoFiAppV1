@@ -13,7 +13,7 @@
         </Grid.ColumnDefinitions>
 
         <TextBox Name="searchB" Background="{StaticResource defaultBackground}" TextWrapping="Wrap" Grid.Row="0" Margin="5"
-                 FontSize="15" FontStyle="Italic" Text="Rechercher" KeyDown="SearchB_KeyDown" LostFocus="SearchB_LostFocus"/>
+                 FontSize="15" FontStyle="Italic" Text="Rechercher" KeyDown="SearchB_KeyDown" LostFocus="SearchB_LostFocus" GotFocus="SearchB_GotFocus"/>
         <Button Grid.Column="1" Background="{StaticResource defaultColor}" Name="Loupe" Click="Loupe_Click">
             <Viewbox Stretch="Uniform">
                 <Image Source="../img/loupe.png" Height="50" Width="30"/>
