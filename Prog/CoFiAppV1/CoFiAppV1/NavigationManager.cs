@@ -25,7 +25,6 @@ namespace CoFiAppV1
             ["Director"] = () => new DirectorUC(),
             ["Independant"] = () => new IndependantUC(),
             ["ModifFilm"] = () => new ModifFilmUC(),
-            ["ModifReal"] = () => new ModifRealUC(),
         };
         
         void OnPropertyChanged([CallerMemberName] string propertyName = null) =>

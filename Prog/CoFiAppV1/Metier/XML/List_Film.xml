@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfFilm xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Metier">
   <Film>
-    <Date_x0020_De_x0020_Sortie>78</Date_x0020_De_x0020_Sortie>
-    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug/../../CoFiAppV1/img/noavatar.png</PathFile>
+    <Date_x0020_De_x0020_Sortie>753</Date_x0020_De_x0020_Sortie>
+    <PathFile>noavatar.png</PathFile>
     <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
       <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
         <d3p1:Key>Realisateur</d3p1:Key>
         <d3p1:Value>
           <Personne>
-            <Biographie>hjkghkk</Biographie>
+            <Biographie>h,</Biographie>
             <DateDeMort i:nil="true" />
-            <DateDeNaissance>7454-04-04T00:00:00</DateDeNaissance>
-            <Nationalite>jkghkgk</Nationalite>
-            <Nom>hukgh</Nom>
-            <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\noavatar.png</PathFile>
-            <Prenom>ghgjk</Prenom>
+            <DateDeNaissance>0086-02-04T00:00:00</DateDeNaissance>
+            <Nationalite>gh,</Nationalite>
+            <Nom>aaaaa</Nom>
+            <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\img\noavatar.png</PathFile>
+            <Prenom>aaaaaa</Prenom>
           </Personne>
         </d3p1:Value>
       </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
@@ -23,25 +23,25 @@
         <d3p1:Value />
       </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
     </Personnes>
-    <Synopsis>ftj</Synopsis>
+    <Synopsis>fgfn</Synopsis>
     <Tags />
-    <Titre>ghggh</Titre>
+    <Titre>azer</Titre>
   </Film>
   <Film>
-    <Date_x0020_De_x0020_Sortie>1</Date_x0020_De_x0020_Sortie>
-    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\DebugC:\Users\GhostFalador\Desktopcofiapp/trunk/Prog/CoFiAppV1/CoFiAppV1/img/noavatar.png</PathFile>
+    <Date_x0020_De_x0020_Sortie>86</Date_x0020_De_x0020_Sortie>
+    <PathFile>erfdfb.jpg</PathFile>
     <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
       <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
         <d3p1:Key>Realisateur</d3p1:Key>
         <d3p1:Value>
           <Personne>
-            <Biographie>hjkghkk</Biographie>
+            <Biographie>h,</Biographie>
             <DateDeMort i:nil="true" />
-            <DateDeNaissance>7454-04-04T00:00:00</DateDeNaissance>
-            <Nationalite>jkghkgk</Nationalite>
-            <Nom>hukgh</Nom>
-            <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\CoFiAppV1\img\noavatar.png</PathFile>
-            <Prenom>ghgjk</Prenom>
+            <DateDeNaissance>0086-02-04T00:00:00</DateDeNaissance>
+            <Nationalite>gh,</Nationalite>
+            <Nom>aaaaa</Nom>
+            <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\img\noavatar.png</PathFile>
+            <Prenom>aaaaaa</Prenom>
           </Personne>
         </d3p1:Value>
       </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
@@ -50,116 +50,8 @@
         <d3p1:Value />
       </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
     </Personnes>
-    <Synopsis>adaz</Synopsis>
+    <Synopsis>sdv</Synopsis>
     <Tags />
-    <Titre>zdad</Titre>
-  </Film>
-  <Film>
-    <Date_x0020_De_x0020_Sortie>15</Date_x0020_De_x0020_Sortie>
-    <PathFile>C:\Users\GhostFalador\Desktopcofiapp/trunk/Prog/CoFiAppV1/CoFiAppV1/img/noavatar.png</PathFile>
-    <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-        <d3p1:Key>Realisateur</d3p1:Key>
-        <d3p1:Value>
-          <Personne>
-            <Biographie>hjkghkk</Biographie>
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>7454-04-04T00:00:00</DateDeNaissance>
-            <Nationalite>jkghkgk</Nationalite>
-            <Nom>hukgh</Nom>
-            <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\CoFiAppV1\img\noavatar.png</PathFile>
-            <Prenom>ghgjk</Prenom>
-          </Personne>
-        </d3p1:Value>
-      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-        <d3p1:Key>Acteur</d3p1:Key>
-        <d3p1:Value />
-      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-    </Personnes>
-    <Synopsis>cndhb</Synopsis>
-    <Tags />
-    <Titre>dezeac</Titre>
-  </Film>
-  <Film>
-    <Date_x0020_De_x0020_Sortie>1</Date_x0020_De_x0020_Sortie>
-    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\img\noavatar.png</PathFile>
-    <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-        <d3p1:Key>Realisateur</d3p1:Key>
-        <d3p1:Value>
-          <Personne>
-            <Biographie>hjkghkk</Biographie>
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>7454-04-04T00:00:00</DateDeNaissance>
-            <Nationalite>jkghkgk</Nationalite>
-            <Nom>hukgh</Nom>
-            <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\CoFiAppV1\img\noavatar.png</PathFile>
-            <Prenom>ghgjk</Prenom>
-          </Personne>
-        </d3p1:Value>
-      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-        <d3p1:Key>Acteur</d3p1:Key>
-        <d3p1:Value />
-      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-    </Personnes>
-    <Synopsis>dezdz</Synopsis>
-    <Tags />
-    <Titre>cceze</Titre>
-  </Film>
-  <Film>
-    <Date_x0020_De_x0020_Sortie>15419841</Date_x0020_De_x0020_Sortie>
-    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\\img\axzaxz.png</PathFile>
-    <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-        <d3p1:Key>Realisateur</d3p1:Key>
-        <d3p1:Value>
-          <Personne>
-            <Biographie>hjkghkk</Biographie>
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>7454-04-04T00:00:00</DateDeNaissance>
-            <Nationalite>jkghkgk</Nationalite>
-            <Nom>hukgh</Nom>
-            <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\CoFiAppV1\img\noavatar.png</PathFile>
-            <Prenom>ghgjk</Prenom>
-          </Personne>
-        </d3p1:Value>
-      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-        <d3p1:Key>Acteur</d3p1:Key>
-        <d3p1:Value />
-      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-    </Personnes>
-    <Synopsis>dadasas</Synopsis>
-    <Tags />
-    <Titre>axzaxz</Titre>
-  </Film>
-  <Film>
-    <Date_x0020_De_x0020_Sortie>1</Date_x0020_De_x0020_Sortie>
-    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\img\dad.png</PathFile>
-    <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-        <d3p1:Key>Realisateur</d3p1:Key>
-        <d3p1:Value>
-          <Personne>
-            <Biographie>adada</Biographie>
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>0001-03-02T00:00:00</DateDeNaissance>
-            <Nationalite>adaz</Nationalite>
-            <Nom>ada</Nom>
-            <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\\img\daa-ada.jpg</PathFile>
-            <Prenom>daa</Prenom>
-          </Personne>
-        </d3p1:Value>
-      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-        <d3p1:Key>Acteur</d3p1:Key>
-        <d3p1:Value />
-      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-    </Personnes>
-    <Synopsis>d</Synopsis>
-    <Tags />
-    <Titre>dad</Titre>
+    <Titre>erfdfb</Titre>
   </Film>
 </ArrayOfFilm>

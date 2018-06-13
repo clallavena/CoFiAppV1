@@ -20,7 +20,7 @@ namespace CoFiAppV1.Frames
     /// <summary>
     /// Logique d'interaction pour FilmDesc.xaml
     /// </summary>
-    public partial class FilmDescUC : UserControl, INotifyPropertyChanged 
+    public partial class FilmDescUC : UserControl, INotifyPropertyChanged
     {
         public NavigationManager NavManager => (Application.Current as App).NavManager;
         public event PropertyChangedEventHandler PropertyChanged;
@@ -89,7 +89,7 @@ namespace CoFiAppV1.Frames
                 {
                     MessageBox.Show("le signalement n'a pas pu être envoyé, veuillez contacter un administrateur ! \n" + ex.ToString());
                 }
-            }           
+            }
         }
 
         private void Ajouter_Click(object sender, RoutedEventArgs e)
@@ -119,10 +119,20 @@ namespace CoFiAppV1.Frames
 
                 if (result.ToString().Equals("Yes"))
                 {
-                    if (LeManager.SupprimerFilm(LeManager.FilmSelected)) MessageBox.Show("Suppression effectué avec succés", "Suppression", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                    else MessageBox.Show("Erreur lors de la suppression", "Suppression", MessageBoxButton.OK, MessageBoxImage.Error);
+                    if (LeManager.SupprimerFilm(LeManager.FilmSelected))
+                    {
+                        MessageBox.Show("Suppression effectué avec succés", "Suppression", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                        NavManager.SelectedPart = NavManager.Parts["Accueil"]();
+                        LeManager.FilmSelected = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erreur lors de la suppression", "Suppression", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
                 NotifyPropertyChanged("LeManager.FilmsParNom");
+                NavManager.SelectedPart = NavManager.Parts["Accueil"]();
+                LeManager.FilmSelected = null;
             }
             else
             {

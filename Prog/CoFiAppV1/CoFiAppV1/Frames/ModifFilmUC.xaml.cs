@@ -266,9 +266,9 @@ namespace CoFiAppV1.Frames
 
                 extension = SourcePath.Remove(0, index);
                 pathimg = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\" + $"img\\{LeManager.FilmSelected.Titre.ToLower().Replace(" ", string.Empty)}{extension}";
-                if (LeManager.FilmSelected.PathFile == pathimg)
+                if (LeManager.FilmSelected.PathFile == pathimg && !pathimg.Contains("noavatar.png"))
                 {
-
+                    File.Delete(LeManager.FilmSelected.PathFile);
                 }
                 File.Move(SourcePath, pathimg);
                 LeManager.FilmSelected.PathFile = pathimg;

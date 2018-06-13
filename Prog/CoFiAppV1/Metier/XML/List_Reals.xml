@@ -1,21 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfPersonne xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Metier">
   <Personne>
-    <Biographie>hjkghkk</Biographie>
+    <Biographie>h,</Biographie>
     <DateDeMort i:nil="true" />
-    <DateDeNaissance>7454-04-04T00:00:00</DateDeNaissance>
-    <Nationalite>jkghkgk</Nationalite>
-    <Nom>hukgh</Nom>
-    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\CoFiAppV1\img\noavatar.png</PathFile>
-    <Prenom>ghgjk</Prenom>
-  </Personne>
-  <Personne>
-    <Biographie>adada</Biographie>
-    <DateDeMort i:nil="true" />
-    <DateDeNaissance>0001-03-02T00:00:00</DateDeNaissance>
-    <Nationalite>adaz</Nationalite>
-    <Nom>ada</Nom>
-    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\\img\daa-ada.jpg</PathFile>
-    <Prenom>daa</Prenom>
+    <DateDeNaissance>0086-02-04T00:00:00</DateDeNaissance>
+    <Nationalite>gh,</Nationalite>
+    <Nom>aaaaa</Nom>
+    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\img\noavatar.png</PathFile>
+    <Prenom>aaaaaa</Prenom>
   </Personne>
 </ArrayOfPersonne>

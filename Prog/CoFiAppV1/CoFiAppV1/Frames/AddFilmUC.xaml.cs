@@ -132,8 +132,7 @@ namespace CoFiAppV1.Frames
             {
                 if (ComboReal.Text.Contains(p.Nom))
                 {
-                    buff = new Personne(p);
-                    lir.Add(buff);
+                    lir.Add(p);
                     personnesAdd.Add(Job.Realisateur, lir);
                     break;
                 }
@@ -150,12 +149,14 @@ namespace CoFiAppV1.Frames
                 { }
 
                 extension = SourcePath.Remove(0, index);
-                pathimg = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\" + $"\\img\\{Titre.ToLower().Replace(" ", string.Empty)}{extension}";
-                File.Move(SourcePath, pathimg);
+                //pathimg = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\" + $"\\img\\{Titre.ToLower().Replace(" ", string.Empty)}{extension}";
+                pathimg = $"{Titre.ToLower().Replace(" ", string.Empty)}{extension}";
+                File.Move(SourcePath, Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\img\\" + pathimg);
             }
             else
             {
-                pathimg = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\img\\noavatar.png";
+                //pathimg = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\img\\noavatar.png";
+                pathimg = "noavatar.png";
             }
 
             personnesAdd.Add(Job.Acteur, listeActeur.ToList());
