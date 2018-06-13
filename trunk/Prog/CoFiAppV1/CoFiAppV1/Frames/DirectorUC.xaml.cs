@@ -32,14 +32,19 @@ namespace CoFiAppV1.Frames
             }
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public DirectorUC()
         {
             InitializeComponent();
             DataContext = this;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
+        /// <summary>
+        /// Signalement d'un réalisateur 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Signalement(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Voulez vous signaler ce réalisateur ?", "Signalement", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -58,12 +63,22 @@ namespace CoFiAppV1.Frames
             }
         }
 
+        /// <summary>
+        /// Retourner à l'accueil
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Accueil_Click(object sender, RoutedEventArgs e)
         {
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
             LeManager.FilmSelected = null;
         }
 
+        /// <summary>
+        /// Supprimer un réalisateur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Supprimer_Click(object sender, RoutedEventArgs e)
         {
             if (LeManager.CurrentUser != null)
@@ -96,6 +111,11 @@ namespace CoFiAppV1.Frames
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(info));
         }
 
+        /// <summary>
+        /// Ajouter un film ou un réalisateur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Ajouter_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Voulez-vous ajouter un Réalisateur ?", "Ajouter Réal", MessageBoxButton.YesNoCancel);

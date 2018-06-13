@@ -77,15 +77,14 @@ namespace Metier
             get; set;
         }
         
+        /// <summary>
+        /// Chemin d'accès de l'image de la personne
+        /// </summary>
         [DataMember]
         public string PathFile
         {
             get;
             set;
-        }
-
-        public Personne()
-        {
         }
 
         public Personne(Personne p)

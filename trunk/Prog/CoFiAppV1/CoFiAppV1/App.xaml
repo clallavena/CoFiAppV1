@@ -9,27 +9,8 @@
         <SolidColorBrush x:Key="defaultBackground">#98B6B4</SolidColorBrush>
         <SolidColorBrush x:Key="defaultColor">#00899B</SolidColorBrush>
         <system:Double x:Key="defaultFontSize">20</system:Double>
-
-        <!--Ancien style des boutons-->        
-        <Style x:Key="stylePourTousLesBouttons" TargetType="{x:Type Button}">
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="Height" Value="25"/>
-            <Setter Property="Width" Value="150"/>
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="Background" Value="{StaticResource defaultColor}"/>
-        </Style>
-
-        <Style x:Key="styleToggleButtonsModif" TargetType="{x:Type ToggleButton}">
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="Height" Value="40"/>
-            <Setter Property="Width" Value="150"/>
-            <Setter Property="Content" Value="Modifier"/>
-        </Style>
-        <!--Ancien style des boutons-->
         
-        <!--Nouveau style des boutons-->
+        <!--style pour boutons-->
         <Style x:Key="styleButtons" TargetType="{x:Type Button}">
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="15"/>
@@ -53,7 +34,9 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <!--style pour boutons-->
 
+        <!--style pour toggle boutons-->
         <Style x:Key="styleToggleButtons" TargetType="{x:Type ToggleButton}">
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="15"/>
@@ -80,22 +63,29 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        <!--Nouveau style des boutons-->
+        <!--style pour toggle boutons-->
         
+        <!--style pour les viewbox-->
         <Style x:Key="stylePourLesViewboxs" TargetType="{x:Type Viewbox}">
             <Setter Property="Width" Value="150"/>
             <Setter Property="Height" Value="200"/>
             <Setter Property="Stretch" Value="Uniform"/>
         </Style>
-        
+        <!--style pour les viewbox-->
+
+        <!--style pour les textbox-->
         <Style x:Key="stylePourTextBox" TargetType="{x:Type TextBox}">
             <Setter Property="Height" Value="40"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
+        <!--style pour les textbox-->
+
+        <!--style pour les textblock-->
         <Style x:Key="stylePourTextBlock" TargetType="{x:Type TextBlock}">
             <Setter Property="Height" Value="40"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
+        <!--style pour les textblock-->
         
     </Application.Resources>
 </Application>

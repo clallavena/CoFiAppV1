@@ -38,6 +38,11 @@ namespace Metier
             Password = password;
         }
 
+        /// <summary>
+        /// Protocole d'égalité réécrit
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             if (object.ReferenceEquals(obj, null)) return false;

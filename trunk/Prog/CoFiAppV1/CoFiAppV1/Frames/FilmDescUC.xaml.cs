@@ -23,7 +23,9 @@ namespace CoFiAppV1.Frames
     public partial class FilmDescUC : UserControl, INotifyPropertyChanged
     {
         public NavigationManager NavManager => (Application.Current as App).NavManager;
+
         public event PropertyChangedEventHandler PropertyChanged;
+
         public Manager LeManager
         {
             get
@@ -57,16 +59,11 @@ namespace CoFiAppV1.Frames
             lpa = LeManager.FilmSelected.Personnes.Where(p => p.Key == Job.Acteur).SelectMany(s => s.Value).ToList();
         }
 
-        public string Titre
-        {
-            get { return (string)GetValue(TitreProperty); }
-            set { SetValue(TitreProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for Titre.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty TitreProperty =
-            DependencyProperty.Register("Titre", typeof(string), typeof(FilmDescUC), new PropertyMetadata("sans titre"));
-
+        /// <summary>
+        /// Retourner à l'accueil
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Accueil_Click(object sender, RoutedEventArgs e)
         {
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
@@ -74,6 +71,11 @@ namespace CoFiAppV1.Frames
             LeManager.FilmSelected = null;
         }
 
+        /// <summary>
+        /// Signalement d'un film
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Signalement(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Voulez vous signaler ce film ?", "Signalement", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -92,6 +94,11 @@ namespace CoFiAppV1.Frames
             }
         }
 
+        /// <summary>
+        /// Ajouter un réalisateur ou un film
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Ajouter_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Voulez-vous ajouter un Réalisateur ?", "Ajouter Réal", MessageBoxButton.YesNoCancel);
@@ -111,6 +118,11 @@ namespace CoFiAppV1.Frames
             }
         }
 
+        /// <summary>
+        /// Supprimer un film
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Supprimer_Click(object sender, RoutedEventArgs e)
         {
             if (LeManager.CurrentUser != null)
@@ -145,6 +157,11 @@ namespace CoFiAppV1.Frames
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(info));
         }
 
+        /// <summary>
+        /// Modifier un film
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Modifier_Click(object sender, RoutedEventArgs e)
         {
             if (LeManager.CurrentUser != null)
@@ -162,6 +179,11 @@ namespace CoFiAppV1.Frames
             }
         }
 
+        /// <summary>
+        /// Double clique sur un réalisateur pour avoir plus de détails sur lui
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             NavManager.SelectedPart = NavManager.Parts["Director"]();

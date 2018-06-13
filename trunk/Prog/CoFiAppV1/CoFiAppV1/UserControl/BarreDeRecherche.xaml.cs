@@ -35,6 +35,11 @@ namespace CoFiAppV1
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Appuyer sur la touche entrée dans la barre de rechercher pour lancer la recherche de films
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SearchB_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -43,6 +48,11 @@ namespace CoFiAppV1
             }
         }
 
+        /// <summary>
+        /// Evenement executé en sortant de la barre de recherche
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SearchB_LostFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(searchB.Text))
@@ -58,11 +68,21 @@ namespace CoFiAppV1
             }
         }
 
+        /// <summary>
+        /// Appuyer sur la loupe pour rechercher
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void Loupe_Click(object sender, RoutedEventArgs e)
         {
             LeManager.RechercherFilm(searchB.Text, LeManager.Films);
         }
 
+        /// <summary>
+        /// Entrer dans la barre de recherche
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SearchB_GotFocus(object sender, RoutedEventArgs e)
         {
             searchB.Text = "";

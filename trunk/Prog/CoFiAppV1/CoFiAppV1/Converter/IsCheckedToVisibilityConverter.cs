@@ -9,6 +9,9 @@ using System.Windows.Data;
 
 namespace CoFiAppV1.Converter
 {
+    /// <summary>
+    /// Converter qui permet de changer la visilité d'un élément en fonction d'un toggle button
+    /// </summary>
     public class IsCheckedToVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

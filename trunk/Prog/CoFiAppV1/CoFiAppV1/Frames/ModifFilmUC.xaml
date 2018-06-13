@@ -20,9 +20,11 @@
             <RowDefinition Height="90*"/>
         </Grid.RowDefinitions>
 
+        <!--boutons de navigation-->
         <Button Style="{StaticResource styleButtons}" Content="Accueil" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Accueil_Click"/>
-        <ToggleButton Name="toggleButton" Style="{StaticResource styleToggleButtons}" Content="Modifier" HorizontalAlignment="Right" VerticalAlignment="Center" Unchecked="ToggleButton_Unchecked"/>
-
+        <ToggleButton Name="toggleButton" Style="{StaticResource styleToggleButtons}" Content="Modifier" HorizontalAlignment="Right" VerticalAlignment="Center" Unchecked="ToggleButton_Unchecked" Checked="ToggleButton_Checked"/>
+        <!--boutons de navigation-->
+        
         <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
             <Grid>
                 <Grid.RowDefinitions>
@@ -55,10 +57,10 @@
 
                 <!--Partie de droite-->
                 <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource stylePourTextBlock}" Margin="0,20" DataContext="{Binding LeManager.FilmSelected}" Text="{Binding Titre}"/>
-
+                
                 <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
                     <ComboBox Name="listDirector" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="0,20" ItemsSource="{Binding Lpr}"
-                          Width="200" >
+                          Width="200" IsEnabled="False">
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -72,7 +74,7 @@
                     <Button Style="{StaticResource styleButtons}" Content="Supprimer" Margin="20,0" Width="80" Click="DeleteDirector_Click"/>
                     <ComboBox Name="listAllDirectors" SelectedIndex="-1" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="0,20" DataContext="{Binding LeManager}"
                               ItemsSource="{Binding ListReal}"
-                          Width="200" >
+                              Width="200" IsEnabled="False">
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -90,16 +92,16 @@
                 <TextBox Grid.Row="3" Grid.Column="1" Visibility="{Binding IsChecked, ElementName=toggleButton, Converter={StaticResource ToggleButtonConverter}}" Style="{StaticResource stylePourTextBox}" Margin="0,20" DataContext="{Binding LeManager.FilmSelected}" Text="{Binding DateDeSortie}"/>
 
                 <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,20">
-                    <ComboBox Name="listTags" Width="auto" SelectedIndex="0" DataContext="{Binding LeManager.FilmSelected}" ItemsSource="{Binding ListTags}">
+                    <ComboBox Name="listTags" Width="auto" SelectedIndex="0" DataContext="{Binding LeManager.FilmSelected}" ItemsSource="{Binding ListTags}" IsEnabled="False">
                     </ComboBox>
                     <Button Style="{StaticResource styleButtons}" Content="Supprimer" Margin="20,0" Width="80" Click="DeleteTag_Click"/>
-                    <ComboBox Name="listAllTags" Grid.Column="1" Grid.Row="4" Width="auto" ItemsSource="{Binding ListAllTag}" >
+                    <ComboBox Name="listAllTags" Grid.Column="1" Grid.Row="4" Width="auto" ItemsSource="{Binding ListAllTag}" IsEnabled="False">
                     </ComboBox>
                     <Button Style="{StaticResource styleButtons}" Content="Ajouter" Margin="20,0" Width="80" Click="AddTag_Click"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,20">
-                    <ComboBox Name="listActors" SelectedIndex="0" HorizontalContentAlignment="Center" ItemsSource="{Binding Lpa}">
+                    <ComboBox Name="listActors" SelectedIndex="0" HorizontalContentAlignment="Center" ItemsSource="{Binding Lpa}" IsEnabled="False">
                     </ComboBox>
                     <Button Style="{StaticResource styleButtons}" Content="Supprimer" Margin="20,0" Width="80" Click="DeleteActor_Click"/>
                     <TextBox Name="NomActor" Grid.Row="3" Grid.Column="1" Style="{StaticResource stylePourTextBox}" TextWrapping="Wrap" Width="80"/>
@@ -111,8 +113,6 @@
                 
                 <TextBlock Grid.Row="7" Grid.Column="1" Height="auto" Style="{StaticResource stylePourTextBlock}" Margin="0,20" DataContext="{Binding LeManager.FilmSelected}" Text="{Binding Synopsis}"/>
                 <TextBox Grid.Row="7" Grid.Column="1" Height="auto" Visibility="{Binding IsChecked, ElementName=toggleButton, Converter={StaticResource ToggleButtonConverter}}" Style="{StaticResource stylePourTextBox}" Margin="0,20" DataContext="{Binding LeManager.FilmSelected}" Text="{Binding Synopsis}"/>
-
-
                 <!--Partie droite-->
 
 

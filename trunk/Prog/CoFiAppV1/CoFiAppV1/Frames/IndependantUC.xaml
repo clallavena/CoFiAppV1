@@ -23,10 +23,10 @@
             <RowDefinition Height="70*"/>
         </Grid.RowDefinitions>
 
-        <!--Bouttons haut de page-->
+        <!--Boutons de navigation-->
         <Button Style="{StaticResource styleButtons}" HorizontalAlignment="Left" Content="Accueil" Click="Accueil_Click" />
         <Button Style="{StaticResource styleButtons}" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Content="Ajouter" Click="Ajouter_Click" />
-
+        <!--Boutons de navigation-->
 
         <!--En tête de la page-->
         <Grid Grid.Row="1">
@@ -47,6 +47,7 @@
             Notre application cherche à valoriser le travail de réalisateur indépendant, ici ils sont classés par ordre chronologique!
             </TextBlock>
         </Grid>
+        <!--En tête de la page-->
 
         <!-- Liste -->
         <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto">
@@ -55,12 +56,13 @@
                     <DataTemplate>
                         <UserControl>
                             <local:Vignette PTitre="{Binding Titre}"
-                                            PImage="{Binding PathFile, Converter={StaticResource string2UriConverter}}" MouseDoubleClick="Vignette_MouseDoubleClick"/>
+                                            PImage="{Binding PathFile}" MouseDoubleClick="Vignette_MouseDoubleClick"/>
                         </UserControl>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
         </ScrollViewer>
+        <!-- Liste -->
 
     </Grid>
 </UserControl>

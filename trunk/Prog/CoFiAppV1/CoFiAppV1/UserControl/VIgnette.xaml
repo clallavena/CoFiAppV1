@@ -7,13 +7,15 @@
              xmlns:conv="clr-namespace:CoFiAppV1.Converter"
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="300"
-             x:Name="root">
+             x:Name="root"
+             Background="{StaticResource defaultColor}">
 
     <UserControl.Resources>
         <conv:String2UriConverter x:Key="string2UriConverter"/>
     </UserControl.Resources>
 
-    <Grid Background="{StaticResource defaultColor}">
+    <Grid>
+        
         <!--Définition de la grid-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
@@ -26,10 +28,10 @@
 
         <!--Début d'une séléction-->
         <Viewbox Grid.Column="0">
-            <!--Changer l'image-->
             <Image Source="{Binding PImage, Converter={StaticResource string2UriConverter}, ElementName=root}" Margin="20,0" Height="100" Width="100" Stretch="Uniform"/>
         </Viewbox>
         <TextBlock Grid.Column="1" Text="{Binding PTitre, ElementName=root}" FontWeight="Bold" FontSize="22" VerticalAlignment="Center" Width="325" TextWrapping="Wrap"/>
         <!--Fin d'une séléction-->
+        
     </Grid>
 </UserControl>

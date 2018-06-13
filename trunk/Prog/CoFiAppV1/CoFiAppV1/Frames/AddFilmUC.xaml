@@ -8,16 +8,16 @@
              d:DesignHeight="800" d:DesignWidth="1200"
              Background="{StaticResource defaultBackground}"
              FontSize="{StaticResource defaultFontSize}">
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="90*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="0">
-            <Button Style="{StaticResource styleButtons}" Content="Accueil" Click="Accueil_Click"/>
-        </StackPanel>
+        <!--bouton de navigation-->
+        <Button Style="{StaticResource styleButtons}" HorizontalAlignment="Left" Content="Accueil" Click="Accueil_Click"/>
+        <!--bouton de navigation-->
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
             <Grid>
@@ -44,8 +44,6 @@
                     <Label  Content="Affiche du film: " HorizontalAlignment="Right"  Margin="0, 15"/>
                 </StackPanel>
                 <!--Partie de gauche-->
-
-                <Button Grid.ColumnSpan="2" Grid.Row="2" Style="{StaticResource styleButtons}" Content="Ajouter" Name="Ajouter" Click="Ajouter_Click"/>
 
                 <!--Partie de droite-->
                 <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="0,25" >
@@ -86,6 +84,10 @@
                     <Button Style="{StaticResource styleButtons}" Content="+ Ajouter Image" Width="200" Margin="0,25" Name="AfficheButton" Click="OpenFileBrowser_Click"/>
                 </StackPanel>
                 <!--Partie de droite-->
+
+                <!--bouton ajouter-->
+                <Button Grid.ColumnSpan="2" Grid.Row="2" Style="{StaticResource styleButtons}" Content="Ajouter" Name="Ajouter" Click="Ajouter_Click"/>
+                <!--bouton ajouter-->
 
             </Grid>
         </ScrollViewer>

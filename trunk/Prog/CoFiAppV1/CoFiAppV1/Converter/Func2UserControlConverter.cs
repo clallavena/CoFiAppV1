@@ -9,6 +9,9 @@ using System.Windows.Data;
 
 namespace CoFiAppV1.Converter
 {
+    /// <summary>
+    /// Converter permettant des Func<UserControl> en UserControl
+    /// </summary>
     public class Func2UserControlConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

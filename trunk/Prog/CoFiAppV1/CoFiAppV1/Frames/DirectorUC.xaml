@@ -4,10 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CoFiAppV1.Frames"
+             xmlns:conv="clr-namespace:CoFiAppV1.Converter"
              mc:Ignorable="d" 
              d:DesignHeight="1000" d:DesignWidth="1600"
              Background="{StaticResource defaultBackground}"
              FontSize="{StaticResource defaultFontSize}">
+
+    <UserControl.Resources>
+        <conv:Func2UserControlConverter x:Key="UCconverter" />
+        <conv:String2UriConverter x:Key="string2UriConverter"/>
+    </UserControl.Resources>
 
     <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="1">
         <Grid Grid.Column="1" Grid.Row="1">
@@ -27,11 +33,13 @@
                 <Button Style="{StaticResource styleButtons}" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Content="Ajouter" Click="Ajouter_Click" />
                 <Button Style="{StaticResource styleButtons}" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Content="Supprimer" Click="Supprimer_Click"/>
             </StackPanel>
+            <!--Bouttons haut de page-->
 
             <!--Photo du Réal-->
             <Viewbox Stretch="Uniform" Grid.Column="0" Grid.Row="1" Width="220" Height="220" Margin="10" HorizontalAlignment="Left">
-                <Image VerticalAlignment="Top" DataContext="{Binding LeManager.RealSelected}" Source="{Binding PathFile}" />
+                <Image VerticalAlignment="Top" DataContext="{Binding LeManager.RealSelected}" Source="{Binding PathFile, Converter={StaticResource string2UriConverter}}" />
             </Viewbox>
+            <!--Photo du Réal-->
 
             <!--En tête-->
             <StackPanel Grid.Column="1" Grid.Row="1">
@@ -53,17 +61,17 @@
                     <TextBlock DataContext="{Binding LeManager.RealSelected}" Text="{Binding Nationalite}" />
                 </StackPanel>
             </StackPanel>
+            <!--En tête-->
 
             <!--Détails du Réal-->
             <StackPanel Grid.Column="1" Grid.Row="2">
-                <!--Biographie-->
-
                 <TextBlock FontWeight="DemiBold" Text="Biographie: " />
                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" DataContext="{Binding LeManager.RealSelected}" Text="{Binding Biographie}" />
-                 
-                <Button Style="{StaticResource styleButtons}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="Signaler" Click="Signalement"/>
 
+                <Button Style="{StaticResource styleButtons}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="Signaler" Click="Signalement"/>
             </StackPanel>
+            <!--Détails du Réal-->
+            
         </Grid>
     </ScrollViewer>
 </UserControl>

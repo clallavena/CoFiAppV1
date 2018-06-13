@@ -17,8 +17,14 @@ namespace CoFiAppV1
     
     public partial class App : Application
     {
+        /// <summary>
+        /// Manager du code behind
+        /// </summary>
         public Manager LeManager { get; set; } = new Manager(new DataContractManager());
 
+        /// <summary>
+        /// Permet de naviguer entre les différents UserControls
+        /// </summary>
         public NavigationManager NavManager { get; set; } = new NavigationManager();
                 
     }

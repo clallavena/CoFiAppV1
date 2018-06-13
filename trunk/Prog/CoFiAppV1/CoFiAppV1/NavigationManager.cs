@@ -29,12 +29,13 @@ namespace CoFiAppV1
         
         void OnPropertyChanged([CallerMemberName] string propertyName = null) =>
            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        
+
+        private UserControl selectedPart;
 
         public UserControl SelectedPart
         {
             get { return selectedPart; }
             set { selectedPart = value; OnPropertyChanged(); }
-        }private UserControl selectedPart;
+        }
     }
 }

@@ -53,9 +53,9 @@ namespace CoFiAppV1.Frames
             set { }
         }
 
-        private IEnumerable<String> listAllTag = Enum.GetValues(typeof(Metier.Tag)).Cast<Tag>().Select(s => s.ToString()).ToList();
-
         private string SourcePath;
+
+        private IEnumerable<String> listAllTag = Enum.GetValues(typeof(Metier.Tag)).Cast<Tag>().Select(s => s.ToString()).ToList();
 
         public IEnumerable<String> ListAllTag
         {
@@ -80,18 +80,27 @@ namespace CoFiAppV1.Frames
             DataContext = this;
         }
 
+        /// <summary>
+        /// Evenement pour retourner à l'accueil
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Accueil_Click(object sender, RoutedEventArgs e)
         {
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
             LeManager.FilmSelected = null;
         }
 
+        /// <summary>
+        /// Evenement pour ajouter un film
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Ajouter_Click(object sender, RoutedEventArgs e)
         {
             string Titre;
             int Sortie;
             string Synopsis;
-            Personne buff;
             List<Personne> lir = new List<Personne>();
 
             if (String.IsNullOrWhiteSpace(TitreBox.Text))
@@ -149,13 +158,11 @@ namespace CoFiAppV1.Frames
                 { }
 
                 extension = SourcePath.Remove(0, index);
-                //pathimg = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\" + $"\\img\\{Titre.ToLower().Replace(" ", string.Empty)}{extension}";
                 pathimg = $"{Titre.ToLower().Replace(" ", string.Empty)}{extension}";
                 File.Move(SourcePath, Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\img\\" + pathimg);
             }
             else
             {
-                //pathimg = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\img\\noavatar.png";
                 pathimg = "noavatar.png";
             }
 
@@ -168,6 +175,11 @@ namespace CoFiAppV1.Frames
             LeManager.FilmSelected = null;
         }
 
+        /// <summary>
+        /// Supprimer un acteur du film
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteActor_Click(object sender, RoutedEventArgs e)
         {
             if (listActors.SelectedIndex == -1)
@@ -189,6 +201,11 @@ namespace CoFiAppV1.Frames
             }
         }
 
+        /// <summary>
+        /// Ajouter un acteur au film
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AjouterActeur_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(Nom_TextBox.Text) || string.IsNullOrWhiteSpace(Prenom_TextBox.Text))
@@ -214,6 +231,11 @@ namespace CoFiAppV1.Frames
             MessageBox.Show("Vous avez ajouté l'acteur " + pAdd.Nom + " " + pAdd.Prenom + " avec succès", "Ajout d'acteur", MessageBoxButton.OK);
         }
 
+        /// <summary>
+        /// Ouvrir le navigateur de fichier
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OpenFileBrowser_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
@@ -229,6 +251,11 @@ namespace CoFiAppV1.Frames
             }
         }
 
+        /// <summary>
+        /// Supprimer un tag du film
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SupprimerTag_Click(object sender, RoutedEventArgs e)
         {
             if (listTags.SelectedItem == null)
@@ -249,6 +276,11 @@ namespace CoFiAppV1.Frames
             }
         }
 
+        /// <summary>
+        /// Ajouter un tag au film
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AjouterTag_Click(object sender, RoutedEventArgs e)
         {
             if (listAllTags.SelectedItem == null)

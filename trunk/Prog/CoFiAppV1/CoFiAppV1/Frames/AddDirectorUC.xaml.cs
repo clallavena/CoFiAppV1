@@ -2,18 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CoFiAppV1.Frames
 {
@@ -44,6 +34,9 @@ namespace CoFiAppV1.Frames
             ChargementJoursMois();
         }
 
+        /// <summary>
+        /// Chargement des comboboxs avec des valeurs pour les jours et les mois
+        /// </summary>
         public void ChargementJoursMois()
         {
             Jours = new List<int>();
@@ -58,12 +51,22 @@ namespace CoFiAppV1.Frames
             }
         }
 
+        /// <summary>
+        /// Evenement utilisé quand on appuie sur le bouton Accueil
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Accueil_Click(object sender, RoutedEventArgs e)
         {
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
             LeManager.FilmSelected = null;
         }
 
+        /// <summary>
+        /// Evenement pour ajouter un réalisateur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddDirector_Click(object sender, RoutedEventArgs e)
         {
             Personne directorToAdd;
@@ -177,12 +180,12 @@ namespace CoFiAppV1.Frames
                 { }
 
                 extension = SourcePath.Remove(0, index);
-                pathimg = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\" +  $"\\img\\{Prenom.ToLower().Replace(" ", string.Empty) + "-" + Nom.ToLower().Replace(" ", string.Empty)}{extension}";
-                File.Move(SourcePath, pathimg);
+                pathimg = $"{Prenom.ToLower().Replace(" ", string.Empty) + "-" + Nom.ToLower().Replace(" ", string.Empty)}{extension}";
+                File.Move(SourcePath, Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\img\\" + pathimg);
             }
             else
             {
-                pathimg = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\img\\noavatar.png";
+                pathimg = "noavatar.png";
             }
 
             if (Mort == null)
@@ -199,6 +202,11 @@ namespace CoFiAppV1.Frames
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
         }
 
+        /// <summary>
+        /// Evenement effectué pour ouvrir un navigateur de fichier afin de sélectionner une photo pour le réalisateur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OpenFileBrowser_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
