@@ -38,7 +38,7 @@
             <!--Bouton-->
 
             <!--Affiche du Film-->
-            <Viewbox Stretch="Uniform" Grid.Column="0" Grid.Row="1" Width="220" Height="220" Margin="10" HorizontalAlignment="Center">
+            <Viewbox Stretch="Uniform" Grid.Column="0" Grid.Row="1" Width="220" Height="220" Margin="10" HorizontalAlignment="Left" >
                 <Image VerticalAlignment="Top" DataContext="{Binding LeManager.FilmSelected}" Source="{Binding PathFile, Converter={StaticResource string2UriConverter}}"/>
             </Viewbox>
             <!--Affiche du Film-->

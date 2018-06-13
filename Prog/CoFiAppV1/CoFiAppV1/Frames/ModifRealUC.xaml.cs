@@ -44,11 +44,11 @@ namespace CoFiAppV1.Frames
         public ModifRealUC()
         {
             InitializeComponent();
-            initDate();
+            InitDate();
             DataContext = this;
         }
 
-        private void initDate()
+        private void InitDate()
         {
             Jours = new List<int>();
             Mois = new List<int>();

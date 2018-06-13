@@ -1,48 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfPersonne xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Metier">
   <Personne>
-    <Biographie>Réalisateur, producteur et scénariste</Biographie>
+    <Biographie>hjkghkk</Biographie>
     <DateDeMort i:nil="true" />
-    <DateDeNaissance>1952-05-14T00:00:00</DateDeNaissance>
-    <Nationalite>Américain</Nationalite>
-    <Nom>Zemeckis</Nom>
-    <PathFile i:nil="true" />
-    <Prenom>Robert</Prenom>
+    <DateDeNaissance>7454-04-04T00:00:00</DateDeNaissance>
+    <Nationalite>jkghkgk</Nationalite>
+    <Nom>hukgh</Nom>
+    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\CoFiAppV1\img\noavatar.png</PathFile>
+    <Prenom>ghgjk</Prenom>
   </Personne>
   <Personne>
-    <Biographie>Raphaël Descraques est un acteur, réalisateur et scénariste français, né le 11 mai 1991 à Vincennes (Val-de-Marne). Il occupe occasionnellement d'autres tâches comme le montage, le cadrage ou les effets spéciaux.Il est principalement connu pour son interprétation du personnage de Raph dans la web-série Le Visiteur du Futur réalisée par son frère François Descraques. Il fait partie du collectif Frenchnerd mais également du Golden Moustache dans lequel il réalise plusieurs vidéos humoristiques avec le groupe Suricate. Il coécrit, joue et réalise également, avec ses associés de Suricate, le film Les Dissociés.</Biographie>
+    <Biographie>adada</Biographie>
     <DateDeMort i:nil="true" />
-    <DateDeNaissance>1991-05-11T00:00:00</DateDeNaissance>
-    <Nationalite>Française</Nationalite>
-    <Nom>Descraques</Nom>
-    <PathFile i:nil="true" />
-    <Prenom>Raphaël</Prenom>
-  </Personne>
-  <Personne>
-    <Biographie>Gianmaria Pezzato est un réalisateur italien, connu pour avoir dirigé, écrit, édité et créé des effets visuels pour le film Voldemort : les origines de l'héritier.</Biographie>
-    <DateDeMort i:nil="true" />
-    <DateDeNaissance>1991-01-01T00:00:00</DateDeNaissance>
-    <Nationalite>Italienne</Nationalite>
-    <Nom>Pezzato</Nom>
-    <PathFile i:nil="true" />
-    <Prenom>Gianmaria</Prenom>
-  </Personne>
-  <Personne>
-    <Biographie>Steven Spielberg est un réalisateur, scénariste et producteur de cinéma américain, né le 18 décembre 1946 à Cincinnati.</Biographie>
-    <DateDeMort i:nil="true" />
-    <DateDeNaissance>1946-12-18T00:00:00</DateDeNaissance>
-    <Nationalite>Américaine</Nationalite>
-    <Nom>Spielberg</Nom>
-    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\steven-spielberg.jpg</PathFile>
-    <Prenom>Steven</Prenom>
-  </Personne>
-  <Personne>
-    <Biographie>rth</Biographie>
-    <DateDeMort>0078-06-03T00:00:00</DateDeMort>
-    <DateDeNaissance>0045-03-03T00:00:00</DateDeNaissance>
-    <Nationalite>rth</Nationalite>
-    <Nom>yjty</Nom>
-    <PathFile>C:\Users\esbarland\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\noavatar.png</PathFile>
-    <Prenom>tyjty</Prenom>
+    <DateDeNaissance>0001-03-02T00:00:00</DateDeNaissance>
+    <Nationalite>adaz</Nationalite>
+    <Nom>ada</Nom>
+    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\\img\daa-ada.jpg</PathFile>
+    <Prenom>daa</Prenom>
   </Personne>
 </ArrayOfPersonne>

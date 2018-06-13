@@ -22,8 +22,6 @@ namespace CoFiAppV1
     /// </summary>
     public partial class LogAdmin : Window
     {
-        private AccueilUC accueilUC;
-
         public Manager LeManager
         {
             get

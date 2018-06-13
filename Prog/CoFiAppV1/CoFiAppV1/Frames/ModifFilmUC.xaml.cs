@@ -252,11 +252,7 @@ namespace CoFiAppV1.Frames
             }            
         }
 
-        private void ModifFilm_Unloaded(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void toggleButton_Unchecked(object sender, RoutedEventArgs e)
+        private void ToggleButton_Unchecked(object sender, RoutedEventArgs e)
         {
             string extension;
             string pathimg;
@@ -269,9 +265,13 @@ namespace CoFiAppV1.Frames
                 { }
 
                 extension = SourcePath.Remove(0, index);
-                pathimg = $"\\..\\..\\img\\{LeManager.FilmSelected.Titre.ToLower().Replace(" ", string.Empty)}{extension}";
-                File.Move(SourcePath, Directory.GetCurrentDirectory() + pathimg);
-                LeManager.FilmSelected.PathFile = Directory.GetCurrentDirectory() + pathimg;
+                pathimg = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\" + $"img\\{LeManager.FilmSelected.Titre.ToLower().Replace(" ", string.Empty)}{extension}";
+                if (LeManager.FilmSelected.PathFile == pathimg)
+                {
+
+                }
+                File.Move(SourcePath, pathimg);
+                LeManager.FilmSelected.PathFile = pathimg;
             }
         }
     }

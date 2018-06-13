@@ -150,16 +150,16 @@ namespace CoFiAppV1.Frames
                 { }
 
                 extension = SourcePath.Remove(0, index);
-                pathimg = $"\\..\\..\\img\\{Titre.ToLower().Replace(" ", string.Empty)}{extension}";
-                File.Move(SourcePath, Directory.GetCurrentDirectory() + pathimg);
+                pathimg = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\" + $"\\img\\{Titre.ToLower().Replace(" ", string.Empty)}{extension}";
+                File.Move(SourcePath, pathimg);
             }
             else
             {
-                pathimg = "\\..\\..\\img\\noavatar.png";
+                pathimg = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\img\\noavatar.png";
             }
 
             personnesAdd.Add(Job.Acteur, listeActeur.ToList());
-            Film f = new Film(Titre, Sortie, Synopsis, personnesAdd, listTagsFilm, Directory.GetCurrentDirectory() + pathimg);
+            Film f = new Film(Titre, Sortie, Synopsis, personnesAdd, listTagsFilm, pathimg);
 
             LeManager.AjouterFilm(f);
 
