@@ -177,21 +177,21 @@ namespace CoFiAppV1.Frames
                 { }
 
                 extension = SourcePath.Remove(0, index);
-                pathimg = $"\\..\\..\\img\\{Prenom.ToLower().Replace(" ", string.Empty) + "-" + Nom.ToLower().Replace(" ", string.Empty)}{extension}";
-                File.Move(SourcePath, Directory.GetCurrentDirectory() + pathimg);
+                pathimg = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\" +  $"\\img\\{Prenom.ToLower().Replace(" ", string.Empty) + "-" + Nom.ToLower().Replace(" ", string.Empty)}{extension}";
+                File.Move(SourcePath, pathimg);
             }
             else
             {
-                pathimg = "\\..\\..\\img\\noavatar.png";
+                pathimg = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\img\\noavatar.png";
             }
 
             if (Mort == null)
             {
-                directorToAdd = new Personne(Nom, Prenom, Naissance, Nationalite, Biographie, Directory.GetCurrentDirectory() + pathimg);
+                directorToAdd = new Personne(Nom, Prenom, Naissance, Nationalite, Biographie, pathimg);
             }
             else
             {
-                directorToAdd = new Personne(Nom, Prenom, Naissance, Mort, Nationalite, Biographie, Directory.GetCurrentDirectory() + pathimg);
+                directorToAdd = new Personne(Nom, Prenom, Naissance, Mort, Nationalite, Biographie, pathimg);
             }
 
             LeManager.AjouterReal(directorToAdd);

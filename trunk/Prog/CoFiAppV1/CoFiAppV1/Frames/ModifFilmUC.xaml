@@ -8,8 +8,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200"
              Background="{StaticResource defaultBackground}"
-             FontSize="{StaticResource defaultFontSize}"
-             Unloaded="ModifFilm_Unloaded">
+             FontSize="{StaticResource defaultFontSize}">
     
     <UserControl.Resources>
         <conv:IsCheckedToVisibilityConverter x:Key="ToggleButtonConverter"/>
@@ -22,7 +21,7 @@
         </Grid.RowDefinitions>
 
         <Button Style="{StaticResource styleButtons}" Content="Accueil" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Accueil_Click"/>
-        <ToggleButton Name="toggleButton" Style="{StaticResource styleToggleButtons}" Content="Modifier" HorizontalAlignment="Right" VerticalAlignment="Center" Unchecked="toggleButton_Unchecked"/>
+        <ToggleButton Name="toggleButton" Style="{StaticResource styleToggleButtons}" Content="Modifier" HorizontalAlignment="Right" VerticalAlignment="Center" Unchecked="ToggleButton_Unchecked"/>
 
         <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
             <Grid>

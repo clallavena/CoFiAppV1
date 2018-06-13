@@ -3,6 +3,8 @@ using Metier;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,6 +50,7 @@ namespace CoFiAppV1
             InitializeComponent();
             WindowState = WindowState.Maximized;
             DataContext = this;
+            Debug.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
         }
 
         private void Window_Closing(object sender, CancelEventArgs e)

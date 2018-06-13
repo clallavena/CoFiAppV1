@@ -9,11 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Metier.DataManager
 {
     public class DataContractManager : IDataManager
     {
+        /// <summary>
+        /// Chargement des films depuis un fichier XML
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Film> ChargementFilms()
         {
             var serializerListFilm = new DataContractSerializer(typeof(List<Film>));
@@ -36,6 +41,10 @@ namespace Metier.DataManager
             }            
         }
 
+        /// <summary>
+        /// Sauvegarde des films dans un fichier XML
+        /// </summary>
+        /// <param name="films"></param>
         public void SauvegardeFilms(IEnumerable<Film> films)
         {
             var serializerListFilm = new DataContractSerializer(typeof(List<Film>));
@@ -47,6 +56,10 @@ namespace Metier.DataManager
             }
         }
 
+        /// <summary>
+        /// Chargement des réalisateurs depuis un fichier XML
+        /// </summary>
+        /// <returns></returns>
         public ObservableCollection<Personne> ChargementReal()
         {
             var serializerListReals = new DataContractSerializer(typeof(ObservableCollection<Personne>));
@@ -69,6 +82,10 @@ namespace Metier.DataManager
             }            
         }
 
+        /// <summary>
+        /// Sauvegarde des réalisateurs dans un fichier XML
+        /// </summary>
+        /// <param name="personnes"></param>
         public void SauvegardeReal(ObservableCollection<Personne> personnes)
         {
             var serializerListReals = new DataContractSerializer(typeof(ObservableCollection<Personne>));
@@ -80,6 +97,10 @@ namespace Metier.DataManager
             }
         }
 
+        /// <summary>
+        /// Chargement des administrauteurs en dur
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Admin> ChargementAdmin()
         {
             List<Admin> admins = new List<Admin>

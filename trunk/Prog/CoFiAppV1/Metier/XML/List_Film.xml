@@ -1,300 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfFilm xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Metier">
   <Film>
-    <Date_x0020_De_x0020_Sortie>1994</Date_x0020_De_x0020_Sortie>
-    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\forrestgump.jpg</PathFile>
+    <Date_x0020_De_x0020_Sortie>78</Date_x0020_De_x0020_Sortie>
+    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug/../../CoFiAppV1/img/noavatar.png</PathFile>
     <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
       <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
         <d3p1:Key>Realisateur</d3p1:Key>
         <d3p1:Value>
           <Personne>
-            <Biographie>Réalisateur, producteur et scénariste</Biographie>
+            <Biographie>hjkghkk</Biographie>
             <DateDeMort i:nil="true" />
-            <DateDeNaissance>1952-05-14T00:00:00</DateDeNaissance>
-            <Nationalite>Américain</Nationalite>
-            <Nom>Zemeckis</Nom>
-            <PathFile i:nil="true" />
-            <Prenom>Robert</Prenom>
-          </Personne>
-        </d3p1:Value>
-      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-        <d3p1:Key>Acteur</d3p1:Key>
-        <d3p1:Value>
-          <Personne>
-            <Biographie i:nil="true" />
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
-            <Nationalite i:nil="true" />
-            <Nom>Hanks</Nom>
-            <PathFile i:nil="true" />
-            <Prenom>Tom</Prenom>
-          </Personne>
-          <Personne>
-            <Biographie i:nil="true" />
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
-            <Nationalite i:nil="true" />
-            <Nom>Wright</Nom>
-            <PathFile i:nil="true" />
-            <Prenom>Robin</Prenom>
-          </Personne>
-          <Personne>
-            <Biographie i:nil="true" />
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
-            <Nationalite i:nil="true" />
-            <Nom>Sinise</Nom>
-            <PathFile i:nil="true" />
-            <Prenom>Gary</Prenom>
-          </Personne>
-        </d3p1:Value>
-      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-    </Personnes>
-    <Synopsis>Au fil des différents interlocuteurs qui viennent s’asseoir tour à tour à côté de lui sur le banc, Forrest Gump va raconter la fabuleuse histoire de sa vie. Sa vie est à l'image de la plume (que l'on aperçoit au début et à la fin du film) qui se laisse porter par le vent, tout comme Forrest se laisse porter par les événements qu'il traverse dans l'Amérique de la seconde moitié du XXe siècle.</Synopsis>
-    <Tags>
-      <Tag>Comedie_Dramatique</Tag>
-      <Tag>Drame</Tag>
-    </Tags>
-    <Titre>Forrest Gump</Titre>
-  </Film>
-  <Film>
-    <Date_x0020_De_x0020_Sortie>1985</Date_x0020_De_x0020_Sortie>
-    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\retourverslefutur.jpg</PathFile>
-    <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-        <d3p1:Key>Realisateur</d3p1:Key>
-        <d3p1:Value>
-          <Personne>
-            <Biographie>Réalisateur, producteur et scénariste</Biographie>
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>1952-05-14T00:00:00</DateDeNaissance>
-            <Nationalite>Américain</Nationalite>
-            <Nom>Zemeckis</Nom>
-            <PathFile i:nil="true" />
-            <Prenom>Robert</Prenom>
-          </Personne>
-        </d3p1:Value>
-      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-        <d3p1:Key>Acteur</d3p1:Key>
-        <d3p1:Value>
-          <Personne>
-            <Biographie i:nil="true" />
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
-            <Nationalite i:nil="true" />
-            <Nom>J.Fox</Nom>
-            <PathFile i:nil="true" />
-            <Prenom>Michael</Prenom>
-          </Personne>
-          <Personne>
-            <Biographie i:nil="true" />
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
-            <Nationalite i:nil="true" />
-            <Nom>Lloyd</Nom>
-            <PathFile i:nil="true" />
-            <Prenom>Christopher</Prenom>
-          </Personne>
-          <Personne>
-            <Biographie i:nil="true" />
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
-            <Nationalite i:nil="true" />
-            <Nom>Thompson</Nom>
-            <PathFile i:nil="true" />
-            <Prenom>Lea</Prenom>
-          </Personne>
-        </d3p1:Value>
-      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-    </Personnes>
-    <Synopsis>L'intrigue relate le voyage dans le passé d'un adolescent, Marty McFly, à bord d'une machine à voyager dans le temps fabriquée par le docteur Emmett Brown à partir d'une voiture de modèle DeLorean DMC-12. Parti de l'année 1985 et propulsé en 1955, Marty, aidé du « Doc » de 1955, doit résoudre les paradoxes temporels provoqués par ses interventions dans le passé et trouver le moyen de faire fonctionner la machine pour retourner à son époque d'origine.</Synopsis>
-    <Tags>
-      <Tag>Science_Fiction</Tag>
-    </Tags>
-    <Titre>Retour Vers le Futur</Titre>
-  </Film>
-  <Film>
-    <Date_x0020_De_x0020_Sortie>2015</Date_x0020_De_x0020_Sortie>
-    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\lesdissociés.jpg</PathFile>
-    <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-        <d3p1:Key>Realisateur</d3p1:Key>
-        <d3p1:Value>
-          <Personne>
-            <Biographie>Raphaël Descraques est un acteur, réalisateur et scénariste français, né le 11 mai 1991 à Vincennes (Val-de-Marne). Il occupe occasionnellement d'autres tâches comme le montage, le cadrage ou les effets spéciaux.Il est principalement connu pour son interprétation du personnage de Raph dans la web-série Le Visiteur du Futur réalisée par son frère François Descraques. Il fait partie du collectif Frenchnerd mais également du Golden Moustache dans lequel il réalise plusieurs vidéos humoristiques avec le groupe Suricate. Il coécrit, joue et réalise également, avec ses associés de Suricate, le film Les Dissociés.</Biographie>
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>1991-05-11T00:00:00</DateDeNaissance>
-            <Nationalite>Française</Nationalite>
-            <Nom>Descraques</Nom>
-            <PathFile i:nil="true" />
-            <Prenom>Raphaël</Prenom>
-          </Personne>
-        </d3p1:Value>
-      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-        <d3p1:Key>Acteur</d3p1:Key>
-        <d3p1:Value>
-          <Personne>
-            <Biographie i:nil="true" />
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
-            <Nationalite i:nil="true" />
-            <Nom>Descraques</Nom>
-            <PathFile i:nil="true" />
-            <Prenom>Raphaël</Prenom>
-          </Personne>
-          <Personne>
-            <Biographie i:nil="true" />
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
-            <Nationalite i:nil="true" />
-            <Nom>Tirel</Nom>
-            <PathFile i:nil="true" />
-            <Prenom>Vincent</Prenom>
-          </Personne>
-          <Personne>
-            <Biographie i:nil="true" />
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
-            <Nationalite i:nil="true" />
-            <Nom>Josselin</Nom>
-            <PathFile i:nil="true" />
-            <Prenom>Julien</Prenom>
-          </Personne>
-        </d3p1:Value>
-      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-    </Personnes>
-    <Synopsis>Lily et Ben forment un jeune couple parisien, heureux dans un quotidien monotone. Jusqu’au jour où ils se font voler leur corps par un groupe de « Dissociés » : des êtres humains capables d’échanger leur corps avec celui de quelqu’un d’autre. Pour récupérer leur corps, Lily et Ben devront faire face à un Dissocié dangereux : Milo, qui peut contrôler le corps d’autrui sans quitter le sien. Le couple sera aidé dans sa quête par Magalie, une petite fille de 5 ans et demi dans le corps d’un homme de 30 ans…</Synopsis>
-    <Tags>
-      <Tag>Independant</Tag>
-      <Tag>Fantastique</Tag>
-      <Tag>Comedie</Tag>
-    </Tags>
-    <Titre>Les Dissociés</Titre>
-  </Film>
-  <Film>
-    <Date_x0020_De_x0020_Sortie>2018</Date_x0020_De_x0020_Sortie>
-    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\voldemortlesoriginesdel'héritier.jpg</PathFile>
-    <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-        <d3p1:Key>Realisateur</d3p1:Key>
-        <d3p1:Value>
-          <Personne>
-            <Biographie>Gianmaria Pezzato est un réalisateur italien, connu pour avoir dirigé, écrit, édité et créé des effets visuels pour le film Voldemort : les origines de l'héritier.</Biographie>
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>1991-01-01T00:00:00</DateDeNaissance>
-            <Nationalite>Italienne</Nationalite>
-            <Nom>Pezzato</Nom>
-            <PathFile i:nil="true" />
-            <Prenom>Gianmaria</Prenom>
-          </Personne>
-        </d3p1:Value>
-      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-        <d3p1:Key>Acteur</d3p1:Key>
-        <d3p1:Value>
-          <Personne>
-            <Biographie i:nil="true" />
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
-            <Nationalite i:nil="true" />
-            <Nom>Rossi</Nom>
-            <PathFile i:nil="true" />
-            <Prenom>Stefano</Prenom>
-          </Personne>
-          <Personne>
-            <Biographie i:nil="true" />
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
-            <Nationalite i:nil="true" />
-            <Nom>Orcali</Nom>
-            <PathFile i:nil="true" />
-            <Prenom>Maddalena</Prenom>
-          </Personne>
-        </d3p1:Value>
-      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-    </Personnes>
-    <Synopsis>Les Origines de l'héritier décrit l'histoire de la montée au pouvoir de Tom Jedusor alias Voldemort. Outre le protagoniste héritier de Serpentard, des personnages originaux ont été introduits avec les héritiers des autres maisons de Poudlard.</Synopsis>
-    <Tags>
-      <Tag>Independant</Tag>
-      <Tag>Fantastique</Tag>
-    </Tags>
-    <Titre>Voldemort Les origines de l'héritier</Titre>
-  </Film>
-  <Film>
-    <Date_x0020_De_x0020_Sortie>1993</Date_x0020_De_x0020_Sortie>
-    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\jurassicpark.jpg</PathFile>
-    <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-        <d3p1:Key>Realisateur</d3p1:Key>
-        <d3p1:Value>
-          <Personne>
-            <Biographie>Steven Spielberg est un réalisateur, scénariste et producteur de cinéma américain, né le 18 décembre 1946 à Cincinnati.</Biographie>
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>1946-12-18T00:00:00</DateDeNaissance>
-            <Nationalite>Américaine</Nationalite>
-            <Nom>Spielberg</Nom>
-            <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\steven-spielberg.jpg</PathFile>
-            <Prenom>Steven</Prenom>
-          </Personne>
-        </d3p1:Value>
-      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-        <d3p1:Key>Acteur</d3p1:Key>
-        <d3p1:Value>
-          <Personne>
-            <Biographie i:nil="true" />
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
-            <Nationalite i:nil="true" />
-            <Nom>Goldblum</Nom>
-            <PathFile i:nil="true" />
-            <Prenom>Jeff</Prenom>
-          </Personne>
-          <Personne>
-            <Biographie i:nil="true" />
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
-            <Nationalite i:nil="true" />
-            <Nom>Neil</Nom>
-            <PathFile i:nil="true" />
-            <Prenom>Sam</Prenom>
-          </Personne>
-          <Personne>
-            <Biographie i:nil="true" />
-            <DateDeMort i:nil="true" />
-            <DateDeNaissance>0001-01-01T00:00:00</DateDeNaissance>
-            <Nationalite i:nil="true" />
-            <Nom>Dern</Nom>
-            <PathFile i:nil="true" />
-            <Prenom>Laura</Prenom>
-          </Personne>
-        </d3p1:Value>
-      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-    </Personnes>
-    <Synopsis>Ne pas réveiller le chat qui dort, c'est ce que le milliardaire John Hammond aurait dû se rappeler avant de se lancer dans le clonage de dinosaures. C'est à partir d'une goutte de sang absorbée par un moustique fossilisé que John Hammond et son équipe ont réussi à faire renaître une dizaine d'espèces de dinosaures.</Synopsis>
-    <Tags>
-      <Tag>Science_Fiction</Tag>
-    </Tags>
-    <Titre>Jurassic Park</Titre>
-  </Film>
-  <Film>
-    <Date_x0020_De_x0020_Sortie>9595</Date_x0020_De_x0020_Sortie>
-    <PathFile>C:\Users\esbarland\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\htrthr.png</PathFile>
-    <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
-        <d3p1:Key>Realisateur</d3p1:Key>
-        <d3p1:Value>
-          <Personne>
-            <Biographie>rth</Biographie>
-            <DateDeMort>0454-12-11T00:00:00</DateDeMort>
-            <DateDeNaissance>0032-01-01T00:00:00</DateDeNaissance>
-            <Nationalite>rth</Nationalite>
-            <Nom>yjty</Nom>
-            <PathFile>C:\Users\esbarland\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\noavatar.png</PathFile>
-            <Prenom>tyjty</Prenom>
+            <DateDeNaissance>7454-04-04T00:00:00</DateDeNaissance>
+            <Nationalite>jkghkgk</Nationalite>
+            <Nom>hukgh</Nom>
+            <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\noavatar.png</PathFile>
+            <Prenom>ghgjk</Prenom>
           </Personne>
         </d3p1:Value>
       </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
@@ -303,8 +23,143 @@
         <d3p1:Value />
       </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
     </Personnes>
-    <Synopsis>yyukuikuil</Synopsis>
+    <Synopsis>ftj</Synopsis>
     <Tags />
-    <Titre>htrthr</Titre>
+    <Titre>ghggh</Titre>
+  </Film>
+  <Film>
+    <Date_x0020_De_x0020_Sortie>1</Date_x0020_De_x0020_Sortie>
+    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\DebugC:\Users\GhostFalador\Desktopcofiapp/trunk/Prog/CoFiAppV1/CoFiAppV1/img/noavatar.png</PathFile>
+    <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+        <d3p1:Key>Realisateur</d3p1:Key>
+        <d3p1:Value>
+          <Personne>
+            <Biographie>hjkghkk</Biographie>
+            <DateDeMort i:nil="true" />
+            <DateDeNaissance>7454-04-04T00:00:00</DateDeNaissance>
+            <Nationalite>jkghkgk</Nationalite>
+            <Nom>hukgh</Nom>
+            <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\CoFiAppV1\img\noavatar.png</PathFile>
+            <Prenom>ghgjk</Prenom>
+          </Personne>
+        </d3p1:Value>
+      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+        <d3p1:Key>Acteur</d3p1:Key>
+        <d3p1:Value />
+      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+    </Personnes>
+    <Synopsis>adaz</Synopsis>
+    <Tags />
+    <Titre>zdad</Titre>
+  </Film>
+  <Film>
+    <Date_x0020_De_x0020_Sortie>15</Date_x0020_De_x0020_Sortie>
+    <PathFile>C:\Users\GhostFalador\Desktopcofiapp/trunk/Prog/CoFiAppV1/CoFiAppV1/img/noavatar.png</PathFile>
+    <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+        <d3p1:Key>Realisateur</d3p1:Key>
+        <d3p1:Value>
+          <Personne>
+            <Biographie>hjkghkk</Biographie>
+            <DateDeMort i:nil="true" />
+            <DateDeNaissance>7454-04-04T00:00:00</DateDeNaissance>
+            <Nationalite>jkghkgk</Nationalite>
+            <Nom>hukgh</Nom>
+            <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\CoFiAppV1\img\noavatar.png</PathFile>
+            <Prenom>ghgjk</Prenom>
+          </Personne>
+        </d3p1:Value>
+      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+        <d3p1:Key>Acteur</d3p1:Key>
+        <d3p1:Value />
+      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+    </Personnes>
+    <Synopsis>cndhb</Synopsis>
+    <Tags />
+    <Titre>dezeac</Titre>
+  </Film>
+  <Film>
+    <Date_x0020_De_x0020_Sortie>1</Date_x0020_De_x0020_Sortie>
+    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\img\noavatar.png</PathFile>
+    <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+        <d3p1:Key>Realisateur</d3p1:Key>
+        <d3p1:Value>
+          <Personne>
+            <Biographie>hjkghkk</Biographie>
+            <DateDeMort i:nil="true" />
+            <DateDeNaissance>7454-04-04T00:00:00</DateDeNaissance>
+            <Nationalite>jkghkgk</Nationalite>
+            <Nom>hukgh</Nom>
+            <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\CoFiAppV1\img\noavatar.png</PathFile>
+            <Prenom>ghgjk</Prenom>
+          </Personne>
+        </d3p1:Value>
+      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+        <d3p1:Key>Acteur</d3p1:Key>
+        <d3p1:Value />
+      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+    </Personnes>
+    <Synopsis>dezdz</Synopsis>
+    <Tags />
+    <Titre>cceze</Titre>
+  </Film>
+  <Film>
+    <Date_x0020_De_x0020_Sortie>15419841</Date_x0020_De_x0020_Sortie>
+    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\\img\axzaxz.png</PathFile>
+    <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+        <d3p1:Key>Realisateur</d3p1:Key>
+        <d3p1:Value>
+          <Personne>
+            <Biographie>hjkghkk</Biographie>
+            <DateDeMort i:nil="true" />
+            <DateDeNaissance>7454-04-04T00:00:00</DateDeNaissance>
+            <Nationalite>jkghkgk</Nationalite>
+            <Nom>hukgh</Nom>
+            <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\CoFiAppV1\img\noavatar.png</PathFile>
+            <Prenom>ghgjk</Prenom>
+          </Personne>
+        </d3p1:Value>
+      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+        <d3p1:Key>Acteur</d3p1:Key>
+        <d3p1:Value />
+      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+    </Personnes>
+    <Synopsis>dadasas</Synopsis>
+    <Tags />
+    <Titre>axzaxz</Titre>
+  </Film>
+  <Film>
+    <Date_x0020_De_x0020_Sortie>1</Date_x0020_De_x0020_Sortie>
+    <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\img\dad.png</PathFile>
+    <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+        <d3p1:Key>Realisateur</d3p1:Key>
+        <d3p1:Value>
+          <Personne>
+            <Biographie>adada</Biographie>
+            <DateDeMort i:nil="true" />
+            <DateDeNaissance>0001-03-02T00:00:00</DateDeNaissance>
+            <Nationalite>adaz</Nationalite>
+            <Nom>ada</Nom>
+            <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\\img\daa-ada.jpg</PathFile>
+            <Prenom>daa</Prenom>
+          </Personne>
+        </d3p1:Value>
+      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+        <d3p1:Key>Acteur</d3p1:Key>
+        <d3p1:Value />
+      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+    </Personnes>
+    <Synopsis>d</Synopsis>
+    <Tags />
+    <Titre>dad</Titre>
   </Film>
 </ArrayOfFilm>
