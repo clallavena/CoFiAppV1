@@ -46,6 +46,7 @@ namespace CoFiAppV1
         public MainWindow()
         {
             InitializeComponent();
+            WindowState = WindowState.Maximized;
             DataContext = this;
         }
 
