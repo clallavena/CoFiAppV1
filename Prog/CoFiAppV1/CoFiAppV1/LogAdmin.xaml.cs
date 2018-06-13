@@ -1,4 +1,5 @@
-﻿using Metier;
+﻿using CoFiAppV1.Frames;
+using Metier;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -21,6 +22,8 @@ namespace CoFiAppV1
     /// </summary>
     public partial class LogAdmin : Window
     {
+        private AccueilUC accueilUC;
+
         public Manager LeManager
         {
             get
@@ -32,6 +35,7 @@ namespace CoFiAppV1
         public LogAdmin()
         {
             InitializeComponent();
+            Username_TextBox.Focus();
         }
 
         private void Quit_Click(object sender, RoutedEventArgs e)
