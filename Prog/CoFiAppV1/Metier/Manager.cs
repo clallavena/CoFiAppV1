@@ -19,21 +19,11 @@ namespace Metier
     [DataContract]
     public class Manager : INotifyPropertyChanged
     {
-
-        private Admin currentUser;
-
-        /// <summary>
-        /// Liste des étiquettes
-        /// Cette liste comprend les différents types d'un film peur avoir (par exemple : action et aventure)
-        /// </summary>
-        public ObservableCollection<Tag> ListTags
-        {
-            get; set;
-        }
-
         /// <summary>
         /// Utilisateur avec les droits administrateurs
         /// </summary>
+        private Admin currentUser;
+
         public Admin CurrentUser
         {
             get { return currentUser; }
@@ -57,27 +47,10 @@ namespace Metier
         }
 
         /// <summary>
-        /// Liste des films Recherchés
-        /// </summary>
-        private List<Film> filmRecherche = new List<Film>();
-
-        public IEnumerable<Film> ListFilmRecherche
-        {
-            get
-            {
-                return filmRecherche;
-            }
-            set { }
-        }
-
-        /// <summary>
-        /// Liste des réalisateur connue
+        /// Liste des réalisateurs connus
         /// </summary>
         private ObservableCollection<Personne> reals = new ObservableCollection<Personne>();
 
-        /// <summary>
-        /// Collection de Réalisateur connu de type Personne
-        /// </summary>
         [DataMember]
         public ObservableCollection<Personne> ListReal
         {
@@ -105,6 +78,9 @@ namespace Metier
             }
         }
 
+        /// <summary>
+        /// Liste des films recherchés
+        /// </summary>
         private IEnumerable<Film> filmsParNom = new List<Film>();
 
         public IEnumerable<Film> FilmsParNom
@@ -121,7 +97,9 @@ namespace Metier
             }
         }
 
-
+        /// <summary>
+        /// Réalisateur sélectionné
+        /// </summary>
         private Personne realSelected;
 
         public Personne RealSelected
@@ -136,6 +114,9 @@ namespace Metier
             }
         }
 
+        /// <summary>
+        /// Film sélectionné
+        /// </summary>
         private Film filmSelected;
 
         public Film FilmSelected
@@ -143,6 +124,7 @@ namespace Metier
             get { return filmSelected; }
             set { filmSelected = value; NotifyPropertyChanged(nameof(FilmSelected)); }
         }
+
         private IRecherchePersonne rech = new RechParFilm();
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -158,6 +140,9 @@ namespace Metier
             Dm = datamanager;
         }
 
+        /// <summary>
+        /// Chargement des données dans l'application
+        /// </summary>
         public void Chargement()
         {
             if (Dm.ChargementFilms() != null)
@@ -180,6 +165,9 @@ namespace Metier
             admins = Dm.ChargementAdmin();
         }
 
+        /// <summary>
+        /// Sauvegarde des données depuis l'application
+        /// </summary>
         public void Sauvegarde()
         {
             Dm.SauvegardeFilms(Films);
@@ -347,7 +335,6 @@ namespace Metier
         /// <param name="film"></param>
         public void ModifierFilm(string titre, int dateDeSortie, string synopsis, Dictionary<Job, List<Personne>> personnes, params Tag[] listTags)
         {
-
             IEnumerable<Film> li = RechercherFilm(titre, films);
 
             li.Where(s => s.Titre.Equals(titre) && s.DateDeSortie == dateDeSortie);
@@ -372,15 +359,6 @@ namespace Metier
                     }
                 }
             }
-        }
-
-        /// <summary>
-        /// Méthode permettant de modifier les informations d'un réalisateur
-        /// </summary>
-        /// <param name="real"></param>
-        public void ModiferReal(Personne real)
-        {
-
         }
 
         public void NotifyPropertyChanged(String info)

@@ -21,28 +21,15 @@
                 <RowDefinition Height="20*" />
             </Grid.RowDefinitions>
 
+            <!--boutons de nagivation-->
             <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center">
-
                 <Button Content="Admin" Style="{StaticResource styleButtons}" Click="Admin_Click"/>
-
-                <!--<Button Content="Admin" Style="{StaticResource stylePourTousLesBouttons}" Click="Admin_Click">
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Border BorderBrush="Black" BorderThickness="2" CornerRadius="5" Background="{TemplateBinding Background}">
-                                <TextBlock Text="Admin" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Background="{StaticResource defaultColor}"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>-->
-
-
                 <Button Content="Indépendant" Style="{StaticResource styleButtons}" Click="Inde_Click"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right">
-                <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Ajouter" Style="{StaticResource styleButtons}" Click="Ajouter_Click"/>
-            </StackPanel>
+            <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Ajouter" Style="{StaticResource styleButtons}" Click="Ajouter_Click"/>
+            <!--boutons de nagivation--> 
 
-
+            <!--page d'accueil-->
             <Viewbox Stretch="Uniform" Grid.Column="1" Grid.Row="1" Width="220" Height="220">
                 <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="../img/logo.png" />
             </Viewbox>
@@ -76,6 +63,7 @@
                     -Réalisateur: Une biographie du réalisateur sera disponible sur l'affichage principal de l'application ainsi que toute sa filmographie.                    
                 </Run>
             </TextBlock>
+            <!--page d'accueil-->
 
         </Grid>
     </ScrollViewer>

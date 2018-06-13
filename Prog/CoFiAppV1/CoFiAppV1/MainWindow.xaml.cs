@@ -37,6 +37,18 @@ namespace CoFiAppV1
             }
         }
 
+        public MainWindow()
+        {
+            InitializeComponent();
+            WindowState = WindowState.Maximized;
+            DataContext = this;
+        }
+
+        /// <summary>
+        /// Evenement exécuté lorsque l'on change l'élément sélectionné
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (LeManager.FilmSelected != null)
@@ -45,19 +57,21 @@ namespace CoFiAppV1
             }
         }
 
-        public MainWindow()
-        {
-            InitializeComponent();
-            WindowState = WindowState.Maximized;
-            DataContext = this;
-            Debug.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
-        }
-
+        /// <summary>
+        /// Evenement exécuté lors de la fermeture de la fenêtre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_Closing(object sender, CancelEventArgs e)
         {
             LeManager.Sauvegarde();
         }
 
+        /// <summary>
+        /// Evenement exécuté lors de l'initialisation de la fenêtre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             LeManager.Chargement();

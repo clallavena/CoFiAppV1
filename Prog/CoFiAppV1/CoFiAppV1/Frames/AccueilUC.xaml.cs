@@ -31,6 +31,7 @@ namespace CoFiAppV1.Frames
         }
 
         public NavigationManager NavManager => (Application.Current as App).NavManager;
+
         public AccueilUC()
         {
             InitializeComponent();

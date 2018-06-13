@@ -10,11 +10,6 @@ namespace Metier.RechercheFilms
 {
     public class RechFilmParNom : IRechercheFilm
     {
-        public IEnumerator<Film> GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
         /// <summary>
         /// Recherche un film, avec en paramètre un critère et une collection de film, recherche à partir du titre du film : Renvoie une liste de Film contenant critère en titre.
         /// </summary>

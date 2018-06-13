@@ -72,7 +72,14 @@ namespace CoFiAppV1.Frames
         {
             InitializeComponent();
             DataContext = this;
+            ChargementListes();
+        }
 
+        /// <summary>
+        /// Charger les listes des acteurs et des réalisateurs du film
+        /// </summary>
+        private void ChargementListes()
+        {
             lprList = LeManager.FilmSelected.Personnes.Where(p => p.Key == Job.Realisateur).SelectMany(s => s.Value).ToList();
             foreach (Personne p in lprList)
             {
@@ -85,14 +92,30 @@ namespace CoFiAppV1.Frames
             }
         }
 
+        /// <summary>
+        /// Retourner à l'accueil
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Accueil_Click(object sender, RoutedEventArgs e)
         {
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
             LeManager.FilmSelected = null;
         }
 
+        /// <summary>
+        /// Supprimer un tag
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteTag_Click(object sender, RoutedEventArgs e)
         {
+            if (!toggleButton.IsChecked.Value)
+            {
+                MessageBox.Show("Appuyez d'abord sur le bouton Modifier !", "Erreur modification", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             if (listTags.SelectedItem == null)
             {
                 MessageBox.Show("Le tag sélectionné n'est pas valide", "Erreur suppression", MessageBoxButton.OK);
@@ -111,8 +134,19 @@ namespace CoFiAppV1.Frames
             }
         }
 
+        /// <summary>
+        /// Ajouter un tag
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddTag_Click(object sender, RoutedEventArgs e)
         {
+            if (!toggleButton.IsChecked.Value)
+            {
+                MessageBox.Show("Appuyez d'abord sur le bouton Modifier !", "Erreur modification", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             if (listAllTags.SelectedItem == null)
             {
                 MessageBox.Show("Le tag sélectionné n'est pas valide", "Erreur ajout", MessageBoxButton.OK);
@@ -127,8 +161,20 @@ namespace CoFiAppV1.Frames
             MessageBox.Show("Vous avez ajouté le tag " + tagToAdd + " avec succès", "Ajout de tag", MessageBoxButton.OK);
         }
 
+        /// <summary>
+        /// Supprimer un acteur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteActor_Click(object sender, RoutedEventArgs e)
         {
+
+            if (!toggleButton.IsChecked.Value)
+            {
+                MessageBox.Show("Appuyez d'abord sur le bouton Modifier !", "Erreur modification", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             if (listActors.SelectedIndex == -1)
             {
                 MessageBox.Show("L'acteur sélectionné n'est pas valide", "Erreur suppression", MessageBoxButton.OK);
@@ -150,8 +196,20 @@ namespace CoFiAppV1.Frames
             }
         }
 
+        /// <summary>
+        /// Ajouter un acteur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddActor_Click(object sender, RoutedEventArgs e)
         {
+
+            if (!toggleButton.IsChecked.Value)
+            {
+                MessageBox.Show("Appuyez d'abord sur le bouton Modifier !", "Erreur modification", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             if (String.IsNullOrWhiteSpace(NomActor.Text) || String.IsNullOrWhiteSpace(PrenomActor.Text))
             {
                 MessageBox.Show("Les champs Nom et Prénom sont vides ou mal renseignés", "Erreur ajout", MessageBoxButton.OK);
@@ -178,8 +236,19 @@ namespace CoFiAppV1.Frames
 
         }
 
+        /// <summary>
+        /// Supprimer un réalisateur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteDirector_Click(object sender, RoutedEventArgs e)
         {
+            if (!toggleButton.IsChecked.Value)
+            {
+                MessageBox.Show("Appuyez d'abord sur le bouton Modifier !", "Erreur modification", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             if (listDirector.SelectedIndex == -1)
             {
                 MessageBox.Show("Le réalisateur sélectionné n'est pas valide", "Erreur suppression", MessageBoxButton.OK);
@@ -201,8 +270,20 @@ namespace CoFiAppV1.Frames
             }
         }
 
+        /// <summary>
+        /// Ajouter un réalisateur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddDirector_Click(object sender, RoutedEventArgs e)
         {
+
+            if (!toggleButton.IsChecked.Value)
+            {
+                MessageBox.Show("Appuyez d'abord sur le bouton Modifier !", "Erreur modification", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             if (String.IsNullOrWhiteSpace(listAllDirectors.Text))
             {
                 MessageBox.Show("Le réalisateur sélectionné n'est pas valide", "Erreur ajout", MessageBoxButton.OK);
@@ -237,12 +318,23 @@ namespace CoFiAppV1.Frames
             MessageBox.Show("Vous avez ajouté le réalisateur " + directorToAdd.Nom + " " + directorToAdd.Prenom + " avec succès", "Ajout de réalisateur", MessageBoxButton.OK);
         }
 
+        /// <summary>
+        /// Ouvrir le navigateur de fichiers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OpenFileBrowser_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.InitialDirectory = "C:\\Users\\Public\\Desktop";
             dlg.DefaultExt = ".jpg | .png | .gif";
             dlg.Filter = "All images files (.jpg, .png, .gif)|*.jpg;*.png;*.gif|JPG files (.jpg)|*.jpg|PNG files (.png)|*.png|GIF files (.gif)|*.gif";
+
+            if (!toggleButton.IsChecked.Value)
+            {
+                MessageBox.Show("Appuyez d'abord sur le bouton Modifier !", "Erreur modification", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
             bool? result = dlg.ShowDialog();
 
@@ -252,6 +344,11 @@ namespace CoFiAppV1.Frames
             }            
         }
 
+        /// <summary>
+        /// Lorsque le toggle button est décoché
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ToggleButton_Unchecked(object sender, RoutedEventArgs e)
         {
             string extension;
@@ -265,14 +362,34 @@ namespace CoFiAppV1.Frames
                 { }
 
                 extension = SourcePath.Remove(0, index);
-                pathimg = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\" + $"img\\{LeManager.FilmSelected.Titre.ToLower().Replace(" ", string.Empty)}{extension}";
-                if (LeManager.FilmSelected.PathFile == pathimg && !pathimg.Contains("noavatar.png"))
+                pathimg = $"{LeManager.FilmSelected.Titre.ToLower().Replace(" ", string.Empty)}{extension}";
+                if (LeManager.FilmSelected.PathFile == pathimg && !LeManager.FilmSelected.PathFile.Contains("noavatar.png"))
                 {
-                    File.Delete(LeManager.FilmSelected.PathFile);
+                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\img\\" +LeManager.FilmSelected.PathFile);
                 }
-                File.Move(SourcePath, pathimg);
+                File.Move(SourcePath, Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\img\\" + pathimg);
                 LeManager.FilmSelected.PathFile = pathimg;
             }
+
+            listAllDirectors.IsEnabled = false;
+            listDirector.IsEnabled = false;
+            listTags.IsEnabled = false;
+            listAllTags.IsEnabled = false;
+            listActors.IsEnabled = false;
+        }
+
+        /// <summary>
+        /// Lorsque le toggle button est coché
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+            listAllDirectors.IsEnabled = true;
+            listDirector.IsEnabled = true;
+            listTags.IsEnabled = true;
+            listAllTags.IsEnabled = true;
+            listActors.IsEnabled = true;
         }
     }
 }

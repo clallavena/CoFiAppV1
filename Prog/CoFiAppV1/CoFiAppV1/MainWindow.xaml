@@ -43,9 +43,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <UserControl>
-                        <local:Vignette PTitre="{Binding Titre}"
-                                        PImage="{Binding PathFile}"/>
-                        <!-- , Converter={StaticResource string2UriConverter}-->
+                        <local:Vignette PTitre="{Binding Titre}" PImage="{Binding PathFile}"/>
                     </UserControl>
                 </DataTemplate>
             </ListBox.ItemTemplate>

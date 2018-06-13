@@ -54,17 +54,32 @@ namespace CoFiAppV1.Frames
             }
         }
 
+        /// <summary>
+        /// Retourner à l'accueil
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Accueil_Click(object sender, RoutedEventArgs e)
         {
             NavManager.SelectedPart = NavManager.Parts["Accueil"]();
             LeManager.FilmSelected = null;
         }
 
+        /// <summary>
+        /// Double cliquer sur une vignette de film pour avoir plus de détails sur le film
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Vignette_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             NavManager.SelectedPart = NavManager.Parts["FilmDesc"]();
         }
 
+        /// <summary>
+        /// Ajouter un film ou un réalisateur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Ajouter_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Voulez-vous ajouter un Réalisateur ?", "Ajouter Réal", MessageBoxButton.YesNoCancel);

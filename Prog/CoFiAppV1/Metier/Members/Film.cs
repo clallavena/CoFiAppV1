@@ -6,6 +6,7 @@ using System.Text;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using System.ComponentModel;
 
 namespace Metier
 {
@@ -14,7 +15,7 @@ namespace Metier
     /// </summary>
     /// 
     [DataContract]
-    public class Film : IEquatable<Film>
+    public class Film : IEquatable<Film>, INotifyPropertyChanged
     {
         /// <summary>
         /// Titre du film
@@ -59,12 +60,13 @@ namespace Metier
         /// <summary>
         /// Chemin d'accés à l'image
         /// </summary>
-        /// 
+        private string pathfile;
+
         [DataMember]
         public string PathFile
         {
-            get;
-            set;
+            get { return pathfile; }
+            set { pathfile = value; OnNotifyPropertyChanged(nameof(PathFile)); }
         }
 
         /// <summary>
@@ -77,9 +79,7 @@ namespace Metier
             get; set;
         }
 
-        public Film()
-        {
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Constructeur d'un film
@@ -106,7 +106,7 @@ namespace Metier
             {
                 ListTags.Add(e);
             }
-            PathFile = pathFile;
+            this.pathfile = pathFile;
         }
 
         /// <summary>
@@ -170,6 +170,11 @@ namespace Metier
         public override int GetHashCode()
         {
             return Titre.GetHashCode();
+        }
+
+        public void OnNotifyPropertyChanged(String info)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(info));
         }
     }
 }

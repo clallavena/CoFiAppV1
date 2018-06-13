@@ -36,16 +36,31 @@ namespace CoFiAppV1
             Username_TextBox.Focus();
         }
 
+        /// <summary>
+        /// Quitter la fenêtre administrateur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Quit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Se connecter avec un compte administrateur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Connection_Click(object sender, RoutedEventArgs e)
         {
             Connexion();
         }
 
+        /// <summary>
+        /// Effectuer une connexion en appuyant sur la touche entrée après avoir rentré le mot de passe
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PassWord_TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -54,6 +69,9 @@ namespace CoFiAppV1
             }
         }
 
+        /// <summary>
+        /// Fonction de connexion pour administrateur
+        /// </summary>
         private void Connexion()
         {
             string username = Username_TextBox.Text;
@@ -75,6 +93,11 @@ namespace CoFiAppV1
             MessageBox.Show("Nom d'utilisateur ou Mot de passe incorrecte", "Erreur connexion", MessageBoxButton.OK);
         }
 
+        /// <summary>
+        /// Fonction pour se déconnecter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Deconnection_Click(object sender, RoutedEventArgs e)
         {
             if (LeManager.CurrentUser != null)

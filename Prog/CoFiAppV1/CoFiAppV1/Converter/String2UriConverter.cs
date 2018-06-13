@@ -9,7 +9,10 @@ using System.Windows.Data;
 
 namespace CoFiAppV1.Converter
 {
-    class String2UriConverter : IValueConverter
+    /// <summary>
+    /// Converter permettant d'afficher les images dans l'application
+    /// </summary>
+    public class String2UriConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
