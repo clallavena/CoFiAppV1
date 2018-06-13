@@ -72,11 +72,18 @@ namespace CoFiAppV1.Frames
 
                 if (result.ToString().Equals("Yes"))
                 {
-                    if (LeManager.SupprimerReal(LeManager.RealSelected)) MessageBox.Show("Suppression effectué avec succés", "Suppression", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                    else MessageBox.Show("Erreur lors de la suppression", "Suppression", MessageBoxButton.OK, MessageBoxImage.Error);
+                    if (LeManager.SupprimerReal(LeManager.RealSelected))
+                    {
+                        MessageBox.Show("Suppression effectué avec succés", "Suppression", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                        NavManager.SelectedPart = NavManager.Parts["Accueil"]();
+                        LeManager.FilmSelected = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erreur lors de la suppression", "Suppression", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
                 NotifyPropertyChanged("LeManager.ListReal");
-                NavManager.SelectedPart = NavManager.Parts["Accueil"]();
             }
             else
             {
@@ -106,11 +113,6 @@ namespace CoFiAppV1.Frames
                     NavManager.SelectedPart = NavManager.Parts["AddFilm"]();
                 }
             }
-        }
-
-        private void Modifier_Click(object sender, RoutedEventArgs e)
-        {
-            NavManager.SelectedPart = NavManager.Parts["ModifReal"]();
         }
     }
 }

@@ -76,9 +76,6 @@
     <Compile Include="Frames\ModifFilmUC.xaml.cs">
       <DependentUpon>ModifFilmUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Frames\ModifRealUC.xaml.cs">
-      <DependentUpon>ModifRealUC.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Converter\Func2UserControlConverter.cs" />
     <Compile Include="Converter\IsCheckedToVisibilityConverter.cs" />
     <Compile Include="LogAdmin.xaml.cs">
@@ -116,10 +113,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Frames\ModifFilmUC.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Frames\ModifRealUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -181,7 +174,6 @@
     <Resource Include="img\Shining.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\JackN.jpg" />
     <Resource Include="img\ShelleyD.jpg" />
   </ItemGroup>
   <ItemGroup>
