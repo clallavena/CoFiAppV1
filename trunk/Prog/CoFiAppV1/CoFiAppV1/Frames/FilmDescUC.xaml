@@ -49,7 +49,6 @@
 
                 <StackPanel HorizontalAlignment="Left" Margin="5" Orientation="Horizontal">
                     <TextBlock FontWeight="DemiBold" Text="Réalisateur(s): " />
-                    <!--<TextBlock TextDecorations="Underline" Foreground="Blue" DataContext="{Binding FilmSelected}" Text="{Binding Personnes}" />-->
                     <ListView Background="{StaticResource defaultBackground}" ItemsSource="{Binding Lp}" MouseDoubleClick="ListView_MouseDoubleClick" SelectedItem="{Binding LeManager.RealSelected}">
                         <ListView.ItemTemplate>
                             <DataTemplate>

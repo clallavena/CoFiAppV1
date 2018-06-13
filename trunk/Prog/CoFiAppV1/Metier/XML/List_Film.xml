@@ -280,4 +280,31 @@
     </Tags>
     <Titre>Jurassic Park</Titre>
   </Film>
+  <Film>
+    <Date_x0020_De_x0020_Sortie>9595</Date_x0020_De_x0020_Sortie>
+    <PathFile>C:\Users\esbarland\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\htrthr.png</PathFile>
+    <Personnes xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+        <d3p1:Key>Realisateur</d3p1:Key>
+        <d3p1:Value>
+          <Personne>
+            <Biographie>rth</Biographie>
+            <DateDeMort>0454-12-11T00:00:00</DateDeMort>
+            <DateDeNaissance>0032-01-01T00:00:00</DateDeNaissance>
+            <Nationalite>rth</Nationalite>
+            <Nom>yjty</Nom>
+            <PathFile>C:\Users\esbarland\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\noavatar.png</PathFile>
+            <Prenom>tyjty</Prenom>
+          </Personne>
+        </d3p1:Value>
+      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+      <d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+        <d3p1:Key>Acteur</d3p1:Key>
+        <d3p1:Value />
+      </d3p1:KeyValueOfJobArrayOfPersonne3LZ9xGac>
+    </Personnes>
+    <Synopsis>yyukuikuil</Synopsis>
+    <Tags />
+    <Titre>htrthr</Titre>
+  </Film>
 </ArrayOfFilm>

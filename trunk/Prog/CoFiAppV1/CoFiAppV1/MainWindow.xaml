@@ -10,7 +10,8 @@
         Title="MainWindow" Height="720" Width="1280"
         Background="{StaticResource defaultBackground}"
         Closing="Window_Closing"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded" 
+        WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <conv:Func2UserControlConverter x:Key="UCconverter" />
