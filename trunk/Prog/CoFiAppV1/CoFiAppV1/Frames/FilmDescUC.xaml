@@ -91,7 +91,7 @@
                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap">
                     <Run FontWeight="Bold">Synopsis: </Run>
                 </TextBlock>
-                <TextBlock DataContext="{Binding LeManager.FilmSelected}" Text="{Binding Synopsis}" Margin="0,0,0, 20" FontSize="16" TextWrapping="Wrap" />
+                <TextBlock DataContext="{Binding LeManager.FilmSelected}" Text="{Binding Synopsis}" Margin="0,0,0, 20" FontSize="16" TextWrapping="Wrap" Width="800" HorizontalAlignment="Left" TextAlignment="Justify" />
                 <TextBlock Text="Acteurs: " FontWeight="Bold" />
                 <!--Synopsis-->
 
