@@ -36,4 +36,13 @@
     <PathFile>C:\Users\GhostFalador\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\steven-spielberg.jpg</PathFile>
     <Prenom>Steven</Prenom>
   </Personne>
+  <Personne>
+    <Biographie>rth</Biographie>
+    <DateDeMort>0078-06-03T00:00:00</DateDeMort>
+    <DateDeNaissance>0045-03-03T00:00:00</DateDeNaissance>
+    <Nationalite>rth</Nationalite>
+    <Nom>yjty</Nom>
+    <PathFile>C:\Users\esbarland\Desktop\cofiapp\trunk\Prog\CoFiAppV1\CoFiAppV1\bin\Debug\..\..\img\noavatar.png</PathFile>
+    <Prenom>tyjty</Prenom>
+  </Personne>
 </ArrayOfPersonne>

@@ -1,6 +1,7 @@
 ﻿using Metier;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,7 +38,7 @@ namespace CoFiAppV1
         public string PImage
         {
             get { return (string)GetValue(PImageProperty); }
-            set { SetValue(PImageProperty, value); }
+            set { SetValue(PImageProperty, value);}
         }
 
         // Using a DependencyProperty as the backing store for PImage.  This enables animation, styling, binding, etc...
