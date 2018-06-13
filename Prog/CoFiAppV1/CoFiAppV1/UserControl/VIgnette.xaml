@@ -29,7 +29,7 @@
             <!--Changer l'image-->
             <Image Source="{Binding PImage, Converter={StaticResource string2UriConverter}, ElementName=root}" Margin="20,0" Height="100" Width="100" Stretch="Uniform"/>
         </Viewbox>
-        <TextBlock Grid.Column="1" Text="{Binding PTitre, ElementName=root}" FontWeight="Bold" FontSize="22" VerticalAlignment="Center" TextWrapping="Wrap"/>
+        <TextBlock Grid.Column="1" Text="{Binding PTitre, ElementName=root}" FontWeight="Bold" FontSize="22" VerticalAlignment="Center" Width="325" TextWrapping="Wrap"/>
         <!--Fin d'une séléction-->
     </Grid>
 </UserControl>
