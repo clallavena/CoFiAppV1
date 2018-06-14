@@ -181,7 +181,7 @@ namespace CoFiAppV1.Frames
 
                 extension = SourcePath.Remove(0, index);
                 pathimg = $"{Prenom.ToLower().Replace(" ", string.Empty) + "-" + Nom.ToLower().Replace(" ", string.Empty)}{extension}";
-                File.Move(SourcePath, Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\img\\" + pathimg);
+                File.Move(SourcePath, Directory.GetCurrentDirectory() + "\\..\\..\\img\\" + pathimg);
             }
             else
             {

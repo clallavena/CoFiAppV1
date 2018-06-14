@@ -11,7 +11,6 @@ using System.ComponentModel;
 using System.Runtime.Serialization;
 using System.Xml;
 using System.Xml.Serialization;
-using Metier.DataManager;
 using System.IO;
 
 namespace Metier

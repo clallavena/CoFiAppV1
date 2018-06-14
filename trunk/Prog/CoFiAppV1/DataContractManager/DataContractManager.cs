@@ -8,8 +8,6 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using System.Xml.Serialization;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Metier.DataManager
 {
