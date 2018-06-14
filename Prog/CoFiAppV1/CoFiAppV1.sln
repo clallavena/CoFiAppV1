@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{E933624B-7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClasses", "TestClasses\TestClasses.csproj", "{803B847E-2168-4256-85C6-E8A3C4245884}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StubDataManager", "StubDataManager\StubDataManager.csproj", "{0B3BB385-9D7A-4A7D-9C7C-DACA3DA86201}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataContractManager", "DataContractManager\DataContractManager.csproj", "{5C77A2FC-AB01-4821-B51E-0DB5C3215E08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,14 @@ Global
 		{803B847E-2168-4256-85C6-E8A3C4245884}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{803B847E-2168-4256-85C6-E8A3C4245884}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{803B847E-2168-4256-85C6-E8A3C4245884}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B3BB385-9D7A-4A7D-9C7C-DACA3DA86201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B3BB385-9D7A-4A7D-9C7C-DACA3DA86201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B3BB385-9D7A-4A7D-9C7C-DACA3DA86201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B3BB385-9D7A-4A7D-9C7C-DACA3DA86201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C77A2FC-AB01-4821-B51E-0DB5C3215E08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C77A2FC-AB01-4821-B51E-0DB5C3215E08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C77A2FC-AB01-4821-B51E-0DB5C3215E08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C77A2FC-AB01-4821-B51E-0DB5C3215E08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

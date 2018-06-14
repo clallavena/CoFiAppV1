@@ -1,12 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PendingCommit>
   <CommitComment />
-  <TrackedFiles>
-    <RelativePath>TestClasses\App.config</RelativePath>
-    <RelativePath>TestClasses\Program.cs</RelativePath>
-    <RelativePath>TestClasses\Properties\AssemblyInfo.cs</RelativePath>
-    <RelativePath>TestClasses\TestClasses.csproj</RelativePath>
-  </TrackedFiles>
-  <ExcludedItems />
   <WorkItems />
+  <PublishPrompt Enabled="True" />
 </PendingCommit>

@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DCAB952B-2374-41EA-82DB-CF94D66A2760}</ProjectGuid>
+    <ProjectGuid>{5C77A2FC-AB01-4821-B51E-0DB5C3215E08}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Metier</RootNamespace>
-    <AssemblyName>Metier</AssemblyName>
+    <RootNamespace>DataContractManager</RootNamespace>
+    <AssemblyName>DataContractManager</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,30 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Members\Admin.cs" />
-    <Compile Include="Members\Film.cs" />
-    <Compile Include="DataManager\IDataManager.cs" />
-    <Compile Include="RechercheFilms\IRechercheFilm.cs" />
-    <Compile Include="RechercheFilms\RechFilmParNom.cs" />
-    <Compile Include="RecherchePersonne\IRecherchePersonne.cs" />
-    <Compile Include="Manager.cs" />
-    <Compile Include="Enums\Job.cs" />
-    <Compile Include="Members\Personne.cs" />
+    <Compile Include="DataContractManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RecherchePersonne\RechParFilm.cs" />
-    <Compile Include="Enums\Tag.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="XML\List_Film.xml" />
-    <Content Include="XML\List_Reals.xml" />
+    <ProjectReference Include="..\Metier\Metier.csproj">
+      <Project>{dcab952b-2374-41ea-82db-cf94d66a2760}</Project>
+      <Name>Metier</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

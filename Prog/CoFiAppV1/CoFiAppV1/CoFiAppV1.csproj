@@ -174,18 +174,20 @@
     <Resource Include="img\Shining.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\ShelleyD.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\Kubrick.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="img\logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataContractManager\DataContractManager.csproj">
+      <Project>{5c77a2fc-ab01-4821-b51e-0db5c3215e08}</Project>
+      <Name>DataContractManager</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Metier\Metier.csproj">
       <Project>{dcab952b-2374-41ea-82db-cf94d66a2760}</Project>
       <Name>Metier</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StubDataManager\StubDataManager.csproj">
+      <Project>{0b3bb385-9d7a-4a7d-9c7c-daca3da86201}</Project>
+      <Name>StubDataManager</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

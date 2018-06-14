@@ -19,7 +19,8 @@ namespace CoFiAppV1.Converter
             string imageName = value as string;
             if (string.IsNullOrWhiteSpace(imageName)) throw new ArgumentException("le nom de l'image doit être différent de null, vide ou blanc, et doit être un string.");
 
-            Uri uri = new Uri(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\img\\" + $"{imageName}", UriKind.RelativeOrAbsolute);
+            //Uri uri = new Uri(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\cofiapp\\trunk\\Prog\\CoFiAppV1\\CoFiAppV1\\img\\" + $"{imageName}", UriKind.RelativeOrAbsolute);
+            Uri uri = new Uri(Directory.GetCurrentDirectory() + "\\..\\..\\img\\" + $"{imageName}", UriKind.RelativeOrAbsolute);
             return uri;
         }
 
