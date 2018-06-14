@@ -70,7 +70,7 @@ namespace TestClasses
             RechFilmParNom re = new RechFilmParNom();
             IEnumerable<Film> liF = re.RechercheFilm("Forrest", m.Films);
 
-            foreach(Film fi in liF)
+            foreach (Film fi in liF)
             {
                 Console.WriteLine(fi.Titre);
             }
