@@ -57,9 +57,9 @@ namespace TestClasses
 
             Film f2 = new Film("Forrest Gump", 1994, "superbe histoire", perso2, null, null);
 
-            //m.AjouterFilm(f);
-            //m.AjouterFilm(f1);
-            //m.AjouterFilm(f2);
+            m.AjouterFilm(f);
+            m.AjouterFilm(f1);
+            m.AjouterFilm(f2);
 
 
 
@@ -77,57 +77,53 @@ namespace TestClasses
 
             Console.WriteLine(f2.PathFile);
 
-            //foreach (Film fi in fl)
-            //{
-            //    Console.WriteLine(fi.Titre);
-            //}
+            foreach (Film fi in fl)
+            {
+                Console.WriteLine(fi.Titre);
+            }
 
-            ////Test ajout de Film
-            //foreach (Film fi in m.Films)
-            //{
-            //    Console.WriteLine(fi);
-            //}
+            //Test ajout de Film
+            foreach (Film fi in m.Films)
+            {
+                Console.WriteLine(fi);
+            }
 
-            //Console.WriteLine("/////////////////////////////////////////////");
+            Console.WriteLine("/////////////////////////////////////////////");
 
-            //m.AjouterFilm(f);
+            m.AjouterFilm(f);
 
-            //foreach (Film fi in m.Films)
-            //{
-            //    Console.WriteLine(fi);
-            //}
+            foreach (Film fi in m.Films)
+            {
+                Console.WriteLine(fi);
+            }
 
-            //Console.WriteLine("/////////////////////////////////////////////");
+            Console.WriteLine("/////////////////////////////////////////////");
 
-            //m.AjouterFilm(f2);
+            m.AjouterFilm(f2);
 
-            //foreach (Film fi in m.Films)
-            //{
-            //    Console.WriteLine(fi);
-            //}
+            foreach (Film fi in m.Films)
+            {
+                Console.WriteLine(fi);
+            }
 
-            //Console.WriteLine("/////////////////////////////////////////////");
+            Console.WriteLine("/////////////////////////////////////////////");
 
-            //m.AjouterFilm(f1);
+            m.AjouterFilm(f1);
 
-            //foreach (Film fi in m.Films)
-            //{
-            //    Console.WriteLine(fi);
-            //}
+            foreach (Film fi in m.Films)
+            {
+                Console.WriteLine(fi);
+            }
 
-            //Console.WriteLine("/////////////////////////////////////////////");
+            Console.WriteLine("/////////////////////////////////////////////");
 
 
-            ////Test de l'ajout de Réal//
+            //Test de l'ajout de Réal//
 
-            //m.AjouterReal(new Personne("Barland", "Esteban", new DateTime(1999, 10, 17), "Espingouin", "Vivant à St-Christophe, avec ses 3 habitants, Esteban rêver de grandeur cinématographique."));
-
-            //foreach(Personne p in m.ListReal)
-            //{
-            //    Console.WriteLine(p);
-            //}
-
-            //m.AjouterReal(new Personne("Nolan", "Christophe", new DateTime(1970, 07, 30), "Anglais", "Prout"));
+            foreach (Personne p in m.ListReal)
+            {
+                Console.WriteLine(p);
+            }
 
         }
     }
