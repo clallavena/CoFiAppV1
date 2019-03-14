@@ -3,8 +3,8 @@
 ### Année 2017-2018
 
 **Réalisé par:**
-* Clément Allavena
-* Estéban Barland
+* Clément Allavena (@clallavena)
+* Estéban Barland (@esbarland)
 
 ### • Qu’est-ce-que c’est ? ###
 CoFiApp est une application gratuite qui stocke des films avec leurs informations principales. La
